@@ -9,6 +9,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 - general
 - locale-polish
 - services
+- theme
 
 
 ### General
@@ -62,6 +63,11 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |Module name|Description|isOptional|
 |---|---|---|
 |user|user settings|no|
+
+### Theme
+|Module name|Description|isOptional|
+|---|---|---|
+|theme|Catppuccin system theme|no|
 
 
 
