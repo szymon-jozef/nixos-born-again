@@ -2,10 +2,10 @@
 {
   flake.nixosModules = {
     network =
-      { hostname, ... }:
+      { myConfig, ... }:
       {
         networking = {
-          hostName = hostname;
+          hostName = myConfig.hostname;
           networkmanager.enable = true;
         };
       };

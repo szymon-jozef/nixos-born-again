@@ -1,7 +1,7 @@
 { ... }:
 {
   flake.homeModules.waybar =
-    { pkgs, ... }:
+    { pkgs, myConfig, ... }:
     {
 
       programs.waybar = {
@@ -19,7 +19,7 @@
             reload_style_on_change = true;
             width = 70;
             output = [
-              "DP-1" # TODO move this to some variable
+              myConfig.mainMonitor
             ];
 
             modules-left = [

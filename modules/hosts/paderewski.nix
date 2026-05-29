@@ -1,27 +1,28 @@
 { inputs, self, ... }:
 let
-  username = "szymon";
-  hostname = "paderewski";
-  system = "x86_64-linux";
-  pathConfig = {
-    wallpaper = "Obrazy/tapety/catppuccin";
-    screenshot = "Obrazy/zrzuty/";
-    obsidian = "Dokumenty/obsidian";
+  myConfig = {
+    username = "szymon";
+    hostname = "paderewski";
+    system = "x86_64-linux";
+    pathConfig = {
+      wallpaper = "Obrazy/tapety/catppuccin";
+      screenshot = "Obrazy/zrzuty/";
+      obsidian = "Dokumenty/obsidian";
+    };
+    mainMonitor = "DP-1";
   };
 in
 {
-  flake.nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.${myConfig.hostname} = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = {
       inherit
         self
         inputs
-        username
-        hostname
-        pathConfig
+        myConfig
         ;
     };
 
-    system = system;
+    system = myConfig.system;
 
     imports = [
       self.nixosModules.wrapper

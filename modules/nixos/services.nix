@@ -90,24 +90,24 @@
     };
 
   flake.nixosModules.services-syncthing =
-    { username, ... }:
+    { myConfig, ... }:
     {
       services.syncthing = {
         enable = true;
         openDefaultPorts = true;
         systemService = false;
-        user = username;
+        user = myConfig.username;
       };
     };
 
   flake.nixosModules.services-snapper =
-    { username, ... }:
+    { myConfig, ... }:
     {
       services.snapper = {
         configs = {
           home = {
             SUBVOLUME = "/home";
-            ALLOW_USERS = [ username ];
+            ALLOW_USERS = [ myConfig.username ];
             TIMELINE_CREATE = true;
             TIMELINE_CLEANUP = true;
           };

@@ -3,14 +3,12 @@
   flake.nixosModules.user =
     {
       inputs,
-      username,
-      hostname,
+      myConfig,
       pkgs,
-      pathConfig,
       ...
     }:
     {
-      users.users.${username} = {
+      users.users.${myConfig.username} = {
         isNormalUser = true;
         shell = pkgs.fish;
         extraGroups = [
@@ -26,20 +24,18 @@
         extraSpecialArgs = {
           inherit
             inputs
-            username
-            hostname
-            pathConfig
+            myConfig
             ;
         };
 
-        users.${username} = {
+        users.${myConfig.username} = {
           imports = [
             inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
             # self.homeModules.* import
           ];
           home = {
             file = {
-              ${pathConfig.wallpaper}.source = inputs.wallpapers;
+              "${myConfig.pathConfig.wallpaper}".source = inputs.wallpapers;
             };
 
             sessionVariables = {

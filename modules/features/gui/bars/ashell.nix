@@ -3,6 +3,7 @@
   flake.homeModules.ashell =
     {
       pkgs,
+      myConfig,
       ...
     }:
     {
@@ -10,7 +11,7 @@
         enable = true;
         settings = {
           outputs = {
-            Targets = [ "DP-1" ]; # TODO move this to some variable
+            Targets = [ myConfig.mainMonitor ];
           };
           position = "Bottom";
           modules = {

@@ -1,6 +1,6 @@
 {
   pkgs,
-  pathConfig,
+  myConfig,
   ...
 }:
 let
@@ -70,7 +70,7 @@ in
         ''}"
 
         "$mainMod, PRINT, exec, ${pkgs.writeShellScript "screenshot-fullscreen" ''
-          target_path="$HOME/${pathConfig.screenshot}/$(date +'%d-%m-%Y_%H-%M-%S').png"
+          target_path="$HOME/${myConfig.pathConfig.screenshot}/$(date +'%d-%m-%Y_%H-%M-%S').png"
           mkdir -p "$(dirname "$target_path")"
 
           MONITOR=$(hyprctl monitors -j | ${jq} -r '.[] | select(.focused == true) | .name')
@@ -81,7 +81,7 @@ in
         ''}"
 
         "alt_l, PRINT, exec, ${pkgs.writeShellScript "screenshot-window" ''
-          target_path="$HOME/${pathConfig.screenshot}/$(date +'%d-%m-%Y_%H-%M-%S').png"
+          target_path="$HOME/${myConfig.pathConfig.screenshot}/$(date +'%d-%m-%Y_%H-%M-%S').png"
           mkdir -p "$(dirname "$target_path")"
 
           GEOMETRY=$(hyprctl activewindow -j | ${jq} -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')

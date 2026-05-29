@@ -5,7 +5,7 @@
     {
       inputs,
       pkgs,
-      pathConfig,
+      myConfig,
       ...
     }:
     let
@@ -71,10 +71,10 @@
 
         vaults = {
           "Notatki-szkolne" = {
-            target = "${pathConfig.obsidian}/notatki-szkolne";
+            target = "${myConfig.pathConfig.obsidian}/notatki-szkolne";
           };
           "Studia" = {
-            target = "${pathConfig.obsidian}/ZUT-notatki";
+            target = "${myConfig.pathConfig.obsidian}/ZUT-notatki";
           };
         };
       };
