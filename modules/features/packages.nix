@@ -63,7 +63,7 @@
     packages-fonts =
       { pkgs, ... }:
       {
-        font-packages = with pkgs.nerd-fonts; [
+        fonts.packages = with pkgs.nerd-fonts; [
           fira-code
           noto
           jetbrains-mono

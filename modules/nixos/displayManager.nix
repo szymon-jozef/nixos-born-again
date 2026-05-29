@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nixosModule = {
+  flake.nixosModules = {
     display-manager =
       { ... }:
       {
