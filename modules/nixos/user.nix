@@ -4,6 +4,7 @@
     {
       inputs,
       username,
+      hostname,
       pkgs,
       pathConfig,
       ...
@@ -20,6 +21,17 @@
       };
 
       home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = {
+          inherit
+            inputs
+            username
+            hostname
+            pathConfig
+            ;
+        };
+
         users.${username} = {
           imports = [
             inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
@@ -48,7 +60,6 @@
           };
         };
 
-        useGlobalPkgs = true;
       };
     };
 }
