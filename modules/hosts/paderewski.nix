@@ -17,12 +17,13 @@ in
 
     system = system;
 
-    modules = [
-      self.nixosModules.general
-      self.nixosModules.locale-polish
-      self.nixosModules.bootloader-gpt
-      self.nixosModules.services
+    imports = [
+      self.nixosModules.wrapper
+
       self.nixosModules.services-hardware-overclock
+      self.nixosModules.services-syncthing
+      self.nixosModules.services-snapper
+
       self.nixosModules.display-manager-autologin
 
       # hardware

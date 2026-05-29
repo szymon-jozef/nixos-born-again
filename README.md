@@ -4,6 +4,13 @@
 *`isOptional = yes` means that a module isn't provided by a wrapper*
 *wrapper module is fat*
 ## nixosModules
+### Wrapper
+This module wraps all other wrapper, so you don't have to import all the stuff yourself.
+- general
+- locale-polish
+- services
+
+
 ### General
 |Module name|Description|isOptional|
 |---|---|---|
