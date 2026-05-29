@@ -9,6 +9,7 @@
         self.nixosModules.services
         self.nixosModules.theme
         self.nixosModules.network
+        self.nixosModules.packages
       ];
     };
 }
