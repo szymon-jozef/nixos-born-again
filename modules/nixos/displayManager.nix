@@ -14,12 +14,12 @@
       };
 
     display-manager-autologin =
-      { self, ... }:
+      { self, username, ... }:
       {
         imports = [ self.nixosModule.display-manager ];
         displayManager.sddm.settings.Autologin = {
           Session = "hyprland-uwsm.desktop";
-          User = "szymon"; # TODO! change to username variable
+          User = username;
         };
       };
   };
