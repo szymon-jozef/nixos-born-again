@@ -39,4 +39,11 @@
 |display-manager|Default display-manager settings (sddm)|no|
 |**display-manager-autologin**|Autologin with display-manager|yes|
 
+### Hardware
+*this is hardware configuration for specific devices*
+|Module name|Description|isOptional|
+|---|---|---|
+|hardware-paderewski|self-explanatory|no|
+
+
 ## homeModules
