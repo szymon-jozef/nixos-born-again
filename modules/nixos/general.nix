@@ -9,7 +9,6 @@
 
           inputs.agenix.nixosModules.default
 
-          inputs.catppuccin.nixosModules.catppuccin # TODO move this to theme.nix?
 
           inputs.nix-index-database.nixosModules.default
           { programs.nix-index-database.comma.enable = true; }

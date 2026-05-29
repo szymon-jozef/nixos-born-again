@@ -1,8 +1,20 @@
-**NixOS born again**
+# NixOS born again
+My NixOS and home-manager configurations.
+
+It used to be separated into [nixos-configuration](https://github.com/szymon-jozef/nixos-configuration) and [amazing-dotfiles](https://github.com/szymon-jozef/amazing-dotfiles), but I merged it into one big repo.
+
+This configuration is build around dendritic pattern, meaning it comes with [flake-parts](https://github.com/hercules-ci/flake-parts) and [import-tree](https://github.com/denful/import-tree). There are no if statements in the code: you just import all the things you want.
 
 # Flake parts
+
 *`isOptional = yes` means that a module isn't provided by a wrapper*
 *wrapper module is fat*
+
+## hosts
+There is an [example host file](./modules/hosts/example.nix)
+
+Every host needs to inherit `username` and `hostname` variables.
+
 ## nixosModules
 ### Wrapper
 This module wraps all other wrapper, so you don't have to import all the stuff yourself.
