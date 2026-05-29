@@ -139,3 +139,4 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |satty| Satty configuration (screenshot edit tool) | no|
 |kitty| Kitty terminal emulator configuration| no|
 |browsers| Provides internet browsers| no|
+|mako| Mako notification daemon| no|
