@@ -1,3 +1,5 @@
+This is **WIP**
+
 # NixOS born again
 My NixOS and home-manager configurations.
 
