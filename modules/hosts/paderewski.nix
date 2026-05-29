@@ -37,7 +37,7 @@ in
       self.nixosModules.network-home-wifi
 
       # hardware
-      self.nixosModule.hardware-paderewski
+      self.nixosModules.hardware-paderewski
     ];
   };
 }

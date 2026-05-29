@@ -10,7 +10,7 @@
     }:
     let
       catppuccin = pkgs.stdenv.mkDerivation {
-        ppname = "obsidian-catppuccin";
+        pname = "obsidian-catppuccin";
         src = inputs.catppuccin-obsidian;
 
         dontConfigure = true;

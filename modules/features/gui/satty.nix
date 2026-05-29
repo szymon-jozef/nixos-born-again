@@ -10,7 +10,7 @@
             fullscreen = true;
             early-exit = true;
             initial-tool = "crop";
-            output-filename = "/home/${myConfig.pathConfig}/Obrazy/zrzuty/%d-%m-%Y_%H:%M:%S.png";
+            output-filename = "/home/${myConfig.username}/Obrazy/zrzuty/%d-%m-%Y_%H:%M:%S.png";
             save-after-copy = true;
             copy-command = "wl-copy";
             disable-notifications = false;

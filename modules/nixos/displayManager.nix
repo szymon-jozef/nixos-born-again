@@ -16,7 +16,7 @@
     display-manager-autologin =
       { self, myConfig, ... }:
       {
-        imports = [ self.nixosModule.display-manager ];
+        imports = [ self.nixosModules.display-manager ];
         displayManager.sddm.settings.Autologin = {
           Session = "hyprland-uwsm.desktop";
           User = myConfig.username;
