@@ -135,6 +135,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 ### GUI
 |Module name|Description|isOptional|
 |---|---|---|
-|Obsidian|Obsidian configuration. Also provides obsidian-catppuccin theme as derivation.|no|
-|Satty| Satty configuration (screenshot edit tool) | no|
-|Kitty| Kitty terminal emulator configuration| no|
+|obsidian|Obsidian configuration. Also provides obsidian-catppuccin theme as derivation.|no|
+|satty| Satty configuration (screenshot edit tool) | no|
+|kitty| Kitty terminal emulator configuration| no|
+|browsers| Provides internet browsers| no|
