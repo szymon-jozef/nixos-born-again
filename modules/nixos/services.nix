@@ -85,13 +85,8 @@
   flake.nixosModules.services-hardware-overclock =
     { ... }:
     {
+      hardware.amdgpu.overdrive.enable = true;
       services.lact.enable = true;
-    };
-
-  flake.nixosModules.services-nvidia =
-    { ... }:
-    {
-      services.xserver.videoDrivers = [ "nvidia" ];
     };
 
 }

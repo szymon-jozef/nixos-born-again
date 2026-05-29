@@ -31,7 +31,6 @@
 |services-audio|Audio support|no|
 |**services**| Wrapper around all non-optional modules|yes|
 |services-hardware-overclock|Enable [lact](https://github.com/ilya-zlobintsev/LACT)| yes|
-|services-nvidia|For nvidia GPU-s|yes|
 
 ### displayManager
 |Module name|Description|isOptional|
@@ -44,6 +43,11 @@
 |Module name|Description|isOptional|
 |---|---|---|
 |hardware-paderewski|self-explanatory|no|
+
+### Nvidia
+|Module name|Description|isOptional|
+|---|---|---|
+|nvidia|Nvidia settings|no|
 
 
 ## homeModules
