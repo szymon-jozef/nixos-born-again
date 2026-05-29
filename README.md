@@ -33,4 +33,10 @@
 |services-hardware-overclock|Enable [lact](https://github.com/ilya-zlobintsev/LACT)| yes|
 |services-nvidia|For nvidia GPU-s|yes|
 
+### displayManager
+|Module name|Description|isOptional|
+|---|---|---|
+|display-manager|Default display-manager settings (sddm)|no|
+|**display-manager-autologin**|Autologin with display-manager|yes|
+
 ## homeModules
