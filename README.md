@@ -46,6 +46,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |bootloader-mbr| For mbr-partitioned disks|yes|
 
 ### Packages
+#### General
 |Module name|Description|isOptional|
 |---|---|---|
 |packages-texting|Texting packges| no|
@@ -55,6 +56,12 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |packages-fonts|Fonts|no|
 |**packages**| Imports everything above| no|
 |packages-virtualisation| Virtualisation utilities (winboat, distrobox, quickemu)| yes|
+
+#### GUI packages
+|Module name|Description|isOptional|
+|---|---|---|
+|hyprland|Hyprland nixos module| no|
+
 
 ### Services
 |Module name|Description|isOptional|
@@ -67,6 +74,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |services-hardware-overclock|Enable [lact](https://github.com/ilya-zlobintsev/LACT)| yes|
 |services-syncthing|Enable syncthing| yes|
 |services-snapper|Enable snapper and make snapshots of home directory| yes|
+
 
 ### displayManager
 |Module name|Description|isOptional|
@@ -105,3 +113,16 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 
 
 ## homeModules
+### hypr
+#### hyprland
+**As of now it's a normal home module, separated like normal files and with hyprlang. Will be rewritten to lua.**
+
+|Module name|Description|isOptional|
+|---|---|---|
+|hyprland|Hyprland configuration| no|
+|hypridle|Hypridle configuration| no|
+|hyprlauncher|Hyprlauncher configuration | no|
+|hyprlock|Hyprlock configuration|no|
+|hyprsunset|Hyprsunset configuration|no|
+|hyprtoolkit|Hyprtoolkit (hypr* apps theming) configuration| no|
+|**hypr**| A wrapper around all the hypr stuff| yes|
