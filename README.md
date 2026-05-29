@@ -13,7 +13,7 @@ This configuration is build around dendritic pattern, meaning it comes with [fla
 ## hosts
 There is an [example host file](./modules/hosts/example.nix)
 
-Every host needs to inherit `username` and `hostname` variables.
+Every host needs to inherit `username`, `hostname`, `pathConfig` variables.
 
 ## nixosModules
 ### Wrapper

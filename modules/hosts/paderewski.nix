@@ -3,6 +3,11 @@ let
   username = "szymon";
   hostname = "paderewski";
   system = "x86_64-linux";
+  pathConfig = {
+    wallpaper = "Obrazy/tapety/catppuccin";
+    screenshot = "Obrazy/zrzuty/";
+    obsidian = "Dokumenty/obsidian";
+  };
 in
 {
   flake.nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
@@ -12,6 +17,7 @@ in
         inputs
         username
         hostname
+        pathConfig
         ;
     };
 
@@ -19,6 +25,7 @@ in
 
     imports = [
       self.nixosModules.wrapper
+      self.nixosModules.bootloader-gpt
 
       self.nixosModules.services-hardware-overclock
       self.nixosModules.services-syncthing
