@@ -1,0 +1,97 @@
+{ ... }:
+{
+  flake.nixosModules.services-printing =
+    { ... }:
+    {
+      services = {
+        printing.enable = true;
+        # for wireless printing
+        avahi = {
+          enable = true;
+          nssmdns4 = true;
+          openFirewall = true;
+        };
+
+      };
+    };
+
+  flake.nixosModules.services-ssh =
+    { ... }:
+    {
+      services = {
+        openssh = {
+          enable = true;
+          openFirewall = false;
+          settings = {
+            PasswordAuthentication = false;
+          };
+        };
+      };
+    };
+
+  flake.nixosModules.services-hardware =
+    { ... }:
+    {
+      services = {
+        hardware.openrgb.enable = true;
+        xserver.enable = false;
+        fstrim = {
+          enable = true;
+          interval = "weekly";
+        };
+        fwupd.enable = true;
+      };
+    };
+
+  flake.nixosModules.services-audio =
+    { ... }:
+    {
+      services = {
+        pulseaudio.enable = false;
+        pipewire = {
+          enable = true;
+          alsa.enable = true;
+          alsa.support32Bit = true;
+          pulse.enable = true;
+        };
+      };
+    };
+
+  flake.nixosModules.services =
+    { self, pkgs, ... }:
+    {
+
+      imports = [
+        self.nixosModules.services-printing
+        self.nixosModules.services-ssh
+        self.nixosModules.services-hardware
+        self.nixosModules.services-audio
+      ];
+
+      # other stuff that i won't but don't fit any category
+      services = {
+        upower.enable = true;
+        tailscale.enable = true;
+        flatpak.enable = true;
+
+        gnome.gnome-keyring.enable = false;
+        dbus.packages = [ pkgs.kdePackages.kwallet ]; # use kwallet instead of gnome-shitring
+      };
+
+    };
+
+  # === OPTIONAL ===
+
+  flake.nixosModules.services-hardware-overclock =
+    { ... }:
+    {
+      services.lact.enable = true;
+    };
+
+  flake.nixosModules.services-nvidia =
+    { ... }:
+    {
+      services.xserver.videoDrivers = [ "nvidia" ];
+    };
+
+}
