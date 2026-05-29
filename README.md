@@ -43,6 +43,17 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |bootloader-gpt| For gpt-partitioned disks|yes|
 |bootloader-mbr| For mbr-partitioned disks|yes|
 
+### Packages
+|Module name|Description|isOptional|
+|---|---|---|
+|packages-texting|Texting packges| no|
+|packages-music| Music utilities| no|
+|packages-cli|Cli basic tools|no|
+|packages-system|Required system packages|no|
+|packages-fonts|Fonts|no|
+|**packages**| Imports everything above| no|
+|packages-virtualisation| Virtualisation utilities (winboat, distrobox, quickemu)| yes|
+
 ### Services
 |Module name|Description|isOptional|
 |---|---|---|

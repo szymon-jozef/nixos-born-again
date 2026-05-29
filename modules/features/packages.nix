@@ -50,16 +50,6 @@
         ];
       };
 
-    packages-virtualisation =
-      { pkgs, ... }:
-      {
-        environment.systemPackages = with pkgs; [
-          winboat
-          distrobox
-          quickemu
-        ];
-      };
-
     packages-fonts =
       { pkgs, ... }:
       {
@@ -86,5 +76,15 @@
         ];
       };
 
+    # === Optional ===
+    packages-virtualisation =
+      { pkgs, ... }:
+      {
+        environment.systemPackages = with pkgs; [
+          winboat
+          distrobox
+          quickemu
+        ];
+      };
   };
 }
