@@ -51,5 +51,11 @@
 |---|---|---|
 |nvidia|Nvidia settings|no|
 
+### User
+|Module name|Description|isOptional|
+|---|---|---|
+|user|user settings|no|
+
+
 
 ## homeModules
