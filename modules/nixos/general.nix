@@ -60,6 +60,26 @@
           };
           overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
         };
+
+        # TODO move this to other module? not sure tho
+        # random stuff that probably belong somewhere else
+        security = {
+          pam = {
+            services.sddm.kwallet.enable = true;
+            services.login.kwallet.enable = true;
+          };
+          polkit.enable = true;
+          rtkit.enable = true;
+        };
+
+        hardware = {
+          graphics.enable = true;
+          bluetooth.enable = true;
+        };
+
+        zramSwap.enable = true;
+
+        system.stateVersion = "25.11";
       };
 
     general-low-jobs =
