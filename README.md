@@ -70,7 +70,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |services-ssh|Enable ssh, but doesn't expose a server|no|
 |services-hardware|General hardware stuff|no|
 |services-audio|Audio support|no|
-|**services**| Wrapper around all non-optional modules|yes|
+|**services**| Wrapper around all non-optional modules|no|
 |services-hardware-overclock|Enable [lact](https://github.com/ilya-zlobintsev/LACT)| yes|
 |services-syncthing|Enable syncthing| yes|
 |services-snapper|Enable snapper and make snapshots of home directory| yes|
@@ -80,7 +80,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |Module name|Description|isOptional|
 |---|---|---|
 |display-manager|Default display-manager settings (sddm)|no|
-|**display-manager-autologin**|Autologin with display-manager|yes|
+|**display-manager-autologin**|Autologin with display-manager|no|
 
 ### Hardware
 *this is hardware configuration for specific devices*
@@ -124,10 +124,16 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |hyprlock|Hyprlock configuration|no|
 |hyprsunset|Hyprsunset configuration|no|
 |hyprtoolkit|Hyprtoolkit (hypr* apps theming) configuration| no|
-|**hypr**| A wrapper around all the hypr stuff| yes|
+|**hypr**| A wrapper around all the hypr stuff| no|
 
 ### Status bars
 |Module name|Description|isOptional|
 |---|---|---|
 |waybar| Waybar configuration (old and not recommended)| no|
 |ashell| Ashell configuration| no|
+
+### GUI
+|Module name|Description|isOptional|
+|---|---|---|
+|Obsidian|Obsidian configuration. Also provides obsidian-catppuccin theme as derivation.|no|
+

@@ -75,6 +75,22 @@
         "type": "github"
       }
     },
+    "catppuccin-obsidian": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773256238,
+        "narHash": "sha256-uB0a2nSZkHHf65xBYXyNh50vaAiqdEpKQVf3eXnCVlE=",
+        "owner": "catppuccin",
+        "repo": "obsidian",
+        "rev": "55aa9c9036a9df864593fdaedb2a227d3823fb06",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "obsidian",
+        "type": "github"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -482,6 +498,7 @@
       "inputs": {
         "agenix": "agenix",
         "catppuccin": "catppuccin",
+        "catppuccin-obsidian": "catppuccin-obsidian",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager_2",
         "hyprcursor-phinger": "hyprcursor-phinger",
