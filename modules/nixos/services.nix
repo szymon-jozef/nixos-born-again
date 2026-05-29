@@ -100,7 +100,7 @@
       };
     };
 
-  flake.nixosModules.snapper =
+  flake.nixosModules.services-snapper =
     { username, ... }:
     {
       services.snapper = {
