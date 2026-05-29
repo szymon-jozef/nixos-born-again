@@ -136,4 +136,4 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |Module name|Description|isOptional|
 |---|---|---|
 |Obsidian|Obsidian configuration. Also provides obsidian-catppuccin theme as derivation.|no|
-
+|Satty| Satty configuration (screenshot edit tool) | no|
