@@ -114,8 +114,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 
 ## homeModules
 ### hypr
-#### hyprland
-**As of now it's a normal home module, separated like normal files and with hyprlang. Will be rewritten to lua.**
+**As of now hyprland is a normal home module, separated like normal files and with hyprlang. Will be rewritten to lua.**
 
 |Module name|Description|isOptional|
 |---|---|---|
@@ -126,3 +125,9 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |hyprsunset|Hyprsunset configuration|no|
 |hyprtoolkit|Hyprtoolkit (hypr* apps theming) configuration| no|
 |**hypr**| A wrapper around all the hypr stuff| yes|
+
+### Status bars
+|Module name|Description|isOptional|
+|---|---|---|
+|waybar| Waybar configuration (old and not recommended)| no|
+|ashell| Ashell configuration| no|
