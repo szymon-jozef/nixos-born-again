@@ -137,3 +137,4 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |---|---|---|
 |Obsidian|Obsidian configuration. Also provides obsidian-catppuccin theme as derivation.|no|
 |Satty| Satty configuration (screenshot edit tool) | no|
+|Kitty| Kitty terminal emulator configuration| no|
