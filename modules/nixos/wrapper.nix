@@ -8,6 +8,7 @@
         self.nixosModules.locale-polish
         self.nixosModules.services
         self.nixosModules.theme
+        self.nixosModules.network
       ];
     };
 }

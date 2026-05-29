@@ -10,6 +10,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 - locale-polish
 - services
 - theme
+- network
 
 
 ### General
@@ -68,6 +69,13 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |Module name|Description|isOptional|
 |---|---|---|
 |theme|Catppuccin system theme|no|
+
+
+### Network
+|Module name|Description|isOptional|
+|---|---|---|
+|network|Basic network settings|no|
+|network-home-wifi|Networkmanager profile for my home wifi|yes|
 
 
 

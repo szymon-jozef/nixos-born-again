@@ -26,6 +26,8 @@ in
 
       self.nixosModules.display-manager-autologin
 
+      self.nixosModules.network-home-wifi
+
       # hardware
       self.nixosModule.hardware-paderewski
     ];
