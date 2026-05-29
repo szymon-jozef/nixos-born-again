@@ -68,7 +68,7 @@
         self.nixosModules.services-audio
       ];
 
-      # other stuff that i won't but don't fit any category
+      # other stuff that i want but don't fit any category
       services = {
         upower.enable = true;
         tailscale.enable = true;
@@ -89,4 +89,29 @@
       services.lact.enable = true;
     };
 
+  flake.nixosModules.services-syncthing =
+    { username, ... }:
+    {
+      services.syncthing = {
+        enable = true;
+        openDefaultPorts = true;
+        systemService = false;
+        user = username;
+      };
+    };
+
+  flake.nixosModules.snapper =
+    { username, ... }:
+    {
+      services.snapper = {
+        configs = {
+          home = {
+            SUBVOLUME = "/home";
+            ALLOW_USERS = [ username ];
+            TIMELINE_CREATE = true;
+            TIMELINE_CLEANUP = true;
+          };
+        };
+      };
+    };
 }

@@ -31,6 +31,8 @@
 |services-audio|Audio support|no|
 |**services**| Wrapper around all non-optional modules|yes|
 |services-hardware-overclock|Enable [lact](https://github.com/ilya-zlobintsev/LACT)| yes|
+|services-syncthing|Enable syncthing| yes|
+|services-snapper|Enable snapper and make snapshots of home directory| yes|
 
 ### displayManager
 |Module name|Description|isOptional|
