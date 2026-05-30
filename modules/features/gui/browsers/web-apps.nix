@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.web-apps =
+  flake.homeModules.browsers =
     { ... }:
     let
       mkWebApp =

@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.nioxsModules.gaming =
+  flake.nixosModules.gaming =
     { ... }:
     {
       programs = {
@@ -9,6 +9,7 @@
           gamescopeSession = true;
           protontricks.enable = true;
         };
+        java.enable = true;
       };
     };
 

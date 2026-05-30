@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.mako =
+  flake.homeModules.gui =
     { pkgs, ... }:
     {
       services.mako = {

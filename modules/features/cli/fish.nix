@@ -1,12 +1,12 @@
 { ... }:
 {
-  flake.nixosModules.fish =
+  flake.nixosModules.cli =
     { ... }:
     {
       programs.fish.enable = true;
     };
 
-  flake.homeModules.fish =
+  flake.homeModules.cli =
     { ... }:
     {
       programs.fish = {

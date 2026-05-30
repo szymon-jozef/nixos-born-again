@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  flake.homeModules.obsidian =
+  flake.homeModules.gui =
     {
       inputs,
       pkgs,

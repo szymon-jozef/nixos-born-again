@@ -10,6 +10,8 @@ let
       obsidian = "Dokumenty/obsidian";
     };
     mainMonitor = "DP-1";
+    maxJobs = "auto";
+    maxCores = 0;
   };
 in
 {
@@ -28,6 +30,7 @@ in
       self.nixosModules.wrapper
       self.nixosModules.bootloader-gpt
 
+      self.nixosModules.services
       self.nixosModules.services-hardware-overclock
       self.nixosModules.services-syncthing
       self.nixosModules.services-snapper

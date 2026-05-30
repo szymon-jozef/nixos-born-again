@@ -60,6 +60,7 @@
 
     # === UNI ===
 
+    # TODO! add this somewhere
     zut-calendar = {
       url = "github:szymon-jozef/zut-calendar";
       inputs.nixpkgs.follows = "nixpkgs";

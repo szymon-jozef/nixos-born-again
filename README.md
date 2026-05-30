@@ -31,7 +31,6 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |Module name|Description|isOptional|
 |---|---|---|
 |general| General nix settings and imports|no|
-|**general-low-jobs**| Wrapper around general that also limits `max-jobs` and `cores` to 2, in order to avoid crashing, during compilation.| no|
 
 ### Locale
 |Module name|Description|isOptional|
@@ -49,12 +48,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 #### General
 |Module name|Description|isOptional|
 |---|---|---|
-|packages-texting|Texting packges| no|
-|packages-music| Music utilities| no|
-|packages-cli|Cli basic tools|no|
-|packages-system|Required system packages|no|
-|packages-fonts|Fonts|no|
-|**packages**| Imports everything above| no|
+|packages|Bunch of system packages|no|
 |packages-virtualisation| Virtualisation utilities (winboat, distrobox, quickemu)| yes|
 |gaming| Steam and other gaming stuff| yes|
 
@@ -66,17 +60,13 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 #### CLI packages
 |Module name|Description|isOptional|
 |---|---|---|
-|fish|Fish enable|no|
+|CLI|CLI tools configuration|no|
 
 
 ### Services
 |Module name|Description|isOptional|
 |---|---|---|
-|services-printing|Printing support|no|
-|services-ssh|Enable ssh, but doesn't expose a server|no|
-|services-hardware|General hardware stuff|no|
-|services-audio|Audio support|no|
-|**services**| Wrapper around all non-optional modules|no|
+|services| Services configuration|no|
 |services-hardware-overclock|Enable [lact](https://github.com/ilya-zlobintsev/LACT)| yes|
 |services-syncthing|Enable syncthing| yes|
 |services-snapper|Enable snapper and make snapshots of home directory| yes|
@@ -141,11 +131,8 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 ### GUI
 |Module name|Description|isOptional|
 |---|---|---|
-|obsidian|Obsidian configuration. Also provides obsidian-catppuccin theme as derivation.|no|
-|satty| Satty configuration (screenshot edit tool) | no|
-|kitty| Kitty terminal emulator configuration| no|
-|browsers| Provides internet browsers| no|
-|web-apps| Provides web apps with brave (PWAs)|no|
+|browsers| Provides internet browsers and PWAs| no|
+|gui| A bunch of GUI tools.| no|
 |mako| Mako notification daemon| no|
 
 |gaming| A bunch of gaming tools| yes|
@@ -153,11 +140,9 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 ### CLI
 |Module name|Description|isOptional|
 |---|---|---|
-|fish|Shell configuration|no|
+|cli|A bunch of CLI tools|no|
 
 ### Packages
 |Module name|Description|isOptional|
 |---|---|---|
-|packages-cli| Bunch of cli tools| no|
-|packages-gui| Bunch of gui tools| no|
-|**packages**|A wrapper around all of the above|no|
+|packages| Bunch of tools without category| no|
