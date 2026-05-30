@@ -10,6 +10,8 @@ let
       obsidian = "Dokumenty/obsidian";
     };
     mainMonitor = "DP-1";
+    maxJobs = "auto";
+    maxCores = 0;
   };
 in
 {

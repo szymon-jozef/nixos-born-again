@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.satty =
+  flake.homeModules.gui =
     { myConfig, ... }:
     {
       programs.satty = {

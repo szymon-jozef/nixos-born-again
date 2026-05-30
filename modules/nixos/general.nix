@@ -2,7 +2,7 @@
 {
   flake.nixosModules = {
     general =
-      { inputs, ... }:
+      { inputs, myConfig, ... }:
       {
         imports = [
           inputs.home-manager.nixosModules.home-manager
@@ -44,6 +44,8 @@
               "flakes"
             ];
             auto-optimise-store = true;
+            max-jobs = myConfig.maxJobs;
+            cores = myConfig.maxCores;
           };
           gc = {
             automatic = true;
@@ -78,16 +80,6 @@
         zramSwap.enable = true;
 
         system.stateVersion = "25.11";
-      };
-
-    general-low-jobs =
-      { self, ... }:
-      {
-        imports = [ self.nixosModules.general ];
-        nix.settings = {
-          max-jobs = 2;
-          cores = 2;
-        };
       };
   };
 }

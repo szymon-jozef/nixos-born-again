@@ -9,6 +9,7 @@
           gamescopeSession = true;
           protontricks.enable = true;
         };
+        java.enable = true;
       };
     };
 
