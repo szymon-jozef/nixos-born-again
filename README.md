@@ -63,6 +63,11 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |---|---|---|
 |hyprland|Hyprland nixos module| no|
 
+#### CLI packages
+|Module name|Description|isOptional|
+|---|---|---|
+|fish|Fish enable|no|
+
 
 ### Services
 |Module name|Description|isOptional|
@@ -144,6 +149,11 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |mako| Mako notification daemon| no|
 
 |gaming| A bunch of gaming tools| yes|
+
+### CLI
+|Module name|Description|isOptional|
+|---|---|---|
+|fish|Shell configuration|no|
 
 ### Packages
 |Module name|Description|isOptional|
