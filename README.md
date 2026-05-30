@@ -141,3 +141,10 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |browsers| Provides internet browsers| no|
 |web-apps| Provides web apps with brave (PWAs)|no|
 |mako| Mako notification daemon| no|
+
+### Packages
+|Module name|Description|isOptional|
+|---|---|---|
+|packages-cli| Bunch of cli tools| no|
+|packages-gui| Bunch of gui tools| no|
+|**packages**|A wrapper around all of the above|no|
