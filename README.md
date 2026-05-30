@@ -56,6 +56,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |packages-fonts|Fonts|no|
 |**packages**| Imports everything above| no|
 |packages-virtualisation| Virtualisation utilities (winboat, distrobox, quickemu)| yes|
+|gaming| Steam and other gaming stuff| yes|
 
 #### GUI packages
 |Module name|Description|isOptional|
@@ -141,6 +142,8 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |browsers| Provides internet browsers| no|
 |web-apps| Provides web apps with brave (PWAs)|no|
 |mako| Mako notification daemon| no|
+
+|gaming| A bunch of gaming tools| yes|
 
 ### Packages
 |Module name|Description|isOptional|
