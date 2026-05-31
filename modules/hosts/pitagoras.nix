@@ -9,13 +9,13 @@ let
       wallpaper = "Obrazy/tapety/catppuccin";
       screenshot = "Obrazy/zrzuty/";
     };
-    mainMonitor = "DP-1";
+    mainMonitor = "eDP-1";
     maxJobs = "auto";
     maxCores = 0;
   };
 in
 {
-  # main pc desktop
+  # lenovo legion
   flake.nixosConfigurations.${myConfig.hostname} = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = {
       inherit
@@ -48,9 +48,11 @@ in
       # theme
       self.nixosModules.theme
 
+      # nvidia
+      self.nixosModules.nvidia
+
       # services
       self.nixosModules.services
-      self.nixosModules.services-hardware-overclock
       self.nixosModules.services-syncthing
       self.nixosModules.services-snapper
 
@@ -62,7 +64,7 @@ in
       self.nixosModules.network-home-wifi
 
       # hardware
-      self.nixosModules.hardware-paderewski
+      self.nixosModules.hardware-pitagoras
     ];
   };
 }

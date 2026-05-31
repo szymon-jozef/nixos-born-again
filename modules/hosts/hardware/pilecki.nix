@@ -1,0 +1,65 @@
+{ ... }:
+{
+
+  flake.nixosModules.hardware-pilecki =
+    {
+      config,
+      lib,
+      pkgs,
+      modulesPath,
+      ...
+    }:
+
+    {
+      imports = [
+        (modulesPath + "/installer/scan/not-detected.nix")
+      ];
+
+      boot.initrd.availableKernelModules = [
+        "ehci_pci"
+        "ahci"
+        "usb_storage"
+        "sd_mod"
+        "sdhci_pci"
+      ];
+      boot.initrd.kernelModules = [ ];
+      boot.kernelModules = [ "kvm-intel" ];
+      boot.extraModulePackages = [ ];
+
+      fileSystems."/" = {
+        device = "/dev/mapper/root";
+        fsType = "btrfs";
+        options = [ "subvol=@" ];
+      };
+
+      boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/7d7cdbf4-becc-4989-b27e-8d3391b8058d";
+
+      fileSystems."/home" = {
+        device = "/dev/mapper/root";
+        fsType = "btrfs";
+        options = [ "subvol=@home" ];
+      };
+
+      fileSystems."/nix" = {
+        device = "/dev/mapper/root";
+        fsType = "btrfs";
+        options = [ "subvol=@nix" ];
+      };
+
+      fileSystems."/swap" = {
+        device = "/dev/mapper/root";
+        fsType = "btrfs";
+        options = [ "subvol=@swap" ];
+      };
+
+      fileSystems."/boot" = {
+        device = "/dev/disk/by-uuid/C33C-390E";
+        fsType = "vfat";
+      };
+
+      swapDevices = [ { device = "/swap/swapfile"; } ];
+
+      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    };
+}

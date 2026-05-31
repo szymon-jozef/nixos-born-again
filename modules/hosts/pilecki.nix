@@ -15,7 +15,7 @@ let
   };
 in
 {
-  # main pc desktop
+  # old thinkpad
   flake.nixosConfigurations.${myConfig.hostname} = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = {
       inherit
@@ -50,9 +50,6 @@ in
 
       # services
       self.nixosModules.services
-      self.nixosModules.services-hardware-overclock
-      self.nixosModules.services-syncthing
-      self.nixosModules.services-snapper
 
       # display manager
       self.nixosModules.display-manager-autologin
@@ -62,7 +59,7 @@ in
       self.nixosModules.network-home-wifi
 
       # hardware
-      self.nixosModules.hardware-paderewski
+      self.nixosModules.hardware-pilecki
     ];
   };
 }
