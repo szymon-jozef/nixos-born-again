@@ -2,7 +2,7 @@
 let
   myConfig = {
     username = "szymon";
-    hostname = "paderewski";
+    hostname = "pitagoras";
     email = "szymon_jozef@proton.me";
     system = "x86_64-linux";
     pathConfig = {
