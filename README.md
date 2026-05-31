@@ -109,6 +109,11 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 
 
 ## homeModules
+### Theme
+|Module name|Description|isOptional|
+|---|---|---|
+|theme|Catppuccin system theme|no|
+
 ### hypr
 **As of now hyprland is a normal home module, separated like normal files and with hyprlang. Will be rewritten to lua.**
 
@@ -146,3 +151,8 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |Module name|Description|isOptional|
 |---|---|---|
 |packages| Bunch of tools without category| no|
+
+### XDG
+|Module name|Description|isOptional|
+|---|---|---|
+|xdg|Xdg configuration (defualt directories, etc.)|no|
