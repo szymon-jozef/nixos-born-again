@@ -4,7 +4,7 @@
     display-manager =
       { ... }:
       {
-        displayManager = {
+        services.displayManager = {
           sddm = {
             enable = true;
             wayland.enable = true;
@@ -17,7 +17,7 @@
       { self, myConfig, ... }:
       {
         imports = [ self.nixosModules.display-manager ];
-        displayManager.sddm.settings.Autologin = {
+        services.displayManager.sddm.settings.Autologin = {
           Session = "hyprland-uwsm.desktop";
           User = myConfig.username;
         };
