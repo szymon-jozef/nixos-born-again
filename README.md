@@ -27,7 +27,6 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 ### Bootloader
 |Module name|Description|
 |---|---|
-|bootloader| Default settings of the bootloader. Shouldn't be used directly|
 |bootloader-gpt| For gpt-partitioned disks|
 |bootloader-mbr| For mbr-partitioned disks|
 
@@ -71,19 +70,13 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |Module name|Description|
 |---|---|
 |display-manager|Default display-manager settings (sddm)|
-|**display-manager-autologin**|Autologin with display-manager|
+|display-manager-autologin|Autologin with display-manager|
 
 ### Network
 |Module name|Description|
 |---|---|
 |network|Basic network settings|
 |network-home-wifi|Networkmanager profile for my home wifi|
-
-### Hardware
-*this is hardware configuration for specific devices*
-|Module name|Description|
-|---|---|
-|hardware-paderewski|self-explanatory|
 
 ### Nvidia
 |Module name|Description|
