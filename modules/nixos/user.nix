@@ -1,11 +1,10 @@
-{ ... }:
+{ self, inputs, ... }:
 {
   flake.nixosModules.user =
     {
-      inputs,
       myConfig,
       pkgs,
-      self,
+      pkgs-stable,
       ...
     }:
     {
@@ -23,9 +22,11 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
+        backupFileExtension = "backup";
         extraSpecialArgs = {
           inherit
             inputs
+            pkgs-stable
             myConfig
             ;
         };
@@ -33,15 +34,18 @@
         users.${myConfig.username} = {
           imports = [
             inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
+            inputs.catppuccin.homeModules.catppuccin
 
             # self.homeModules.* import
             self.homeModules.theme
             self.homeModules.hypr
             self.homeModules.ashell
             self.homeModules.gui
+            self.homeModules.cli
             self.homeModules.browsers
             self.homeModules.xdg
             self.homeModules.gaming
+            self.homeModules.university
           ];
           home = {
             file = {

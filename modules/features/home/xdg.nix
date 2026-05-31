@@ -16,7 +16,6 @@
       audioPlayer = "mpv.desktop";
     in
     {
-
       xdg = {
         portal.config = {
           common = {
@@ -59,22 +58,23 @@
             "x-scheme-handler/tuta" = [ "tutanota-desktop.desktop" ];
           };
 
-          userDirs = {
-            enable = true;
-            createDirectories = true;
+        };
 
-            documents = "${home}/Dokumenty";
-            download = "${home}/Pobrane";
-            pictures = "${home}/Obrazy";
-            videos = "${home}/Video";
-            projects = "${home}/Kodowanie";
+        userDirs = {
+          enable = true;
+          createDirectories = true;
 
-            desktop = null;
-            music = null;
-            templates = null;
-            publicShare = null;
-            setSessionVariables = true;
-          };
+          documents = "${home}/Dokumenty";
+          download = "${home}/Pobrane";
+          pictures = "${home}/Obrazy";
+          videos = "${home}/Video";
+          projects = "${home}/Kodowanie";
+
+          desktop = null;
+          music = null;
+          templates = null;
+          publicShare = null;
+          setSessionVariables = true;
         };
       };
     };

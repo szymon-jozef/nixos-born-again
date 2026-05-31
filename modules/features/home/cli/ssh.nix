@@ -9,7 +9,7 @@
       programs.ssh = {
         enableDefaultConfig = false;
         enable = true;
-        matchBlocks = {
+        settings = {
           "dmowski" = {
             hostname = "192.168.0.30";
             user = myConfig.username;
@@ -30,9 +30,9 @@
 
           "*" = {
             addKeysToAgent = "yes";
-            setEnv = {
-              TERM = "xterm-256color";
-            };
+            setEnv = [
+              "xterm-256color"
+            ];
           };
         };
       };

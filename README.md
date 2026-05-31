@@ -123,3 +123,4 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |browsers| Provides internet browsers and PWAs|
 |xdg|Xdg configuration (defualt directories, etc.)|
 |gaming| A bunch of gaming tools|
+|university| Some university tools|

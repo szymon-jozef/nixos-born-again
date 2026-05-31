@@ -2,16 +2,18 @@
 {
   flake.nixosModules = {
     general =
-      { inputs, myConfig, ... }:
+      {
+        inputs,
+        myConfig,
+        pkgs,
+        ...
+      }:
       {
         imports = [
           inputs.home-manager.nixosModules.home-manager
-
           inputs.agenix.nixosModules.default
-
           inputs.nix-index-database.nixosModules.default
           { programs.nix-index-database.comma.enable = true; }
-
         ];
 
         nix = {
@@ -59,6 +61,16 @@
             allowUnfree = true;
           };
           overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
+        };
+
+        _module.args.pkgs-stable = import inputs.nixpkgs-stable {
+          system = pkgs.stdenv.hostPlatform.system;
+          config = {
+            allowUnfree = true;
+            permittedInsecurePackages = [
+              "electron-38.8.4"
+            ];
+          };
         };
 
         # TODO move this to other module? not sure tho

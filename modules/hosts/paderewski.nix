@@ -14,7 +14,14 @@ let
     maxCores = 0;
   };
 
-  pkgs = inputs.nixpkgs.legacyPackages.${myConfig.system};
+  pkgs = import inputs.nixpkgs {
+    system = myConfig.system;
+    config.allowUnfree = true;
+    overlays = [
+      inputs.nix-cachyos-kernel.overlays.pinned
+    ];
+  };
+
   # drives backup
   backup =
     pkgs.writeShellScript "backup"
@@ -55,9 +62,9 @@ in
           systemd.services."drives-backup" = {
             description = "Backup drives";
             startAt = "daily";
-            script = backup;
             serviceConfig = {
               Type = "oneshot";
+              ExecStart = backup;
               User = myConfig.username;
             };
           };
@@ -73,6 +80,7 @@ in
             # packages
             self.nixosModules.packages
             self.nixosModules.packages-virtualisation
+            self.nixosModules.programs
             self.nixosModules.gaming
             self.nixosModules.hyprland
             self.nixosModules.cli

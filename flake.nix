@@ -26,7 +26,6 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # === CACHYOS KERNEL ===
@@ -43,11 +42,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    catppuccin-obsidian = {
-      url = "github:catppuccin/obsidian";
-      flake = false;
-    };
-
     hyprcursor-phinger = {
       url = "github:jappie3/hyprcursor-phinger";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -59,8 +53,6 @@
     };
 
     # === UNI ===
-
-    # TODO! add this somewhere
     zut-calendar = {
       url = "github:szymon-jozef/zut-calendar";
       inputs.nixpkgs.follows = "nixpkgs";

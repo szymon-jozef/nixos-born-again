@@ -29,60 +29,62 @@
 
             fastfetch --config ~/.config/fastfetch/startup.jsonc
           '';
-      };
 
-      update_files = {
-        body =
-          # fish
-          ''
-            echo "=== System packages updates ==="
-            pushd /etc/nixos
+        functions = {
+          update_files = {
+            body =
+              # fish
+              ''
+                echo "=== System packages updates ==="
+                pushd /etc/nixos
 
-            git add -A
-            git commit -m 'chore: state before pulling'
+                git add -A
+                git commit -m 'chore: state before pulling'
 
-            if git pull
-                nh os switch
-            end
+                if git pull
+                    nh os switch
+                end
 
-            popd
-          '';
+                popd
+              '';
 
-      };
+          };
 
-      update = {
-        body =
-          # fish
-          ''
-            echo "=== System packages update ==="
-            pushd /etc/nixos
+          update = {
+            body =
+              # fish
+              ''
+                echo "=== System packages update ==="
+                pushd /etc/nixos
 
-            if git pull
-              git add -A
-              git commit --allow-empty -m "chore: state before system update"
-              
-              nix flake update
-              
-              if test $status -eq 0
-                  git add ./flake.lock
-                  git commit --allow-empty -m "chore: update system flake.lock"
-                  nh os switch
-                  git push
-              else
-                  echo "Error while updating system flake!"
-              end
-            else
-              echo "Error: 'git pull' failed in /etc/nixos. Skipping system update."
-            end
+                if git pull
+                  git add -A
+                  git commit --allow-empty -m "chore: state before system update"
+                  
+                  nix flake update
+                  
+                  if test $status -eq 0
+                      git add ./flake.lock
+                      git commit --allow-empty -m "chore: update system flake.lock"
+                      nh os switch
+                      git push
+                  else
+                      echo "Error while updating system flake!"
+                  end
+                else
+                  echo "Error: 'git pull' failed in /etc/nixos. Skipping system update."
+                end
 
-            popd
-          '';
-      };
+                popd
+              '';
+          };
+        };
 
-      shellAliases = {
-        ls = "eza --long --icons --group-directories-first --git";
-        lst = "eza --long --icons --color --git --tree";
-        rm = "trash";
+        shellAliases = {
+          ls = "eza --long --icons --group-directories-first --git";
+          lst = "eza --long --icons --color --git --tree";
+          rm = "trash";
+        };
       };
     };
 }

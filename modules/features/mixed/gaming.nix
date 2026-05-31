@@ -6,7 +6,7 @@
       programs = {
         steam = {
           enable = true;
-          gamescopeSession = true;
+          gamescopeSession.enable = true;
           protontricks.enable = true;
         };
         java.enable = true;

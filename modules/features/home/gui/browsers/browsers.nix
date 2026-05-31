@@ -1,7 +1,7 @@
 { ... }:
 {
   flake.homeModules.browsers =
-    { pkgs, ... }:
+    { pkgs, inputs, ... }:
     {
       programs.chromium = {
         enable = true;

@@ -1,11 +1,15 @@
 { ... }:
 {
   flake.homeModules.cli =
-    { ... }:
+    { inputs, ... }:
     let
       flakePath = "/etc/nixos";
     in
     {
+      imports = [
+        inputs.nixvim.homeModules.nixvim
+      ];
+
       programs.nixvim = {
         enable = true;
         defaultEditor = true;
