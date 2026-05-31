@@ -27,7 +27,7 @@ in
 
     system = myConfig.system;
 
-    imports = [
+    modules = [
       # general
       self.nixosModules.general
       self.nixosModules.locale-polish
