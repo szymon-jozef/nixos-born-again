@@ -13,10 +13,24 @@ let
     maxJobs = "auto";
     maxCores = 0;
   };
+
+  pkgs = inputs.nixpkgs.legacyPackages.${myConfig.system};
+  # drives backup
+  backup =
+    pkgs.writeShellScript "backup"
+      # bash
+      ''
+        set -e
+
+        ${pkgs.rsync} -avh --no-links --delete --exclude=.* --exclude=dyski /home/szymon/ /mnt/uwu_backup/home/szymon/
+        ${pkgs.rsync} -avh --no-links --delete --exclude=.* --exclude=dyski /home/szymon/ /mnt/wd_backup/home/szymon/
+      '';
 in
 {
   # main pc desktop
   flake.nixosConfigurations.${myConfig.hostname} = inputs.nixpkgs.lib.nixosSystem {
+    system = myConfig.system;
+
     specialArgs = {
       inherit
         self
@@ -25,44 +39,68 @@ in
         ;
     };
 
-    system = myConfig.system;
+    modules = [
+      (
+        { ... }:
+        {
+          systemd.timers."drives-backup" = {
+            description = "Daily backup of drives";
+            wantedBy = [ "timers.target" ];
+            timerConfig = {
+              OnCalendar = "daily";
+              Persistent = true;
+            };
+          };
 
-    imports = [
-      # general
-      self.nixosModules.general
-      self.nixosModules.locale-polish
+          systemd.services."drives-backup" = {
+            description = "Backup drives";
+            startAt = "daily";
+            script = backup;
+            serviceConfig = {
+              Type = "oneshot";
+              User = myConfig.username;
+            };
+          };
 
-      # bootloader
-      self.nixosModules.bootloader-gpt
+          imports = [
+            # general
+            self.nixosModules.general
+            self.nixosModules.locale-polish
 
-      # packages
-      self.nixosModules.packages
-      self.nixosModules.packages-virtualisation
-      self.nixosModules.gaming
-      self.nixosModules.hyprland
-      self.nixosModules.cli
+            # bootloader
+            self.nixosModules.bootloader-gpt
 
-      # user
-      self.nixosModules.user
+            # packages
+            self.nixosModules.packages
+            self.nixosModules.packages-virtualisation
+            self.nixosModules.gaming
+            self.nixosModules.hyprland
+            self.nixosModules.cli
 
-      # theme
-      self.nixosModules.theme
+            # user
+            self.nixosModules.user
 
-      # services
-      self.nixosModules.services
-      self.nixosModules.services-hardware-overclock
-      self.nixosModules.services-syncthing
-      self.nixosModules.services-snapper
+            # theme
+            self.nixosModules.theme
 
-      # display manager
-      self.nixosModules.display-manager-autologin
+            # services
+            self.nixosModules.services
+            self.nixosModules.services-hardware-overclock
+            self.nixosModules.services-syncthing
+            self.nixosModules.services-snapper
 
-      # network
-      self.nixosModules.network
-      self.nixosModules.network-home-wifi
+            # display manager
+            self.nixosModules.display-manager-autologin
 
-      # hardware
-      self.nixosModules.hardware-paderewski
+            # network
+            self.nixosModules.network
+            self.nixosModules.network-home-wifi
+
+            # hardware
+            self.nixosModules.hardware-paderewski
+          ];
+        }
+      )
     ];
   };
 }
