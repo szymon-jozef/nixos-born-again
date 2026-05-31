@@ -5,6 +5,7 @@
       inputs,
       myConfig,
       pkgs,
+      self,
       ...
     }:
     {
@@ -31,7 +32,15 @@
         users.${myConfig.username} = {
           imports = [
             inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
+
             # self.homeModules.* import
+            self.homeModules.theme
+            self.homeModules.hypr
+            self.homeModules.ashell
+            self.homeModules.gui
+            self.homeModules.browsers
+            self.homeModules.xdg
+            self.homeModules.gaming
           ];
           home = {
             file = {
