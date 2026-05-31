@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.programs =
+  flake.homeModules.cli =
     { ... }:
     {
       services.kdeconnect = {

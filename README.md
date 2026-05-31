@@ -133,27 +133,11 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |waybar| Waybar configuration (old and not recommended)| no|
 |ashell| Ashell configuration| no|
 
-### GUI
+### Programs
 |Module name|Description|isOptional|
 |---|---|---|
+|gui| GUI packages| no|
+|cli| CLI packges | no|
 |browsers| Provides internet browsers and PWAs| no|
-|gui| A bunch of GUI tools.| no|
-|mako| Mako notification daemon| no|
-
-|gaming| A bunch of gaming tools| yes|
-
-### CLI
-|Module name|Description|isOptional|
-|---|---|---|
-|cli|A bunch of CLI tools|no|
-
-### Packages
-|Module name|Description|isOptional|
-|---|---|---|
-|packages| Bunch of tools without category| no|
-|programs| Program configurations| no|
-
-### XDG
-|Module name|Description|isOptional|
-|---|---|---|
 |xdg|Xdg configuration (defualt directories, etc.)|no|
+|gaming| A bunch of gaming tools| yes|

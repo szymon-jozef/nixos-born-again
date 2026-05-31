@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.packages-gui =
+  flake.homeModules.gui =
     {
       pkgs,
       pkgs-stable,
