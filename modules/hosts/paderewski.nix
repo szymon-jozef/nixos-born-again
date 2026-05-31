@@ -3,6 +3,7 @@ let
   myConfig = {
     username = "szymon";
     hostname = "paderewski";
+    email = "szymon_jozef@proton.me";
     system = "x86_64-linux";
     pathConfig = {
       wallpaper = "Obrazy/tapety/catppuccin";

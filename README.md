@@ -151,6 +151,7 @@ This module wraps all other wrapper, so you don't have to import all the stuff y
 |Module name|Description|isOptional|
 |---|---|---|
 |packages| Bunch of tools without category| no|
+|programs| Program configurations| no|
 
 ### XDG
 |Module name|Description|isOptional|
