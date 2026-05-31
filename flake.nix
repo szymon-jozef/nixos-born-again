@@ -71,5 +71,21 @@
     };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+  outputs =
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
+      { lib, ... }:
+      {
+        imports = [
+          (inputs.import-tree ./modules)
+        ];
+
+        options.flake.homeModules = lib.mkOption {
+          type = lib.types.lazyAttrsOf lib.types.deferredModule;
+          default = { };
+          description = "Custom homemanager modules";
+        };
+
+      }
+    );
 }
