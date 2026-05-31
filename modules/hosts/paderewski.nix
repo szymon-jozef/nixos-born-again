@@ -8,7 +8,6 @@ let
     pathConfig = {
       wallpaper = "Obrazy/tapety/catppuccin";
       screenshot = "Obrazy/zrzuty/";
-      obsidian = "Dokumenty/obsidian";
     };
     mainMonitor = "DP-1";
     maxJobs = "auto";

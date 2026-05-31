@@ -3,25 +3,11 @@
 {
   flake.homeModules.gui =
     {
-      inputs,
-      pkgs,
-      myConfig,
+      config,
       ...
     }:
     let
-      catppuccin = pkgs.stdenv.mkDerivation {
-        pname = "obsidian-catppuccin";
-        src = inputs.catppuccin-obsidian;
-
-        dontConfigure = true;
-        dontBuild = true;
-
-        installPhase = # bash
-          ''
-            mkdir -p $out
-            cp theme.css manifest.json $out/
-          '';
-      };
+      obsidian_dir = "${config.xdg.userDirs.documents}/obsidian";
     in
     {
 
@@ -45,10 +31,6 @@
             };
           };
 
-          themes = [
-            catppuccin
-          ];
-
           corePlugins = [
             "file-explorer"
             "global-search"
@@ -71,10 +53,10 @@
 
         vaults = {
           "Notatki-szkolne" = {
-            target = "${myConfig.pathConfig.obsidian}/notatki-szkolne";
+            target = "${obsidian_dir}/notatki-szkolne";
           };
           "Studia" = {
-            target = "${myConfig.pathConfig.obsidian}/ZUT-notatki";
+            target = "${obsidian_dir}/ZUT-notatki";
           };
         };
       };
