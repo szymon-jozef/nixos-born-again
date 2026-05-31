@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -31,13 +31,31 @@
         hide_on_key_press = 1;
       };
 
-      bindel = [
-        ",XF86MonBrightnessDown, exec, hyprctl hyprsunset gamma -10"
-        ",XF86MonBrightnessUp, exec, hyprctl hyprsunset gamma +10"
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && ~/.local/bin/wp-vol.sh && paplay /usr/share/sounds/freedesktop/stereo/bell.oga"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && ~/.local/bin/wp-vol.sh && paplay /usr/share/sounds/freedesktop/stereo/bell.oga"
-        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
-      ];
+      bindel =
+        let
+          wp-vol = pkgs.writeShellApplication {
+            name = "wp-vol";
+            runtimeInputs = with pkgs; [
+              libnotify
+              wireplumber
+            ];
+            text = # bash
+              ''
+                volume=$(wpctl get-volume @DEFAULT_SINK@)
+                volume=$(echo "$volume" | awk '{print $2}')
+                volume=$(echo "( $volume * 100 ) / 1" | bc)
+
+                notify-send -t 1000 -a 'wp-vol' -h int:value:$volume "Volume: ''${volume}%"
+              '';
+          };
+        in
+        [
+          ",XF86MonBrightnessDown, exec, hyprctl hyprsunset gamma -10"
+          ",XF86MonBrightnessUp, exec, hyprctl hyprsunset gamma +10"
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && ${wp-vol} && paplay /usr/share/sounds/freedesktop/stereo/bell.oga"
+          ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && ${wp-vol} && paplay /usr/share/sounds/freedesktop/stereo/bell.oga"
+          ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_SOURCE@ toggle"
+        ];
     };
 
     extraConfig =
