@@ -37,8 +37,7 @@ in
 
       # packages
       self.nixosModules.packages
-      self.nixosModules.packages-virtualisation
-      self.nixosModules.gaming
+      self.nixosModules.programs
       self.nixosModules.hyprland
       self.nixosModules.cli
 
