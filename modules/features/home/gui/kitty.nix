@@ -7,13 +7,19 @@
         enable = true;
         settings = {
           confirm_os_window_close = 0;
-          dynamic_background_opacity = true;
-          enable_audio_bell = false;
+
+          dynamic_background_opacity = "yes";
+          # background_opacity = 0.95;
+
+          enable_audio_bell = "no";
+
           mouse_hide_wait = "-1.0";
           window_padding_width = 10;
-          background_opacity = "0.95";
+
           font_size = 12;
           background_blur = 15;
+
+          cursor_trail = 3;
           symbol_map =
             let
               mappings = [
