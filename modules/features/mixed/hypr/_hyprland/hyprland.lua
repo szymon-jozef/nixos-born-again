@@ -222,48 +222,77 @@ hl.device({
 local mainMod = "SUPER"
 local openrgb_color = "green"
 
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("[float] waypaper"))
-hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("[workspace 4] " .. terminal))
+
+local function focus_or_launch(class_pattern, cmd, opts)
+    local windows = hl.get_windows()
+
+    for _, w in ipairs(windows) do
+        if w.class:match(class_pattern) then
+            hl.dispatch(hl.dsp.focus({ class = class_pattern }))
+            return
+        end
+    end
+
+    hl.dispatch(hl.dsp.exec_cmd(cmd, opts))
+end
+
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("waypaper", { float = true }))
+hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal, { workspace = 4 }))
 hl.bind(mainMod .. " + CONTROL + RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 
 hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd("openrgb -c " .. openrgb_color))
 
 -- notes
-hl.bind(mainMod .. " + CONTROL + N", hl.dsp.exec_cmd("uwsm app -- " .. notes, { workspace = 6 }))
-hl.bind(mainMod .. " + CONTROL + N", hl.dsp.focus({ class = "^(obsidian)$" }))
+hl.bind(mainMod .. " + CONTROL + N", function()
+    focus_or_launch("^(obsidian)$", "uwsm app -- " .. notes, { workspace = 6 })
+end)
 
 -- music
-hl.bind(mainMod .. " + CONTROL + M", hl.dsp.exec_cmd("uwsm app -- " .. music_player, { workspace = 9 }))
+hl.bind(mainMod .. " + CONTROL + M", function()
+    focus_or_launch("^(?)$", "uwsm app -- " .. music_player, { workspace = 9 })
+end)
 
 -- aShell
 hl.bind(mainMod .. " + CONTROL + SHIFT + B", hl.dsp.exec_cmd("killall ashell && uwsm app -- ashell"))
 
 -- Steam
-hl.bind(mainMod .. " + CONTROL + G", hl.dsp.exec_cmd("uwsm app -- steam"))
-hl.bind(mainMod .. " + CONTROL + G", hl.dsp.focus({ class = "^(steam)$" }))
+hl.bind(mainMod .. " + CONTROL + G", function()
+    focus_or_launch("^(steam)$", "uwsm app -- steam")
+end)
 
 -- Browser
-hl.bind(mainMod .. " + CONTROL + B", hl.dsp.exec_cmd("uwsm app -- " .. browser))
-hl.bind(mainMod .. " + CONTROL + B", hl.dsp.focus("class:^(zen)$"))
+hl.bind(mainMod .. " + CONTROL + B", function()
+    focus_or_launch("^(zen)$", "uwsm app -- " .. browser)
+end)
 
 -- FreeTube
-hl.bind(mainMod .. " + CONTROL + F", hl.dsp.exec_cmd("uwsm app -- freetube"))
-hl.bind(mainMod .. " + CONTROL + F", hl.dsp.focus({ class = "^(freetube)$" }))
+hl.bind(mainMod .. " + CONTROL + F", function()
+    focus_or_launch("^(freetube)$", "uwsm app -- freetube")
+end)
 
 -- X.desktop
-hl.bind(mainMod .. " + CONTROL + X", hl.dsp.exec_cmd("uwsm app -- ~/.nix-profile/share/applications/x.desktop"))
-hl.bind(mainMod .. " + CONTROL + X", hl.dsp.focus({ class = "^(chrome-x.com__-Default)$" }))
+hl.bind(mainMod .. " + CONTROL + X", function()
+    focus_or_launch("^(chrome-x.com__-Default)$", "uwsm app -- ~/.nix-profile/share/applications/x.desktop")
+end)
 
 -- Signal
-hl.bind(mainMod .. " + CONTROL + S", hl.dsp.exec_cmd(signal_client, { workspace = 1 }))
-hl.bind(mainMod .. " + CONTROL + S", hl.dsp.focus({ class = "^(signal)$" }))
-hl.bind(mainMod .. " + CONTROL + S", hl.dsp.focus("title:^(signal)$"))
+hl.bind(mainMod .. " + CONTROL + S", function()
+    focus_or_launch("^(signal)$", signal_client, { workspace = 1 })
+end)
 
 -- Vesktop
-hl.bind(mainMod .. " + CONTROL + V", hl.dsp.send_shortcut("ctrl, k, class:^(vesktop)$"))
-hl.bind(mainMod .. " + CONTROL + V", hl.dsp.exec_cmd("uwsm app -- vesktop"))
-hl.bind(mainMod .. " + CONTROL + V", hl.dsp.focus({ class = "^(vesktop)$" }))
+hl.bind(mainMod .. " + CONTROL + V", function()
+    local windows = hl.get_windows()
+    for _, w in ipairs(windows) do
+        if w.class:match("^(vesktop)$") then
+            hl.dispatch(hl.dsp.send_shortcut("ctrl, k, class:^(vesktop)$"))
+            hl.dispatch(hl.dsp.focus({ class = "^(vesktop)$" }))
+            return
+        end
+    end
+    hl.dispatch(hl.dsp.exec_cmd("uwsm app -- vesktop"))
+end)
 
 -- workspaces
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
@@ -317,10 +346,10 @@ hl.bind(mainMod .. " + ALT + minus",
     { repeating = true })
 hl.bind(mainMod .. " + ALT + 0", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor 1"), { repeating = true })
 
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.resize("10 0"), { repeating = true })
-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.resize("-10 0"), { repeating = true })
-hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.resize("0 -10"), { repeating = true })
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.resize("0 10"), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.resize({ x = 10, y = 0 }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.resize({ x = -10, y = 0 }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.resize({ x = 0, y = -10 }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.resize({ x = 0, y = 10 }), { repeating = true })
 
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("hyprctl hyprsunset gamma -10"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("hyprctl hyprsunset gamma +10"), { locked = true, repeating = true })
@@ -399,8 +428,8 @@ hl.workspace_rule({ workspace = "6", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "7", monitor = "HDMI-A-2" })
 hl.workspace_rule({ workspace = "9", monitor = "DP-2" })
 hl.workspace_rule({ workspace = "10", monitor = "DP-2" })
-hl.workspace_rule({ workspace = "w[tv1]", gapsout = 0, gapsin = 0 })
-hl.workspace_rule({ workspace = "f[1]", gapsout = 0, gapsin = 0 })
+hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
+hl.workspace_rule({ workspace = "f[1]", gaps_out = 0, gaps_in = 0 })
 
 -- floating
 hl.window_rule({
