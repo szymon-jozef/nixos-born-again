@@ -14,7 +14,7 @@
       music_player = lib.getExe pkgs.spotify;
       notes = lib.getExe pkgs.obsidian;
       signal_client = "${terminal} --title 'gurk' ${pkgs.gurk-rs}/bin/gurk";
-      browser = "${inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default}";
+      browser = lib.getExe inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
       color = "green";
     in
     {
@@ -24,14 +24,14 @@
         configType = "lua";
 
         settings = {
-          mod._var = "SUPER";
+          mainMod._var = "SUPER";
           terminal._var = terminal;
           menu._var = menu;
           music_player._var = music_player;
           notes._var = notes;
           signal_client._var = signal_client;
           browser._var = browser;
-          openrgb_color._ = color;
+          openrgb_color._var = color;
 
           env = [
             {

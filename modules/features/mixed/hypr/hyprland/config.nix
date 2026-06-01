@@ -39,14 +39,14 @@
               natural_scroll = true;
             };
           };
-        };
 
-        ecosystem = {
-          enforce_permissions = true;
-        };
+          ecosystem = {
+            enforce_permissions = true;
+          };
 
-        xwayland = {
-          force_zero_scaling = true;
+          xwayland = {
+            force_zero_scaling = true;
+          };
         };
       };
     };
