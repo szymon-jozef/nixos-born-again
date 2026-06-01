@@ -9,6 +9,7 @@
 
       catppuccin = {
         enable = true;
+        autoEnable = true;
         accent = "sapphire";
       };
     };
