@@ -230,18 +230,18 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd("openrgb -c " .. openrgb_color))
 
 -- notes
-hl.bind(mainMod .. " + CONTROL + N", hl.dsp.exec_cmd("[workspace 6] uwsm app -- " .. notes))
-hl.bind(mainMod .. " + CONTROL + N", hl.dsp.focus("class:^(obsidian)$"))
+hl.bind(mainMod .. " + CONTROL + N", hl.dsp.exec_cmd("uwsm app -- " .. notes, { workspace = 6 }))
+hl.bind(mainMod .. " + CONTROL + N", hl.dsp.focus({ class = "^(obsidian)$" }))
 
 -- music
-hl.bind(mainMod .. " + CONTROL + M", hl.dsp.exec_cmd("[workspace 9] uwsm app -- " .. music_player))
+hl.bind(mainMod .. " + CONTROL + M", hl.dsp.exec_cmd("uwsm app -- " .. music_player, { workspace = 9 }))
 
 -- aShell
 hl.bind(mainMod .. " + CONTROL + SHIFT + B", hl.dsp.exec_cmd("killall ashell && uwsm app -- ashell"))
 
 -- Steam
 hl.bind(mainMod .. " + CONTROL + G", hl.dsp.exec_cmd("uwsm app -- steam"))
-hl.bind(mainMod .. " + CONTROL + G", hl.dsp.focus("class:^(steam)$"))
+hl.bind(mainMod .. " + CONTROL + G", hl.dsp.focus({ class = "^(steam)$" }))
 
 -- Browser
 hl.bind(mainMod .. " + CONTROL + B", hl.dsp.exec_cmd("uwsm app -- " .. browser))
@@ -249,21 +249,21 @@ hl.bind(mainMod .. " + CONTROL + B", hl.dsp.focus("class:^(zen)$"))
 
 -- FreeTube
 hl.bind(mainMod .. " + CONTROL + F", hl.dsp.exec_cmd("uwsm app -- freetube"))
-hl.bind(mainMod .. " + CONTROL + F", hl.dsp.focus("class:^(freetube)$"))
+hl.bind(mainMod .. " + CONTROL + F", hl.dsp.focus({ class = "^(freetube)$" }))
 
 -- X.desktop
 hl.bind(mainMod .. " + CONTROL + X", hl.dsp.exec_cmd("uwsm app -- ~/.nix-profile/share/applications/x.desktop"))
-hl.bind(mainMod .. " + CONTROL + X", hl.dsp.focus("class:^(chrome-x.com__-Default)$"))
+hl.bind(mainMod .. " + CONTROL + X", hl.dsp.focus({ class = "^(chrome-x.com__-Default)$" }))
 
 -- Signal
-hl.bind(mainMod .. " + CONTROL + S", hl.dsp.exec_cmd("[workspace 1] " .. signal_client))
-hl.bind(mainMod .. " + CONTROL + S", hl.dsp.focus("class:^(signal)$"))
+hl.bind(mainMod .. " + CONTROL + S", hl.dsp.exec_cmd(signal_client, { workspace = 1 }))
+hl.bind(mainMod .. " + CONTROL + S", hl.dsp.focus({ class = "^(signal)$" }))
 hl.bind(mainMod .. " + CONTROL + S", hl.dsp.focus("title:^(signal)$"))
 
 -- Vesktop
 hl.bind(mainMod .. " + CONTROL + V", hl.dsp.send_shortcut("ctrl, k, class:^(vesktop)$"))
 hl.bind(mainMod .. " + CONTROL + V", hl.dsp.exec_cmd("uwsm app -- vesktop"))
-hl.bind(mainMod .. " + CONTROL + V", hl.dsp.focus("class:^(vesktop)$"))
+hl.bind(mainMod .. " + CONTROL + V", hl.dsp.focus({ class = "^(vesktop)$" }))
 
 -- workspaces
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
