@@ -49,7 +49,7 @@
           ];
           home = {
             file = {
-              "${myConfig.pathConfig.wallpaper}".source = inputs.wallpapers;
+              "Obrazy/tapety/".source = inputs.wallpapers;
             };
 
             sessionVariables = {

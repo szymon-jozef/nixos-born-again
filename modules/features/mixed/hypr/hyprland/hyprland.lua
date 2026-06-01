@@ -368,16 +368,16 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_SOURCE@ tog
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-hl.bind("PRINT", hl.dsp.exec_cmd("/nix/store/57qjryl2qcwzdhyjm03q7w5bwjw4d8kp-screenshot-region"), { transparent = true })
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("/nix/store/xm984h794hkcq06k5mv4ik7srybq06kj-screenshot-fullscreen"),
+hl.bind("PRINT", hl.dsp.exec_cmd("screenshot-region"), { transparent = true })
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("screenshot-fullscreen"),
     { transparent = true })
-hl.bind("ALT + PRINT", hl.dsp.exec_cmd("/nix/store/58j8940h4d4l9j8xb9vi2i8y79wad8qd-screenshot-window"),
+hl.bind("ALT + PRINT", hl.dsp.exec_cmd("screenshot-window"),
     { transparent = true })
-hl.bind("PAUSE", hl.dsp.exec_cmd("/nix/store/4f2p0ik255zma77ymdgxiwgbpbmbm8dy-playerctl-2.4.1/bin/playerctl play-pause"),
+hl.bind("PAUSE", hl.dsp.exec_cmd("playerctl play-pause"),
     { transparent = true })
 hl.bind(mainMod .. " + PAUSE",
     hl.dsp.exec_cmd(
-        "/nix/store/4f2p0ik255zma77ymdgxiwgbpbmbm8dy-playerctl-2.4.1/bin/playerctl play-pause --player spotify"),
+        "playerctl play-pause --player spotify"),
     { transparent = true })
 
 local suppressMaximizeRule = hl.window_rule({

@@ -13,12 +13,10 @@
   flake.homeModules.hyprland =
     { ... }:
     {
-      home.file.".config/hypr/hyprland.lua" = {
-        source = ./_hyprland/hyprland.lua;
-      };
-
-      home.file.".config/hypr/catppuccin.lua" = {
-        source = ./_hyprland/catppuccin.lua;
+      wayland.windowManager.hyprland = {
+        enable = true;
+        configType = "lua";
+        systemd.enable = true;
       };
     };
 }
