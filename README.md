@@ -1,5 +1,7 @@
 This is **WIP**
 
+![Nix](https://img.shields.io/badge/Nix-unstable-blue.svg?logo=nixos&logoColor=white)
+![Home Manager](https://img.shields.io/badge/Home_Manager-enabled-brightgreen.svg)
 # NixOS born again
 My NixOS and home-manager configurations.
 
