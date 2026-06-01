@@ -1,4 +1,4 @@
-require("catppuccin")
+local M = require("catppuccin")
 
 ---- monitors config
 
@@ -41,10 +41,10 @@ hl.monitor({
 
 -- other
 hl.monitor({
-    output = "",
-    mode = "auto",
+    output   = "",
+    mode     = "preferred",
     position = "auto",
-    scale = 1,
+    scale    = "auto",
 })
 
 ---- programs
@@ -205,7 +205,7 @@ hl.config({
         left_handed = false,
         sensitivity = 0,
 
-        touchpad {
+        touchpad = {
             natural_scroll = true
         },
     },
