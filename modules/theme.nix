@@ -113,6 +113,12 @@
           '';
     in
     {
+      catppuccin = {
+        enable = true;
+        flavor = "mocha";
+        accent = "sapphire";
+      };
+
       gtk = {
         enable = true;
         colorScheme = "dark";

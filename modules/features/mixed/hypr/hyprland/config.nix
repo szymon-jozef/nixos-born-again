@@ -3,7 +3,7 @@
   flake.homeModules.hyprland =
     { ... }:
     {
-      wayland.windowManager.hyprland.config = {
+      wayland.windowManager.hyprland.settings = {
         config = {
           dwindle = {
             preserve_split = true;

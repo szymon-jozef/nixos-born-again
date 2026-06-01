@@ -4,18 +4,17 @@
     {
       pkgs,
       inputs,
+      lib,
       ...
     }:
 
     let
-      exe = pkg: "${pkgs.${pkg}}/bin/${pkg}";
-
-      terminal = exe "kitty";
-      menu = exe "hyprlauncher";
-      music_player = exe "music_player";
-      notes = exe "obsidian";
+      terminal = lib.getExe pkgs.kitty;
+      menu = lib.getExe pkgs.hyprlauncher;
+      music_player = lib.getExe pkgs.spotify;
+      notes = lib.getExe pkgs.obsidian;
       signal_client = "${terminal} --title 'gurk' ${pkgs.gurk-rs}/bin/gurk";
-      browser = "${inputs.zen-browser.packages.${pkgs.stenv.hostPlatform.system}.default}";
+      browser = "${inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default}";
       color = "green";
     in
     {
