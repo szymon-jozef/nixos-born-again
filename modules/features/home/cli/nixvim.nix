@@ -37,6 +37,12 @@
           ];
         };
 
+        colorschemes.catppuccin = {
+          enable = true;
+          autoLoad = true;
+          settings.flavour = "mocha";
+        };
+
         keymaps = [
           {
             mode = [
@@ -158,7 +164,7 @@
 
         plugins = {
           nvim-autopairs.enable = true;
-          web-devicons.enable = true;
+          # web-devicons.enable = true;
 
           which-key = {
             enable = true;
