@@ -48,7 +48,7 @@
           ];
           home = {
             file = {
-              "Obrazy/tapety/".source = inputs.wallpapers;
+              "Obrazy/tapety/catppuccin".source = inputs.wallpapers;
             };
 
             sessionVariables = {
