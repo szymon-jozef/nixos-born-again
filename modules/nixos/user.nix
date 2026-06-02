@@ -16,7 +16,6 @@
           "wheel"
           "docker"
         ];
-        password = "123";
       };
 
       home-manager = {
