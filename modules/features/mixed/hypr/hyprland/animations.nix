@@ -114,7 +114,7 @@
           {
             leaf = "global";
             enabled = true;
-            speed = 10;
+            speed = 5;
             bezier = "default";
           }
           {
@@ -196,23 +196,23 @@
           {
             leaf = "workspaces";
             enabled = true;
-            speed = 1.94;
+            speed = 1;
             bezier = "almostLinear";
-            style = "fade";
+            style = "slidevert";
           }
           {
             leaf = "workspacesIn";
             enabled = true;
-            speed = 1.21;
+            speed = 1;
             bezier = "almostLinear";
-            style = "fade";
+            style = "slidevert";
           }
           {
             leaf = "workspacesOut";
             enabled = true;
-            speed = 1.94;
+            speed = 1;
             bezier = "almostLinear";
-            style = "fade";
+            style = "slidevert";
           }
           {
             leaf = "zoomFactor";
