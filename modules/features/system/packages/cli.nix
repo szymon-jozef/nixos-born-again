@@ -5,8 +5,8 @@
     {
       environment.systemPackages = with pkgs; [
         kitty
-        neovim
         wget
+        vim
         git
         ripgrep
         killall
