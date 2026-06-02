@@ -21,15 +21,20 @@ let
     ];
   };
 
+  getExe = pkgs.lib.getExe;
+
   # drives backup
   backup =
     pkgs.writeShellScript "backup"
       # bash
       ''
         set -e
+        echo "=== Starting drives backup ==="
 
-        ${pkgs.rsync} -avh --no-links --delete --exclude=.* --exclude=dyski /home/szymon/ /mnt/uwu_backup/home/szymon/
-        ${pkgs.rsync} -avh --no-links --delete --exclude=.* --exclude=dyski /home/szymon/ /mnt/wd_backup/home/szymon/
+        echo "Backup to uwu"
+        ${getExe pkgs.rsync} -avh --no-links --delete --exclude=.* --exclude=dyski /home/szymon/ /mnt/uwu_backup/home/szymon/
+        echo "Backup to wd"
+        ${getExe pkgs.rsync} -avh --no-links --delete --exclude=.* --exclude=dyski /home/szymon/ /mnt/wd_backup/home/szymon/
       '';
 in
 {
