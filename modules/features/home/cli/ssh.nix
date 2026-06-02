@@ -9,6 +9,7 @@
       programs.ssh = {
         enableDefaultConfig = false;
         enable = true;
+
         settings = {
           "dmowski" = {
             hostname = "192.168.0.30";
@@ -30,9 +31,7 @@
 
           "*" = {
             addKeysToAgent = "yes";
-            setEnv = [
-              "xterm-256color"
-            ];
+            setEnv = "TERM=xterm-256color";
           };
         };
       };
