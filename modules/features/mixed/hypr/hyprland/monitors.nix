@@ -14,7 +14,7 @@
             bitdepth = 10;
             cm = "hdr";
             supports_hdr = true;
-            sdrbrightness = 1.3;
+            sdrbrightness = 1.6;
             sdrsaturation = 0.98;
           }
           # secondary monitor
