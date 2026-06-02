@@ -142,8 +142,8 @@
             hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
             hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
-            hl.bind(mainMod .. " + SHIFT + right", hl.dsp.workspace.move({monitor = +1}))
-            hl.bind(mainMod .. " + SHIFT + left", hl.dsp.workspace.move({monitor = -1}))
+            hl.bind(mainMod .. " + SHIFT + right", hl.dsp.workspace.move({monitor = "+1"}))
+            hl.bind(mainMod .. " + SHIFT + left", hl.dsp.workspace.move({monitor = "-1"}))
 
             for i = 1, 10 do
                 local key = i % 10
