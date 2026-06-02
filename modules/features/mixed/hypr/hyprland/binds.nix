@@ -8,19 +8,22 @@
       ...
     }:
     let
+      # === apps ===
       grim = lib.getExe pkgs.grim;
       satty = lib.getExe pkgs.satty;
       jq = lib.getExe pkgs.jq;
       wl_copy = lib.getExe' pkgs.wl-clipboard "wl-copy";
       notify_send = lib.getExe' pkgs.libnotify "notify-send";
       screenshot_path = "${config.xdg.userDirs.pictures}/zrzuty";
+      playerctl = lib.getExe pkgs.playerctl;
 
-      screenshot-region = pkgs.writeShellScriptBin "screenshot-region" ''
+      # === scripts ===
+      screenshot-region = pkgs.writeShellScript "screenshot-region" ''
         MONITOR=$(hyprctl monitors -j | ${jq} -r '.[] | select(.focused == true) | .name')
         ${grim} -o "$MONITOR" - | ${satty} -f -
       '';
 
-      screenshot-fullscreen = pkgs.writeShellScriptBin "screenshot-fullscreen" ''
+      screenshot-fullscreen = pkgs.writeShellScript "screenshot-fullscreen" ''
         target_path="${screenshot_path}/$(date +'%d-%m-%Y_%H-%M-%S').png"
         mkdir -p "$(dirname "$target_path")"
 
@@ -31,7 +34,7 @@
         ${notify_send} -i "$target_path" -u low -a "Screenshot" "Screenshot fullscreen" "Saved and copied"
       '';
 
-      screenshot-window = pkgs.writeShellScriptBin "screenshot-window" ''
+      screenshot-window = pkgs.writeShellScript "screenshot-window" ''
         target_path="${screenshot_path}/$(date +'%d-%m-%Y_%H-%M-%S').png"
         mkdir -p "$(dirname "$target_path")"
 
@@ -41,14 +44,19 @@
         ${wl_copy} < "$target_path"
         ${notify_send} -i "$target_path" -u low -a "Screenshot" "Screenshot window" "Saved and copied"
       '';
+
+      wp-vol =
+        pkgs.writeShellScript "wp-vol"
+          # bash
+          ''
+            volume=''$(wpctl get-volume @DEFAULT_SINK@)
+            volume=''$(echo "''$volume" | awk '{print $2}')
+            volume=''$(echo "( ''$volume * 100 ) / 1" | bc)
+
+            notify-send -t 1000 -a 'wp-vol' -h int:value:''$volume "Volume: ''${volume}%"
+          '';
     in
     {
-      home.packages = [
-        screenshot-region
-        screenshot-fullscreen
-        screenshot-window
-      ];
-
       wayland.windowManager.hyprland = {
 
         extraConfig =
@@ -104,7 +112,7 @@
 
             -- X.desktop
             hl.bind(mainMod .. " + CONTROL + X", function()
-                focus_or_launch("^(chrome-x.com__-Default)$", "uwsm app -- ~/.nix-profile/share/applications/x.desktop")
+                focus_or_launch("^(chrome-x.com__-Default)$", "uwsm app -- x.desktop")
             end)
 
             -- Signal
@@ -134,8 +142,8 @@
             hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
             hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
 
-            hl.bind(mainMod .. " + SHIFT + right", hl.dsp.exec_cmd("hyprctl dispatch movecurrentworkspacetomonitor +1"))
-            hl.bind(mainMod .. " + SHIFT + left", hl.dsp.exec_cmd("hyprctl dispatch movecurrentworkspacetomonitor -1"))
+            hl.bind(mainMod .. " + SHIFT + right", hl.dsp.workspace.move({monitor = +1}))
+            hl.bind(mainMod .. " + SHIFT + left", hl.dsp.workspace.move({monitor = -1}))
 
             for i = 1, 10 do
                 local key = i % 10
@@ -163,35 +171,27 @@
                 hl.dsp.exec_cmd("openrgb -c black && pidof hyprlock || sleep 1 && systemctl sleep"))
             hl.bind(mainMod .. " + SHIFT + CONTROL + M", hl.dsp.exec_cmd("uwsm stop"))
 
+            -- window managament
             hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen(), { description = "Make app fullscreen" })
             hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }), { description = "Toggle floating" })
             hl.bind(mainMod .. " + Q", hl.dsp.window.close(), { description = "Kill active window" })
 
-            hl.bind(mainMod .. " + ALT + equal",
-                hl.dsp.exec_cmd(
-                    "hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 1.1}')"),
-                { repeating = true })
-            hl.bind(mainMod .. " + ALT + minus",
-                hl.dsp.exec_cmd(
-                    "hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 0.9}')"),
-                { repeating = true })
-            hl.bind(mainMod .. " + ALT + 0", hl.dsp.exec_cmd("hyprctl -q keyword cursor:zoom_factor 1"), { repeating = true })
-
-            hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.resize({ x = 10, y = 0 }), { repeating = true })
-            hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.resize({ x = -10, y = 0 }), { repeating = true })
-            hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.resize({ x = 0, y = -10 }), { repeating = true })
-            hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.resize({ x = 0, y = 10 }), { repeating = true })
+            -- resize
+            hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
+            hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
+            hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+            hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
 
             hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("hyprctl hyprsunset gamma -10"), { locked = true, repeating = true })
             hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("hyprctl hyprsunset gamma +10"), { locked = true, repeating = true })
 
             hl.bind("XF86AudioRaiseVolume",
                 hl.dsp.exec_cmd(
-                    "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && ~/.local/bin/wp-vol.sh && paplay /usr/share/sounds/freedesktop/stereo/bell.oga"),
+                    "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && ${wp-vol} && paplay /usr/share/sounds/freedesktop/stereo/bell.oga"),
                 { locked = true, repeating = true })
             hl.bind("XF86AudioLowerVolume",
                 hl.dsp.exec_cmd(
-                    "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && ~/.local/bin/wp-vol.sh && paplay /usr/share/sounds/freedesktop/stereo/bell.oga"),
+                    "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && ${wp-vol} && paplay /usr/share/sounds/freedesktop/stereo/bell.oga"),
                 { locked = true, repeating = true })
             hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_SOURCE@ toggle"),
                 { locked = true, repeating = true })
@@ -199,16 +199,20 @@
             hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
             hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-            hl.bind("PRINT", hl.dsp.exec_cmd("screenshot-region"), { transparent = true })
-            hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("screenshot-fullscreen"),
+
+            -- Screenshots --
+            hl.bind("PRINT", hl.dsp.exec_cmd("${screenshot-region}"), { transparent = true })
+            hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("${screenshot-fullscreen}"),
                 { transparent = true })
-            hl.bind("ALT + PRINT", hl.dsp.exec_cmd("screenshot-window"),
+            hl.bind("ALT + PRINT", hl.dsp.exec_cmd("${screenshot-window}"),
                 { transparent = true })
-            hl.bind("PAUSE", hl.dsp.exec_cmd("playerctl play-pause"),
+
+            -- Playerctl
+            hl.bind("PAUSE", hl.dsp.exec_cmd("${playerctl} play-pause"),
                 { transparent = true })
             hl.bind(mainMod .. " + PAUSE",
                 hl.dsp.exec_cmd(
-                    "playerctl play-pause --player spotify"),
+                    "${playerctl} play-pause --player spotify"),
                 { transparent = true })
 
             local suppressMaximizeRule = hl.window_rule({
