@@ -7,6 +7,19 @@ It used to be separated into [nixos-configuration](https://github.com/szymon-joz
 
 This configuration is build around dendritic pattern, meaning it comes with [flake-parts](https://github.com/hercules-ci/flake-parts) and [import-tree](https://github.com/denful/import-tree). There are no if statements in the code: you just import all the things you want.
 
+# Usage
+## Nixos
+This repo may be used as a normal nixos configuration. Just clone it, add your host and run
+```bash
+sudo nixos-rebuild switch --flake .#<you_host>
+```
+
+## Home-manager
+This repo also has home-manager standalone module, so you can use that if you want to use my config. Just add your configuration into modules/hosts/standalone/ and run
+```bash
+home-manager switch --flake .#<your_name>@<your_host>
+```
+
 # Flake parts
 ## hosts
 There is an [example host file](./modules/hosts/example.nix)
