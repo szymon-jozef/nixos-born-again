@@ -17,6 +17,8 @@
     in
     {
       xdg = {
+        enable = true;
+
         portal.config = {
           common = {
             default = [
