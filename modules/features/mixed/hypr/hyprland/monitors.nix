@@ -8,14 +8,17 @@
         monitor = [
           {
             output = "DP-1";
-            mode = "2560x1440@180";
+            mode = "2560x1440@180.06";
             position = "0x0";
             scale = 1;
             bitdepth = 10;
+            vrr = 1;
             cm = "hdr";
             supports_hdr = true;
-            sdrbrightness = 1.6;
-            sdrsaturation = 0.98;
+            # sdrbrightness = 1.6;
+            # sdrsaturation = 0.98;
+            sdr_min_luminance = 0.005;
+            sdr_max_luminance = 220;
           }
           # secondary monitor
           {
