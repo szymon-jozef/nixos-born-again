@@ -5,9 +5,6 @@ let
     hostname = "example";
     email = "john@idk.com";
     system = "x86_64-linux";
-    pathConfig = {
-      screenshot = "Obrazy/zrzuty/";
-    };
     mainMonitor = "DP-1";
   };
   pkgs = import inputs.nixpkgs {

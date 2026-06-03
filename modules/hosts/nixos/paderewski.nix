@@ -5,9 +5,6 @@ let
     hostname = "paderewski";
     email = "szymon_jozef@proton.me";
     system = "x86_64-linux";
-    pathConfig = {
-      screenshot = "Obrazy/zrzuty/";
-    };
     mainMonitor = "DP-1";
     maxJobs = "auto";
     maxCores = 0;

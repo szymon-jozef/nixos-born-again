@@ -5,10 +5,6 @@ let
     hostname = "example";
     email = "john@example.com";
     system = "x86_64-linux";
-    pathConfig = {
-      wallpaper = "Obrazy/tapety/catppuccin";
-      screenshot = "Obrazy/zrzuty/";
-    };
     mainMonitor = "DP-1";
     maxJobs = "auto";
     maxCores = 0;

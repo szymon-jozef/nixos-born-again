@@ -5,13 +5,9 @@ let
     hostname = "pitagoras";
     email = "szymon_jozef@proton.me";
     system = "x86_64-linux";
-    pathConfig = {
-      wallpaper = "Obrazy/tapety/catppuccin";
-      screenshot = "Obrazy/zrzuty/";
-    };
     mainMonitor = "eDP-1";
-    maxJobs = "auto";
-    maxCores = 0;
+    maxJobs = 2;
+    maxCores = 2;
   };
 in
 {
@@ -37,9 +33,10 @@ in
 
       # packages
       self.nixosModules.packages
-      self.nixosModules.programs
       self.nixosModules.packages-virtualisation
       self.nixosModules.gaming
+
+      self.nixosModules.programs
       self.nixosModules.hyprland
       self.nixosModules.cli
 
