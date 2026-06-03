@@ -24,6 +24,10 @@
         grim
         slurp
         bc
+        wget
+        vim
+        git
+        ripgrep
 
         nh
         runc

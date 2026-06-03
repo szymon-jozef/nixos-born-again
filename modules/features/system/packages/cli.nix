@@ -5,10 +5,6 @@
     {
       environment.systemPackages = with pkgs; [
         kitty
-        wget
-        vim
-        git
-        ripgrep
         killall
         unzip
         wl-clipboard
