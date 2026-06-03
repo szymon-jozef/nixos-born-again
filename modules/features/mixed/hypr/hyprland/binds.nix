@@ -125,8 +125,8 @@
                 local windows = hl.get_windows()
                 for _, w in ipairs(windows) do
                     if w.class:match("^(vesktop)$") then
-                        hl.dispatch(hl.dsp.send_shortcut("ctrl, k, class:^(vesktop)$"))
-                        hl.dispatch(hl.dsp.focus({ class = "^(vesktop)$" }))
+                            hl.dispatch(hl.dsp.send_shortcut({mods = "ctrl", key = "k", window = "class:^(vesktop)$"}))
+                            hl.dispatch(hl.dsp.focus({window = "class:^(vesktop)$" }))
                         return
                     end
                 end
@@ -158,6 +158,11 @@
             hl.bind(mainMod .. " + S", hl.dsp.layout("swapwithmaster"))
             hl.bind(mainMod .. " + N", hl.dsp.layout("swapnext"))
             hl.bind(mainMod .. " + P", hl.dsp.layout("swapprev"))
+
+            hl.bind(mainMod .. " + ALT + h", hl.dsp.window.swap({direction = "l"}))
+            hl.bind(mainMod .. " + ALT + l", hl.dsp.window.swap({direction = "r"}))
+            hl.bind(mainMod .. " + ALT + j", hl.dsp.window.swap({direction = "d"}))
+            hl.bind(mainMod .. " + ALT + k", hl.dsp.window.swap({direction = "u"}))
 
             -- clipboard
             hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | hyprlauncher -m | cliphist decode | wl-copy"))
