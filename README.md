@@ -103,8 +103,6 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |theme|Catppuccin system theme|
 
 ### hypr
-**As of now hyprland is a normal home module, separated like normal files and with hyprlang. Will be rewritten to lua.**
-
 |Module name|Description|
 |---|---|
 |hyprland|Hyprland configuration|
