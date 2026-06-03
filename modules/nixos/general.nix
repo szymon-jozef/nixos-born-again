@@ -73,8 +73,6 @@
           };
         };
 
-        # TODO move this to other module? not sure tho
-        # random stuff that probably belong somewhere else
         security = {
           pam = {
             services.sddm.kwallet.enable = true;

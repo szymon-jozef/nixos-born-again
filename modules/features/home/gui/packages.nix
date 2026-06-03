@@ -7,7 +7,6 @@
     }:
     {
       home.packages = with pkgs; [
-        # TODO! split into files
         homebank
         gimp
         feh
