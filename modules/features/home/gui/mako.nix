@@ -2,6 +2,9 @@
 {
   flake.homeModules.gui =
     { pkgs, ... }:
+    let
+      play_sound = "exec ${pkgs.pulseaudio}/bin/paplay ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/dialog-information.oga";
+    in
     {
       services.mako = {
         enable = true;
@@ -22,7 +25,7 @@
           border-color = "#89b4fa";
           progress-color = "over #313244";
           output = "DP-1";
-          on-notify = "exec ${pkgs.pulseaudio}/bin/paplay ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/dialog-information.oga";
+          on-notify = play_sound;
         };
 
         extraConfig = ''
@@ -33,7 +36,7 @@
           border-color=#FF6347
 
           [urgency=critical]
-          on-notify=${"exec ${pkgs.pulseaudio}/bin/paplay ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/dialog-information.oga"}
+          on-notify=${play_sound}
           border-color=#FF0000
 
           [mode=do-not-disturb]
