@@ -44,6 +44,7 @@ in
               homeDirectory = "/home/${myConfig.username}";
               stateVersion = "25.11";
             };
+            targets.genericLinux.enable = true;
 
             imports = [
               inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
