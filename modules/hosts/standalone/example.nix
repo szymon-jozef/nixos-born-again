@@ -47,7 +47,7 @@ in
 
             imports = [
               inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
-              inputs.catppuccin.modules.homeManager.catppuccin
+              inputs.catppuccin.homeModules.catppuccin
 
               # self.modules.homeManager.* import
               self.modules.homeManager.theme
