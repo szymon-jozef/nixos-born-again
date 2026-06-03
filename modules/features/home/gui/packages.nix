@@ -16,7 +16,6 @@
         vlc
 
         # texting
-        vesktop
         signal-desktop
         gurk-rs
       ];
