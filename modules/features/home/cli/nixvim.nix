@@ -1,5 +1,6 @@
 { ... }:
 {
+  # TODO! split this configuration into more files
   flake.modules.homeManager.cli =
     { inputs, ... }:
     let
