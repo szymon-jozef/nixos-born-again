@@ -61,12 +61,11 @@
                   git add -A
                   git commit --allow-empty -m "chore: state before system update"
                   
-                  nix flake update
+                  nh os switch -u
                   
                   if test $status -eq 0
                       git add ./flake.lock
                       git commit --allow-empty -m "chore: update system flake.lock"
-                      nh os switch
                       git push
                   else
                       echo "Error while updating system flake!"
