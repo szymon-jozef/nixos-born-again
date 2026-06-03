@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.gui =
+  flake.modules.homeManager.gui =
     { pkgs, ... }:
     let
       play_sound = "exec ${pkgs.pulseaudio}/bin/paplay ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/dialog-information.oga";

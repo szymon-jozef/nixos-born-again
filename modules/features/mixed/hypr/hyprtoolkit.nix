@@ -1,7 +1,7 @@
 { ... }:
 {
 
-  flake.homeModules.hyprtoolkit =
+  flake.modules.homeManager.hyprtoolkit =
     { ... }:
     {
       # TODO! change this to home module if it ever gets released

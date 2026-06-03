@@ -35,16 +35,16 @@
             inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
             inputs.catppuccin.homeModules.catppuccin
 
-            # self.homeModules.* import
-            self.homeModules.theme
-            self.homeModules.hypr
-            self.homeModules.ashell
-            self.homeModules.gui
-            self.homeModules.cli
-            self.homeModules.browsers
-            self.homeModules.xdg
-            self.homeModules.gaming
-            self.homeModules.university
+            # self.modules.homeManager.* import
+            self.modules.homeManager.theme
+            self.modules.homeManager.hypr
+            self.modules.homeManager.ashell
+            self.modules.homeManager.gui
+            self.modules.homeManager.cli
+            self.modules.homeManager.browsers
+            self.modules.homeManager.xdg
+            self.modules.homeManager.gaming
+            self.modules.homeManager.university
           ];
           home = {
             file = {

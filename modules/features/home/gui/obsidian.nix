@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  flake.homeModules.gui =
+  flake.modules.homeManager.gui =
     {
       config,
       ...

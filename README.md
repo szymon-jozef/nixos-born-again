@@ -96,7 +96,7 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |---|---|
 |nvidia|Nvidia settings|
 
-## homeModules
+## modules.homeManager
 ### Theme
 |Module name|Description|
 |---|---|

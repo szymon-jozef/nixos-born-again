@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.university =
+  flake.modules.homeManager.university =
     {
       inputs,
       pkgs,

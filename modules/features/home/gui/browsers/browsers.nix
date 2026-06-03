@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.browsers =
+  flake.modules.homeManager.browsers =
     { pkgs, inputs, ... }:
     {
       programs.chromium = {

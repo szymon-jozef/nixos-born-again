@@ -1,7 +1,7 @@
 { ... }:
 {
 
-  flake.homeModules.xdg =
+  flake.modules.homeManager.xdg =
     { config, ... }:
     let
       home = config.home.homeDirectory;

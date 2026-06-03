@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.hyprsunset =
+  flake.modules.homeManager.hyprsunset =
     { ... }:
     {
       services.hyprsunset = {

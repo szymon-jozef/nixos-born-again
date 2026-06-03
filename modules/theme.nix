@@ -14,7 +14,7 @@
       };
     };
 
-  flake.homeModules.theme =
+  flake.modules.homeManager.theme =
     { pkgs, ... }:
     let
       colors =

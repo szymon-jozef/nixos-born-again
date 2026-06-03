@@ -6,7 +6,7 @@
       programs.fish.enable = true;
     };
 
-  flake.homeModules.cli =
+  flake.modules.homeManager.cli =
     { ... }:
     {
       programs.fish = {

@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.hyprland =
+  flake.modules.homeManager.hyprland =
     { lib, pkgs, ... }:
     let
     ashell = lib.getExe pkgs.ashell;

@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.cli =
+  flake.modules.homeManager.cli =
     { inputs, ... }:
     let
       flakePath = "/etc/nixos";

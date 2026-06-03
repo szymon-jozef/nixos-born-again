@@ -1,7 +1,7 @@
 { ... }:
 {
 
-  flake.homeModules.cli =
+  flake.modules.homeManager.cli =
     { pkgs, ... }:
     {
       home.packages = with pkgs; [

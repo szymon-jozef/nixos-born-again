@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.ashell =
+  flake.modules.homeManager.ashell =
     {
       pkgs,
       myConfig,

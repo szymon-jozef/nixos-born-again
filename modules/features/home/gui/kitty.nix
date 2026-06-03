@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.gui =
+  flake.modules.homeManager.gui =
     { ... }:
     {
       programs.kitty = {

@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.cli =
+  flake.modules.homeManager.cli =
     { config, lib, ... }:
     let
       download = config.xdg.userDirs.download;

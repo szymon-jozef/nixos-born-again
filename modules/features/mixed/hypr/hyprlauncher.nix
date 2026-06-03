@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.hyprlauncher =
+  flake.modules.homeManager.hyprlauncher =
     { ... }:
     {
       services.hyprlauncher = {

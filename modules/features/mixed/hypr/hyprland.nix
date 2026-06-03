@@ -10,7 +10,7 @@
       };
     };
 
-  flake.homeModules.hyprland =
+  flake.modules.homeManager.hyprland =
     { ... }:
     {
       wayland.windowManager.hyprland = {

@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.gaming =
+  flake.modules.homeManager.gaming =
     { ... }:
     {
 

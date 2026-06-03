@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.hyprland =
+  flake.modules.homeManager.hyprland =
     {
       pkgs,
       inputs,

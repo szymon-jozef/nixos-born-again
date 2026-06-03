@@ -1,6 +1,6 @@
 { ... }:
 {
-  flake.homeModules.hyprlock =
+  flake.modules.homeManager.hyprlock =
     { ... }:
     {
       programs.hyprlock = {
