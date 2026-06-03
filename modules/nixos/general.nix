@@ -11,6 +11,8 @@
       {
         imports = [
           inputs.home-manager.nixosModules.home-manager
+          inputs.home-manager.flakeModules.home-manager
+
           inputs.agenix.nixosModules.default
           inputs.nix-index-database.nixosModules.default
           { programs.nix-index-database.comma.enable = true; }
