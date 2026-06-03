@@ -13,9 +13,6 @@ let
   pkgs = import inputs.nixpkgs {
     system = myConfig.system;
     config.allowUnfree = true;
-    overlays = [
-      inputs.nix-cachyos-kernel.overlays.pinned
-    ];
   };
 
   getExe = pkgs.lib.getExe;
