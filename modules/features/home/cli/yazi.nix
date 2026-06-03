@@ -1,7 +1,14 @@
 { ... }:
 {
   flake.homeModules.cli =
-    { config, ... }:
+    { config, lib, ... }:
+    let
+      download = config.xdg.userDirs.download;
+      documents = config.xdg.userDirs.documents;
+      videos = config.xdg.userDirs.videos;
+      pictures = config.xdg.userDirs.pictures;
+      projects = config.xdg.userDirs.projects;
+    in
     {
       programs.yazi = {
         enable = true;
@@ -44,35 +51,35 @@
               "g"
               "p"
             ];
-            run = "cd ${config.xdg.userDirs.download}";
+            run = "cd ${download}";
           }
           {
             on = [
               "g"
               "d"
             ];
-            run = "cd ${config.xdg.userDirs.documents}";
+            run = "cd ${documents}";
           }
           {
             on = [
               "g"
               "v"
             ];
-            run = "cd ${config.xdg.userDirs.videos}";
+            run = "cd ${videos}";
           }
           {
             on = [
               "g"
               "o"
             ];
-            run = "cd ${config.xdg.userDirs.pictures}";
+            run = "cd ${pictures}";
           }
           {
             on = [
               "g"
               "k"
             ];
-            run = "cd ${config.xdg.userDirs.projects}";
+            run = "cd ${projects}";
           }
         ];
       };
