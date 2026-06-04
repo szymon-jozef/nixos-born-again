@@ -13,9 +13,9 @@
             scale = 1;
             # bitdepth = 10;
             vrr = 1;
-            cm = "hdr";
+            cm = "auto";
             supports_hdr = 1;
-            sdrbrightness = 1.6;
+            sdrbrightness = 1.7;
             sdrsaturation = 0.98;
             sdr_min_luminance = 0.005;
             sdr_max_luminance = 220;
