@@ -2,18 +2,20 @@
 {
 
   flake.modules.homeManager.xdg =
-    { config, ... }:
+    { config, pkgs, ... }:
     let
+      getDesktop = name: "${pkgs.${name}}/share/applications/${name}.desktop";
+
       home = config.home.homeDirectory;
       browserFallback = [
         "zen-beta.desktop"
         "zen.desktop"
-        "brave.desktop"
-        "chromium.desktop"
+        (getDesktop "brave")
+        (getDesktop "chromium")
       ];
-      imageViewer = "feh.desktop";
-      pdfViewer = "org.pwmt.zathura.desktop";
-      audioPlayer = "mpv.desktop";
+      imageViewer = getDesktop "feh";
+      pdfViewer = "${pkgs.zathura}/share/applications/org.pwmt.zathura.desktop"; # sadly not a standard .desktop name :(
+      audioPlayer = getDesktop "mpv";
     in
     {
       xdg = {
