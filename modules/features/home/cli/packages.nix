@@ -14,6 +14,7 @@
         trash-cli
         pandoc
         fzf
+        zathura
         eza
         fastfetch
         fd
