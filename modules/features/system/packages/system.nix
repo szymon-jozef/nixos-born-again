@@ -4,7 +4,6 @@
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        awww
         kdePackages.kwallet
         kdePackages.kwallet-pam
         kdePackages.kwalletmanager
