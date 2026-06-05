@@ -1,13 +1,16 @@
 { ... }:
 {
   flake.nixosModules.gaming =
-    { ... }:
+    { pkgs, ... }:
     {
       programs = {
         steam = {
           enable = true;
           gamescopeSession.enable = true;
           protontricks.enable = true;
+          extraCompatPackages = [
+            pkgs.proton-ge-bin
+          ];
         };
         java.enable = true;
       };
