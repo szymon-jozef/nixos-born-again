@@ -41,6 +41,7 @@
             self.modules.homeManager.ashell
             self.modules.homeManager.gui
             self.modules.homeManager.cli
+            self.modules.homeManager.gemini
             self.modules.homeManager.browsers
             self.modules.homeManager.xdg
             self.modules.homeManager.gaming
