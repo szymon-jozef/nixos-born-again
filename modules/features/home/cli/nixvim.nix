@@ -237,14 +237,22 @@
               # nix
               nixd = {
                 enable = true;
+                autoStart = true;
                 filetypes = [ "nix" ];
-                formatting = {
-                  command = [ "nixfmt" ];
-                };
+                settings = {
+                  formatting = {
+                    command = [ "nixfmt" ];
+                  };
 
-                nixpkgs.expr = ''
-                  import (builtins.getFlake "${flakePath}").inputs.nixpkgs { }
-                '';
+                  # TODO change names to myConfig
+                  nixpkgs.expr = ''
+                    import (builtins.getFlake "${flakePath}").inputs.nixpkgs { }
+                  '';
+                  options = {
+                    nixos.expr = ''(builtins.getFlake ("/etc/nixos")).nixosConfigurations.paderewski.options'';
+                    home_manager.expr = ''(builtins.getFlake ("/etc/nixos")).nixosConfigurations.paderewski.options.home-manager.users.type.getSubOptions [ ]'';
+                  };
+                };
               };
               # other
               marksman.enable = true;
