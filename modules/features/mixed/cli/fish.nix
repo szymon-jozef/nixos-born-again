@@ -9,6 +9,15 @@
   flake.modules.homeManager.cli =
     { ... }:
     {
+      programs.starship = {
+        enable = true;
+        enableFishIntegration = true;
+
+        settings = {
+          add_newline = true;
+        };
+      };
+
       programs.fish = {
         enable = true;
         loginShellInit = # fish
