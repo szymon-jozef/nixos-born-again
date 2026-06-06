@@ -5,8 +5,9 @@
     {
       catppuccin.gemini-cli.enable = false;
       # Move this to a separate module?
-      programs.gemini-cli = {
+      programs.antigravity-cli = {
         enable = true;
+        defaultModel = "gemini-3.1-pro";
         context = {
           GEMINI = ''
             # Context
