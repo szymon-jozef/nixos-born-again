@@ -36,8 +36,10 @@
         ];
       };
 
-      boot.initrd.luks.devices."cryptroot".device =
-        "/dev/disk/by-uuid/1e6e9e2c-e035-4d31-837e-b39087843b03";
+      boot.initrd.luks.devices."cryptroot" = {
+        device = "/dev/disk/by-uuid/1e6e9e2c-e035-4d31-837e-b39087843b03";
+        crypttabExtraOpts = [ "fido2-device=auto" ];
+      };
 
       fileSystems."/home" = {
         device = "/dev/mapper/cryptroot";
