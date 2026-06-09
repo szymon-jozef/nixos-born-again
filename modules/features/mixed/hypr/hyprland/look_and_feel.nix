@@ -7,17 +7,17 @@
         config = {
 
           general = {
-            gaps_in = 4;
-            gaps_out = 6;
+            gaps_in = 2;
+            gaps_out = 4;
 
-            border_size = 4;
+            border_size = 2;
 
             "col.active_border" = {
               colors = [
-                (lib.generators.mkLuaInline "colors.blue")
-                (lib.generators.mkLuaInline "colors.sky")
+                (lib.generators.mkLuaInline "colors.sapphire")
+                (lib.generators.mkLuaInline "colors.red")
               ];
-              angle = 45;
+              angle = 60;
             };
             "col.inactive_border" = lib.generators.mkLuaInline "colors.base";
 
