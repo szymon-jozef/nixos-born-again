@@ -8,5 +8,6 @@
         distrobox
         quickemu
       ];
+      virtualisation.waydroid.enable = true;
     };
 }
