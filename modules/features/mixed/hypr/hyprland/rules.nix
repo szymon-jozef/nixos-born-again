@@ -223,6 +223,7 @@
           {
             workspace = "2";
             monitor = "DP-1";
+            layout = "dwindle";
           }
           {
             workspace = "3";
