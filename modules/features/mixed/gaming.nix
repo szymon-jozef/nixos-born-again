@@ -12,6 +12,11 @@
             pkgs.proton-ge-bin
           ];
         };
+
+        gamemode = {
+          enable = true;
+        };
+
         java.enable = true;
       };
     };

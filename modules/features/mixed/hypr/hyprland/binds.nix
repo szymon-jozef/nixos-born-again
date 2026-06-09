@@ -67,7 +67,7 @@
 
                 for _, w in ipairs(windows) do
                     if w.class:match(class_pattern) then
-                        hl.dispatch(hl.dsp.focus({ class = class_pattern }))
+                        hl.dispatch(hl.dsp.focus({ window = "class:".. class_pattern}))
                         return
                     end
                 end
@@ -122,15 +122,9 @@
 
             -- Vesktop
             hl.bind(mainMod .. " + CONTROL + V", function()
-                local windows = hl.get_windows()
-                for _, w in ipairs(windows) do
-                    if w.class:match("^(vesktop)$") then
-                            hl.dispatch(hl.dsp.send_shortcut({mods = "ctrl", key = "k", window = "class:^(vesktop)$"}))
-                            hl.dispatch(hl.dsp.focus({window = "class:^(vesktop)$" }))
-                        return
-                    end
-                end
-                hl.dispatch(hl.dsp.exec_cmd("uwsm app -- vesktop"))
+                local regex = "^(vesktop)"
+                focus_or_launch(regex, "uwsm app -- vesktop")
+                hl.dispatch(hl.dsp.send_shortcut({mods = "ctrl", key = "k", window = regex}))
             end)
 
             -- workspaces
