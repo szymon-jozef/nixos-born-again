@@ -10,6 +10,7 @@
         homebank
         gimp
         feh
+        mpv
 
         # music
         spotify
