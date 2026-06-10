@@ -209,7 +209,11 @@
               # web
               cssls.enable = true;
               html.enable = true;
-              emmet_ls.enable = true;
+              emmet_language_server = {
+                enable = true;
+                filetypes = [ "html" ];
+              };
+
               friendly-snippets.enable = true;
               # dev
               clangd.enable = true;
