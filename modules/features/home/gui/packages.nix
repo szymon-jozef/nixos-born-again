@@ -11,6 +11,7 @@
         gimp
         feh
         mpv
+        libreoffice
 
         # music
         spotify
