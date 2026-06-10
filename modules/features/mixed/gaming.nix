@@ -29,8 +29,8 @@
         mangohud
         prismlauncher
         heroic
-        # lutris
-        pkgs-stable.rpcs3
+        lutris
+        # pkgs-stable.rpcs3 | commented out since shit doesn't work rn
         pcsx2
       ];
     };
