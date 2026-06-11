@@ -29,6 +29,7 @@
         vim
         git
         ripgrep
+        feh
 
         nh
         runc
