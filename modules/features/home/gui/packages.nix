@@ -13,6 +13,10 @@
         mpv
         libreoffice
 
+        hunspell
+        hunspellDicts.pl_PL
+        hyphenDicts.pl_PL
+
         # music
         spotify
         vlc
