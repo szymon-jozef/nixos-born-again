@@ -78,6 +78,7 @@ in
             # packages
             self.nixosModules.packages
             self.nixosModules.packages-virtualisation
+            self.nixosModules.university # TODO don't forget to remove this
             self.nixosModules.programs
             self.nixosModules.gaming
             self.nixosModules.hyprland

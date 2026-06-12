@@ -61,6 +61,9 @@
       url = "github:shv187/zutui";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    battleship.url = "github:szymon-jozef/battleship-pygame-lan";
+
   };
 
   outputs =

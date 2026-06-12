@@ -1,5 +1,15 @@
 { ... }:
 {
+  flake.nixosModules.university =
+    { inputs, ... }:
+    {
+      imports = [
+        inputs.battleship.nixosModules.default
+      ];
+
+      programs.battleship-pygame-lan.enable = true;
+    };
+
   flake.modules.homeManager.university =
     {
       inputs,

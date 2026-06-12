@@ -33,6 +33,7 @@ in
 
       # packages
       self.nixosModules.packages
+      self.nixosModules.university
       self.nixosModules.packages-virtualisation
       self.nixosModules.gaming
 

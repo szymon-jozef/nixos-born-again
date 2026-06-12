@@ -55,6 +55,7 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |Module name|Description|
 |---|---|
 |hyprland|Hyprland nixos module|
+|university| university packages|
 
 #### CLI packages
 |Module name|Description|
