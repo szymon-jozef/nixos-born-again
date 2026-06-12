@@ -12,7 +12,7 @@
         "chromium.desktop"
       ];
 
-      imageViewer = "feh";
+      imageViewer = "feh.desktop";
       pdfViewer = "org.pwmt.zathura.desktop"; # sadly not a standard .desktop name :(
       audioPlayer = "mpv";
     in
