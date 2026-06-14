@@ -92,8 +92,13 @@
             workspace = 2;
           }
           {
-            name = "brave-ws";
+            name = "x-ws";
             match.class = "^(brave-x.com__-Default)$";
+            workspace = 2;
+          }
+          {
+            name = "reddit-ws";
+            match.class = "^(brave-reddit.com__-Default)$";
             workspace = 2;
           }
           {

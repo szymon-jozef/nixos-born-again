@@ -41,6 +41,13 @@
           icon = "proton-mail";
           wmClass = "brave-mail.proton.me__u_0_inbox.com-Default";
         };
+
+        reddit = mkWebApp {
+          name = "Reddit";
+          url = "reddit.com";
+          icon = "reddit";
+          wmClass = "brave-reddit.com__-Default";
+        };
       };
     };
 }
