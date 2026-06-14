@@ -283,7 +283,6 @@
 
           cursorline = {
             enable = true;
-            timeout = 0;
           };
 
           mini-indentscope = {
