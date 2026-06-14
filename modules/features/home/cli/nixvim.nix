@@ -214,7 +214,7 @@
                 filetypes = [ "html" ];
               };
 
-              friendly-snippets.enable = true;
+              # friendly-snippets.enable = true;
               # dev
               clangd.enable = true;
               pylsp = {
@@ -241,7 +241,7 @@
               # nix
               nixd = {
                 enable = true;
-                autoStart = true;
+                # autoStart = true;
                 filetypes = [ "nix" ];
                 settings = {
                   formatting = {
@@ -283,7 +283,6 @@
 
           cursorline = {
             enable = true;
-            timeout = 0;
           };
 
           mini-indentscope = {
