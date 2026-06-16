@@ -14,8 +14,5 @@
           package = config.boot.kernelPackages.nvidiaPackages.stable;
         };
       };
-
-      virtualisation.podman.enableNvidia = true;
     };
-
 }
