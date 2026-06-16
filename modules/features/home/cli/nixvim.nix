@@ -12,6 +12,9 @@
       ];
 
       programs.nixvim = {
+        # fix for https://github.com/nix-community/nixvim/issues/4426
+        nixpkgs.useGlobalPackages = true;
+
         enable = true;
         defaultEditor = true;
 
