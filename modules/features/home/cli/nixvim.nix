@@ -220,6 +220,8 @@
               # friendly-snippets.enable = true;
               # dev
               clangd.enable = true;
+              cmake.enable = true;
+
               pylsp = {
                 enable = true;
                 settings = {
