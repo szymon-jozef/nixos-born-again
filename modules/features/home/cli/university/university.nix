@@ -29,7 +29,7 @@
         inputs.zut-calendar.packages.${pkgs.stdenv.hostPlatform.system}.default
         inputs.zutui.packages.${pkgs.stdenv.hostPlatform.system}.default
 
-        rstudio-with-packages
+        #       rstudio-with-packages
       ];
     };
 }
