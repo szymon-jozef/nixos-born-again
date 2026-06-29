@@ -30,7 +30,7 @@
           tabstop = 4;
           expandtab = true;
           list = true;
-          clipboard = "unnamedplus";
+          clipboard = "unnamed";
           spell = true;
           spelllang = [
             "pl"

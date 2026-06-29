@@ -1,6 +1,5 @@
 { ... }:
 {
-
   flake.modules.homeManager.cli =
     { ... }:
     {
@@ -26,7 +25,7 @@
           action = "<gv";
           options.desc = "Shift code left";
         }
-
+        # harpoon
         {
           mode = "n";
           key = "<leader>a";
@@ -72,6 +71,7 @@
           options.desc = "Toggle next harpoon buffer";
         }
         {
+          # make sure the screen is centered
           key = "j";
           action = "jzz";
         }
@@ -94,6 +94,23 @@
         {
           key = "}}";
           action = "}}zz";
+        }
+        # clipboard
+        {
+          mode = [
+            "v"
+          ];
+          key = "<leader>y";
+          action = "\"+y";
+          options.desc = "Copy to system clipboard";
+        }
+        {
+          mode = [
+            "v"
+          ];
+          key = "<leader>p";
+          action = "\"+p";
+          options.desc = "Paste from system clipboard";
         }
       ];
     };
