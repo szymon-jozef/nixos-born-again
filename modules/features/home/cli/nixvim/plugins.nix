@@ -53,6 +53,10 @@
             indent.enable = false;
           };
         };
+        treesitter-textobjects.enable = true;
+
+        dap.enable = true;
+        dap-ui.enable = true;
 
         cursorline = {
           enable = true;
@@ -62,8 +66,6 @@
           enable = true;
           settings.draw.delay = 0;
         };
-
-        toggleterm.enable = true;
 
         cmp = {
           enable = true;

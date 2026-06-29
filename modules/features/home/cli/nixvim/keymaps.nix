@@ -106,11 +106,48 @@
         }
         {
           mode = [
-            "v"
+            "n"
           ];
           key = "<leader>p";
           action = "\"+p";
           options.desc = "Paste from system clipboard";
+        }
+        {
+          # dap
+          mode = "n";
+          key = "<F5>";
+          action = "<cmd>lua require('dap').continue()<CR>";
+          options.desc = "DAP: Start/Continue";
+        }
+        {
+          mode = "n";
+          key = "<F10>";
+          action = "<cmd>lua require('dap').step_over()<CR>";
+          options.desc = "DAP: Step Over";
+        }
+        {
+          mode = "n";
+          key = "<F11>";
+          action = "<cmd>lua require('dap').step_into()<CR>";
+          options.desc = "DAP: Step Into";
+        }
+        {
+          mode = "n";
+          key = "<F12>";
+          action = "<cmd>lua require('dap').step_out()<CR>";
+          options.desc = "DAP: Step Out";
+        }
+        {
+          mode = "n";
+          key = "<leader>b";
+          action = "<cmd>lua require('dap').toggle_breakpoint()<CR>";
+          options.desc = "DAP: Toggle Breakpoint";
+        }
+        {
+          mode = "n";
+          key = "<leader>du";
+          action = "<cmd>lua require('dapui').toggle()<CR>";
+          options.desc = "DAP: Toggle UI";
         }
       ];
     };
