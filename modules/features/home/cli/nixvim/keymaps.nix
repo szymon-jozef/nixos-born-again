@@ -149,6 +149,27 @@
           action = "<cmd>lua require('dapui').toggle()<CR>";
           options.desc = "DAP: Toggle UI";
         }
+        {
+          # splitting windows
+          mode = "n";
+          key = "<C-h>";
+          action = "<C-w>h";
+        }
+        {
+          mode = "n";
+          key = "<C-j>";
+          action = "<C-w>j";
+        }
+        {
+          mode = "n";
+          key = "<C-k>";
+          action = "<C-w>k";
+        }
+        {
+          mode = "n";
+          key = "<C-l>";
+          action = "<C-w>l";
+        }
       ];
     };
 }
