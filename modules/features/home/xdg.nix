@@ -49,6 +49,7 @@
             "audio/mp3" = [ audioPlayer ];
             "audio/mp4" = [ audioPlayer ];
 
+            "image/gif" = [ imageViewer ];
             "image/png" = [ imageViewer ];
             "image/jpeg" = [ imageViewer ];
             "image/jpg" = [ imageViewer ];

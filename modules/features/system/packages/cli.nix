@@ -4,7 +4,6 @@
     { inputs, pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
-        kitty
         killall
         unzip
         wl-clipboard
