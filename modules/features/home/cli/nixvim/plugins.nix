@@ -14,9 +14,8 @@
         which-key.enable = true;
 
         # show git stuff (super cool!)
-        gitsigns = {
-          enable = true;
-        };
+        gitsigns.enable = true;
+        mini-git.enable = true;
 
         # fuzzy find files
         telescope = {
@@ -69,6 +68,9 @@
         #  settings.draw.delay = 0;
         #};
         indent-blankline.enable = true;
+
+        # status line
+        lualine.enable = true;
 
         # restore session
         auto-session.enable = true;
