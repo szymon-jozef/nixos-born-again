@@ -41,6 +41,8 @@
             self.modules.homeManager.ashell
             self.modules.homeManager.gui
             self.modules.homeManager.kitty
+            self.modules.homeManager.ghostty
+
             self.modules.homeManager.cli
             self.modules.homeManager.gemini
             self.modules.homeManager.browsers
