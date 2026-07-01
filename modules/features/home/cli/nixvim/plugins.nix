@@ -5,24 +5,19 @@
     { ... }:
     {
       programs.nixvim.plugins = {
+        # close () and stuff
         nvim-autopairs.enable = true;
+        # icons
         web-devicons.enable = true;
 
-        which-key = {
-          enable = true;
-          settings.spec = [
-            {
-              __unkeyed-1 = "<leader>?";
-              mode = "n";
-              desc = "Buffer Local Keymaps (which-key)";
-            }
-          ];
-        };
+        # show keymaps
+        which-key.enable = true;
 
-        gitsigns = {
-          enable = true;
-        };
+        # show git stuff (super cool!)
+        gitsigns.enable = true;
+        mini-git.enable = true;
 
+        # fuzzy find files
         telescope = {
           enable = true;
           keymaps = {
@@ -37,15 +32,18 @@
           };
         };
 
-        harpoon = {
-          enable = true;
-          enableTelescope = true;
-        };
+        # harpoon!
+        #harpoon = {
+        #  enable = true;
+        #  enableTelescope = true;
+        #};
 
+        #autoformat on save
         lsp-format.enable = true;
-
+        # snippets enginge
         luasnip.enable = true;
 
+        # treesitter speaks for itself
         treesitter = {
           enable = true;
           settings = {
@@ -55,18 +53,35 @@
         };
         treesitter-textobjects.enable = true;
 
+        # debugger
         dap.enable = true;
         dap-ui.enable = true;
 
+        # highlights word under cursor
         cursorline = {
           enable = true;
         };
 
-        mini-indentscope = {
-          enable = true;
-          settings.draw.delay = 0;
-        };
+        # show indent
+        #mini-indentscope = {
+        #  enable = true;
+        #  settings.draw.delay = 0;
+        #};
+        indent-blankline.enable = true;
 
+        # status line
+        lualine.enable = true;
+
+        # restore session
+        auto-session.enable = true;
+
+        # show lsp errors
+        trouble.enable = true;
+
+        # show dir as nvim buffer
+        oil.enable = true;
+
+        # completion engine
         cmp = {
           enable = true;
           settings = {
