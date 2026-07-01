@@ -125,6 +125,18 @@
           key = "<C-l>";
           action = "<C-w>l";
         }
+        {
+          mode = "n";
+          key = "<leader>ce";
+          action = "<cmd> Trouble diagnostics<CR>";
+          options.desc = "Show lsp diagnostics";
+        }
+        {
+          mode = "n";
+          key = "<leader>cl";
+          action = "<cmd> Trouble lsp<CR>";
+          options.desc = "Show lsp definitions, etc.";
+        }
       ];
     };
 }
