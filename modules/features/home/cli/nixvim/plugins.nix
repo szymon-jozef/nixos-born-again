@@ -75,6 +75,9 @@
         # restore session
         auto-session.enable = true;
 
+        # show lsp errors
+        trouble.enable = true;
+
         # completion engine
         cmp = {
           enable = true;
