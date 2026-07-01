@@ -78,6 +78,9 @@
         # show lsp errors
         trouble.enable = true;
 
+        # show dir as nvim buffer
+        oil.enable = true;
+
         # completion engine
         cmp = {
           enable = true;
