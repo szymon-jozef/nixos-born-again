@@ -31,11 +31,11 @@
         "uv2nix": "uv2nix"
       },
       "locked": {
-        "lastModified": 1781626473,
-        "narHash": "sha256-UjtvW3CFpZSspIQoZtayPxFKk11/kdxnpiYXUBPEOSE=",
+        "lastModified": 1781721953,
+        "narHash": "sha256-FildE+rCYs9xmW5unFT9HHdWwTwMs4kUlrNeQ/yh1UE=",
         "owner": "szymon-jozef",
         "repo": "battleship-pygame-lan",
-        "rev": "98aa92e79bba9e01ed321d839cf9ff89b6e0b6c3",
+        "rev": "a2fe8ed8ef42ddc2a47bedad4c61c9b234f19ca7",
         "type": "github"
       },
       "original": {
