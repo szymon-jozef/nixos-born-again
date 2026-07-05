@@ -8,7 +8,10 @@
         distrobox
         quickemu
       ];
-      virtualisation.waydroid.enable = true;
-      virtualisation.podman.enable = true;
+
+      virtualisation = {
+        waydroid.enable = true;
+        docker.enable = true;
+      };
     };
 }
