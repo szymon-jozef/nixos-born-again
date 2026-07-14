@@ -7,7 +7,7 @@
         inputs.battleship.nixosModules.default
       ];
 
-      programs.battleship-pygame-lan.enable = true;
+      programs.battleships.enable = true;
     };
 
   flake.modules.homeManager.university =

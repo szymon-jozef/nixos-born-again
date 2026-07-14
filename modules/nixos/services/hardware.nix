@@ -4,7 +4,7 @@
     { ... }:
     {
       services = {
-        hardware.openrgb.enable = true;
+        hardware.openrgb.enable = false;
         xserver.enable = false;
         fstrim = {
           enable = true;
