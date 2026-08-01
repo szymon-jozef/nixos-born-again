@@ -62,7 +62,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    battleship.url = "github:szymon-jozef/battleships";
+    battleship = {
+      url = "github:szymon-jozef/battleships";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
