@@ -1,5 +1,38 @@
 ![Nix](https://img.shields.io/badge/Nix-unstable-blue.svg?logo=nixos&logoColor=white)
 ![Home Manager](https://img.shields.io/badge/Home_Manager-enabled-brightgreen.svg)
+
+<!--toc:start-->
+- [NixOS born again](#nixos-born-again)
+- [Usage](#usage)
+  - [Nixos](#nixos)
+  - [Home-manager](#home-manager)
+- [Flake parts](#flake-parts)
+  - [hosts](#hosts)
+  - [nixosModules](#nixosmodules)
+    - [General](#general)
+    - [Locale](#locale)
+    - [Bootloader](#bootloader)
+    - [Packages](#packages)
+      - [General](#general-1)
+      - [GUI packages](#gui-packages)
+      - [CLI packages](#cli-packages)
+    - [User](#user)
+    - [Theme](#theme)
+    - [Services](#services)
+    - [displayManager](#displaymanager)
+    - [Network](#network)
+    - [Nvidia](#nvidia)
+  - [modules.homeManager](#moduleshomemanager)
+    - [Theme](#theme-1)
+    - [hypr](#hypr)
+    - [Status bars](#status-bars)
+    - [Programs](#programs)
+- [Templates](#templates)
+  - [Usage](#usage-1)
+  - [Available templates](#available-templates)
+<!--toc:end-->
+
+
 # NixOS born again
 My NixOS and home-manager configurations.
 
@@ -130,3 +163,29 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |xdg|Xdg configuration (defualt directories, etc.)|
 |gaming| A bunch of gaming tools|
 |university| Some university tools|
+
+# Templates
+This configuration also exposes templates for languages that I use.
+
+## Usage
+To use a template create a new directory and type:
+
+```bash
+nix flake init -t github:szymon-jozef/nixos-born-again#<template name>
+```
+
+Or do it with one command:
+
+```bash
+nix flake new -t github:szymon-jozef/nixos-born-again#<template name> ./path/to/your/project
+```
+
+For example:
+```bash
+nix flake init -t github:szymon-jozef/nixos-born-again#cpp
+```
+
+This will create all necessary files. Please remember to configure them to your needs.
+
+## Available templates
+- cpp
