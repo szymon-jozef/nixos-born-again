@@ -30,11 +30,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1785422568,
-        "narHash": "sha256-Lqxrsapzd3De/nfT+B5gz/7G//OI+DkV0H1eXa8SKsk=",
+        "lastModified": 1785429287,
+        "narHash": "sha256-qGsybfyTSwPbWC93PEUfdGUHfoW5xaqEeTtaN/3tnig=",
         "owner": "szymon-jozef",
         "repo": "battleships",
-        "rev": "76e73a16a85533277d37ab317250be12ff1e0a41",
+        "rev": "2caca607fb236d32c8f7ddc4b1f308f5f0590115",
         "type": "github"
       },
       "original": {
