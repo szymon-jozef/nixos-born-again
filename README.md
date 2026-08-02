@@ -191,3 +191,4 @@ This will create all necessary files. Please remember to configure them to your 
 - empty
 - cpp
 - py
+- rs

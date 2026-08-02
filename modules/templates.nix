@@ -14,5 +14,10 @@
       path = ./_templates/py;
       description = "Python + uv nix flake";
     };
+
+    rs = {
+      path = ./_templates/rs;
+      description = "Rust nix flake";
+    };
   };
 }

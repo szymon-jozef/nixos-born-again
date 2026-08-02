@@ -1,0 +1,12 @@
+[package]
+name = "example"
+description = "Example project description"
+version = "0.0.1"
+readme = "README.md"
+license = "gpl3"
+repository = "https://example.com"
+authors = [ "author" ]
+
+edition = "2024"
+
+[dependencies]
