@@ -190,3 +190,4 @@ This will create all necessary files. Please remember to configure them to your 
 ## Available templates
 - empty
 - cpp
+- py
