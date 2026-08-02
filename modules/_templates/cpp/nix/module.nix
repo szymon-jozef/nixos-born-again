@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, metadata, ... }:
 {
   flake.nixosModules.default =
     {
@@ -20,7 +20,7 @@
     in
     {
       options.programs.battleships = {
-        enable = mkEnableOption "example";
+        enable = mkEnableOption metadata.name;
 
         package = mkOption {
           default = self.packages.${system}.default;
