@@ -1,6 +1,5 @@
 {
   inputs,
-  metadata,
   python-version,
   ...
 }:
@@ -12,6 +11,7 @@
       ...
     }:
     let
+      # translates uv.lock to nix
       workspace = inputs.uv2nix.lib.workspace.loadWorkspace { workspaceRoot = ./..; };
 
       overlay = workspace.mkPyprojectOverlay {
@@ -24,30 +24,14 @@
         }).overrideScope
           (
             lib.composeManyExtensions [
-              inputs.pyproject-build-systems.overlays.default # Zazwyczaj używa się .default w ekosystemie pyproject-nix
+              inputs.pyproject-build-systems.overlays.default
               overlay
             ]
           );
     in
     {
-      devShells.default = pkgs.mkShell {
-        packages = with pkgs; [
-          (pythonSet.mkVirtualEnv "${metadata.project.name}-dev-env" workspace.deps.all)
-          uv
-        ];
-
-        env = {
-          UV_NO_SYNC = "1";
-          UV_PYTHON = pythonSet.python.interpreter;
-          UV_PYTHON_DOWNLOADS = "never";
-        };
-
-        shellHook = ''
-          unset PYTHONPATH
-          export REPO_ROOT=$(git rev-parse --show-toplevel)
-        '';
+      _module.args = {
+        inherit workspace pythonSet;
       };
-
-      packages.default = pythonSet.mkVirtualEnv "${metadata.project.name}-env" workspace.deps.default;
     };
 }
