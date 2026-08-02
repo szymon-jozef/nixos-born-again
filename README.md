@@ -188,4 +188,5 @@ nix flake init -t github:szymon-jozef/nixos-born-again#cpp
 This will create all necessary files. Please remember to configure them to your needs.
 
 ## Available templates
+- empty
 - cpp
