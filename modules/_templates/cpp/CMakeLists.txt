@@ -11,10 +11,6 @@ string(JSON version GET ${METADATA_STRING} version)
 string(JSON description GET ${METADATA_STRING} description)
 string(JSON homepage_url GET ${METADATA_STRING} homepage_url)
 
-if(UNIX)
-    set(CMAKE_GENERATOR Ninja)
-endif()
-
 project(${name} 
     VERSION "${version}"
     DESCRIPTION "${description}"
