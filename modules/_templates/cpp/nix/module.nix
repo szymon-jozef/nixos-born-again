@@ -8,7 +8,7 @@
       ...
     }:
     let
-      cfg = config.programs.example;
+      cfg = config.programs.${metadata.name};
 
       inherit (lib)
         mkEnableOption
@@ -19,7 +19,7 @@
       inherit (pkgs.stdenv.hostPlatform) system;
     in
     {
-      options.programs.battleships = {
+      options.programs.${metadata.name} = {
         enable = mkEnableOption metadata.name;
 
         package = mkOption {
