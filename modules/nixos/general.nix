@@ -60,6 +60,9 @@
         nixpkgs = {
           config = {
             allowUnfree = true;
+            permittedInsecurePackages = [
+              "electron-40.10.5"
+            ];
           };
           overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
         };
@@ -68,9 +71,6 @@
           system = pkgs.stdenv.hostPlatform.system;
           config = {
             allowUnfree = true;
-            permittedInsecurePackages = [
-              "electron-38.8.4"
-            ];
           };
         };
 
