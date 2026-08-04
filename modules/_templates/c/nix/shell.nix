@@ -2,8 +2,8 @@
   perSystem =
     { pkgs, config, ... }:
     {
-      devShells.default = pkgs.mkShell {
-        nativeBuildInputs = with pkgs; [
+      devenv.shells.default = {
+        packages = with pkgs; [
           clang
           clang-tools
           clang-analyzer
@@ -11,7 +11,9 @@
           cppcheck
         ];
 
-        CMAKE_BUILD_TYPE = "Debug";
+        env = {
+          CMAKE_BUILD_TYPE = "Debug";
+        };
 
         inputsFrom = [
           (config.packages.default)

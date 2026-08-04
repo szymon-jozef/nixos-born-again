@@ -1,6 +1,6 @@
 {
   perSystem = { pkgs, config, ... }: {
-    devShells.default = pkgs.mkShell {
+    devenv.shells.default = {
       packages = with pkgs; [ ];
 
       inputsFrom = [

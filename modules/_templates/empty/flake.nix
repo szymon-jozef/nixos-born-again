@@ -8,6 +8,12 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
+
+    devenv.url = "github:cachix/devenv";
+    devenv-root = {
+      url = "file+file:///dev/null";
+      flake = false;
+    };
   };
 
   outputs =
@@ -21,6 +27,7 @@
         ];
 
         imports = [
+          inputs.devenv.flakeModule
           (inputs.import-tree ./nix)
         ];
       }
