@@ -46,7 +46,7 @@ in
 
     modules = [
       (
-        { ... }:
+        { lib, ... }:
         {
           systemd.timers."drives-backup" = {
             description = "Daily backup of drives";
@@ -64,6 +64,26 @@ in
               Type = "oneshot";
               ExecStart = backup;
               User = myConfig.username;
+            };
+          };
+
+          # start this apps only on this host
+          home-manager.users.${myConfig.username} = {
+            wayland.windowManager.hyprland.settings = {
+              on = [
+                {
+                  _args = [
+                    "hyprland.start"
+                    (lib.generators.mkLuaInline ''
+                      function()
+                          hl.exec_cmd("vesktop")
+                          hl.exec_cmd(signal_client, {workspace = 1} )
+                          hl.exec_cmd(browser)
+                      end
+                    '')
+                  ];
+                }
+              ];
             };
           };
 
