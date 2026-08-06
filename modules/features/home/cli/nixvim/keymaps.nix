@@ -137,6 +137,12 @@
           action = "<cmd> Trouble lsp<CR>";
           options.desc = "Show lsp definitions, etc.";
         }
+        {
+          mode = "n";
+          key = "<leader>q";
+          action = "<cmd> AutoSession search<CR>";
+          options.desc = "Search sessions";
+        }
       ];
     };
 }

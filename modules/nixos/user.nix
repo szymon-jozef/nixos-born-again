@@ -12,9 +12,9 @@
         isNormalUser = true;
         shell = pkgs.fish;
         extraGroups = [
+          "docker"
           "networkmanager"
           "wheel"
-          "docker"
         ];
       };
 
@@ -62,6 +62,7 @@
             };
 
             pointerCursor = {
+              enable = true;
               name = "phinger-cursors-light";
               package = pkgs.phinger-cursors;
               size = 24;

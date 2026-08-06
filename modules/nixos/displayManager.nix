@@ -1,4 +1,3 @@
-{ ... }:
 {
   flake.nixosModules = {
     display-manager =
@@ -14,12 +13,26 @@
       };
 
     display-manager-autologin =
-      { self, myConfig, ... }:
+      {
+        self,
+        myConfig,
+        ...
+      }:
       {
         imports = [ self.nixosModules.display-manager ];
-        services.displayManager.sddm.settings.Autologin = {
-          Session = "hyprland-uwsm.desktop";
-          User = myConfig.username;
+        /*
+          services.displayManager.sddm.settings.Autologin = {
+            Session = "hyprland-uwsm.desktop";
+            User = myConfig.username;
+          };
+        */
+        services.displayManager = {
+          defaultSession = "hyprland-uwsm";
+
+          autoLogin = {
+            enable = true;
+            user = myConfig.username;
+          };
         };
       };
   };

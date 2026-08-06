@@ -24,7 +24,7 @@
               "https://cache.nixos.org"
 
               # Cache Kernel CachyOS
-              "https://cache.garnix.io"
+              "https://cache.xinux.uz"
               "https://attic.xuyh0120.win/lantian"
 
               # Cache Hyprland
@@ -36,8 +36,8 @@
               "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
 
               # Kernel
-              "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
               "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc"
+              "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
 
               # Hyprland
               #  "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
@@ -60,6 +60,9 @@
         nixpkgs = {
           config = {
             allowUnfree = true;
+            permittedInsecurePackages = [
+              "electron-40.10.5"
+            ];
           };
           overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
         };
@@ -68,9 +71,6 @@
           system = pkgs.stdenv.hostPlatform.system;
           config = {
             allowUnfree = true;
-            permittedInsecurePackages = [
-              "electron-38.8.4"
-            ];
           };
         };
 

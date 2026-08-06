@@ -61,6 +61,10 @@
           }
         ];
 
+        userCommands = {
+          NewNote.command = "call mkdir(expand('~/Dokumenty/szybkie_notatki'), 'p') | enew | lcd ~/Dokumenty/szybkie_notatki";
+        };
+
         extraConfigLua = ''
           vim.diagnostic.config({
             virtual_text = {

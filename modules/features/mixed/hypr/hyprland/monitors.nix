@@ -11,9 +11,9 @@
             mode = "2560x1440@180.06";
             position = "0x0";
             scale = 1;
-            # bitdepth = 10;
+            bitdepth = 10;
             vrr = 1;
-            cm = "auto";
+            cm = "hdr";
             supports_hdr = 1;
             sdrbrightness = 1.7;
             sdrsaturation = 0.98;

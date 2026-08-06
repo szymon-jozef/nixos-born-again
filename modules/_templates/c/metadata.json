@@ -1,0 +1,9 @@
+{
+    "name": "project",
+    "executable" : "main",
+    "version": "0.0.1",
+    "description": "project description",
+    "homepage_url": "https://example.com",
+    "release_url": "https://example.com",
+    "categories" : ["project"]
+}
