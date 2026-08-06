@@ -10,19 +10,20 @@
       obsidian_dir = "${config.xdg.userDirs.documents}/obsidian";
     in
     {
-
       programs.obsidian = {
         enable = true;
 
         defaultSettings = {
           app = {
             vimMode = true;
+            showLineNumber = true;
             alwaysUpdateLinks = true;
             attachmentFolderPath = "media";
             newLinkFormat = "relative";
             newFileLocation = "current";
             useMarkdownLinks = true;
             showUnsupportedFiles = true;
+
             pdfExportSettings = {
               pageSize = "A4";
               landscape = false;
