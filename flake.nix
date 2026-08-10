@@ -52,6 +52,8 @@
       flake = false;
     };
 
+    fwm.url = "github:iluaii/fwm";
+
     # === UNI ===
     zut-calendar = {
       url = "github:szymon-jozef/zut-calendar";

@@ -87,10 +87,14 @@ in
             };
           };
 
+          programs.fwm.enable = true;
+
           imports = [
             # general
             self.nixosModules.general
             self.nixosModules.locale-polish
+
+            inputs.fwm.nixosModules.default
 
             # bootloader
             self.nixosModules.bootloader-gpt
