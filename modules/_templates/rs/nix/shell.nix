@@ -1,9 +1,7 @@
 {
   perSystem = { pkgs, config, ... }: {
-    devenv.shells.default = {
+    devShells.default = pkgs.mkShell {
       packages = with pkgs; [ ];
-
-      languages.rust.enable = true;
 
       inputsFrom = [
         (config.packages.default)

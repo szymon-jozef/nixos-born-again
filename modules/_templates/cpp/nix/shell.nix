@@ -2,7 +2,7 @@
   perSystem =
     { pkgs, config, ... }:
     {
-      devenv.shells.default = {
+      devShells.default = pkgs.mkShell {
         packages = with pkgs; [
           clang
           clang-tools
@@ -11,9 +11,7 @@
           cppcheck
         ];
 
-        env = {
-          CMAKE_BUILD_TYPE = "Debug";
-        };
+        CMAKE_BUILD_TYPE = "Debug";
 
         inputsFrom = [
           (config.packages.default)
