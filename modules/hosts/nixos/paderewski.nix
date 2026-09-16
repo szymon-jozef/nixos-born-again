@@ -46,6 +46,7 @@ in
 
     modules = [
       (
+        # backup services
         { lib, ... }:
         {
           systemd.timers."drives-backup" = {
@@ -67,8 +68,9 @@ in
             };
           };
 
-          # start this apps only on this host
+          # home manager custom settings
           home-manager.users.${myConfig.username} = {
+            # start this apps only on this host
             wayland.windowManager.hyprland.settings = {
               on = [
                 {
@@ -85,9 +87,15 @@ in
                 }
               ];
             };
+
+            services.ollama = {
+              enable = true;
+              acceleration = "rocm";
+            };
           };
 
           programs.fwm.enable = true;
+          services.open-webui.enable = true;
 
           imports = [
             # general
