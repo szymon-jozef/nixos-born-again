@@ -1,7 +1,7 @@
 { ... }:
 {
   flake.modules.homeManager.cli =
-    { pkgs, myConfig, ... }:
+    { pkgs, config, ... }:
     let
       signingKey = "~/.ssh/github.pub";
     in
@@ -15,8 +15,8 @@
         enable = true;
         settings = {
           user = {
-            name = myConfig.username;
-            email = myConfig.email;
+            name = config.user.name;
+            email = config.user.email;
           };
           init.defaultBranch = "master";
           push.autoSetupRemote = true;
@@ -54,7 +54,7 @@
       };
 
       home.file.".ssh/allowed_signers".text = ''
-        ${myConfig.email} ${signingKey}
+        ${config.user.email} ${signingKey}
       '';
 
       programs.delta = {

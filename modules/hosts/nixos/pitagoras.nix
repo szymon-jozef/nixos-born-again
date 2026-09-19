@@ -1,30 +1,27 @@
 { inputs, self, ... }:
 let
-  myConfig = {
-    username = "szymon";
-    hostname = "pitagoras";
-    email = "szymon_jozef@proton.me";
-    system = "x86_64-linux";
-    mainMonitor = "eDP-1";
-    maxJobs = 2;
-    maxCores = 2;
-  };
+hostname = "pitagoras";
 in
 {
   # lenovo legion
-  flake.nixosConfigurations.${myConfig.hostname} = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = {
       inherit
         self
         inputs
-        myConfig
         ;
     };
 
-    system = myConfig.system;
+    system = "x86_64-linux";
 
     modules = [
+    {
+        system.hostname = hostname;
+        monitors.primary = "eDP-1";
+    }
+
       # general
+      self.nixosModules.options
       self.nixosModules.general
       self.nixosModules.locale-polish
 

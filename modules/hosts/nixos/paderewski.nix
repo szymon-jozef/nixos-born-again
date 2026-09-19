@@ -1,17 +1,7 @@
 { inputs, self, ... }:
 let
-  myConfig = {
-    username = "szymon";
-    hostname = "paderewski";
-    email = "szymon_jozef@proton.me";
-    system = "x86_64-linux";
-    mainMonitor = "DP-1";
-    maxJobs = "auto";
-    maxCores = 0;
-  };
-
   pkgs = import inputs.nixpkgs {
-    system = myConfig.system;
+    system = "x86_64-linux";
     config.allowUnfree = true;
   };
 
@@ -33,21 +23,20 @@ let
 in
 {
   # main pc desktop
-  flake.nixosConfigurations.${myConfig.hostname} = inputs.nixpkgs.lib.nixosSystem {
-    system = myConfig.system;
+  flake.nixosConfigurations."paderewski" = inputs.nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
 
     specialArgs = {
       inherit
         self
         inputs
-        myConfig
         ;
     };
 
     modules = [
       (
         # backup services
-        { lib, ... }:
+        { lib, config, ... }:
         {
           systemd.timers."drives-backup" = {
             description = "Daily backup of drives";
@@ -64,12 +53,12 @@ in
             serviceConfig = {
               Type = "oneshot";
               ExecStart = backup;
-              User = myConfig.username;
+              User = config.user.name;
             };
           };
 
           # home manager custom settings
-          home-manager.users.${myConfig.username} = {
+          home-manager.users.${config.user.name} = {
             # start this apps only on this host
             wayland.windowManager.hyprland.settings = {
               on = [
@@ -99,6 +88,7 @@ in
 
           imports = [
             # general
+            self.nixosModules.options
             self.nixosModules.general
             self.nixosModules.locale-polish
 

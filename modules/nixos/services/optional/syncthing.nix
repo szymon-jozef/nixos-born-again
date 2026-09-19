@@ -1,13 +1,12 @@
-{ ... }:
 {
   flake.nixosModules.services-syncthing =
-    { myConfig, ... }:
+    { config, ... }:
     {
       services.syncthing = {
         enable = true;
         openDefaultPorts = true;
         systemService = false;
-        user = myConfig.username;
+        user = config.user.name;
       };
     };
 }

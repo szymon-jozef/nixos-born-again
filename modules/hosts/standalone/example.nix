@@ -7,6 +7,7 @@ let
     system = "x86_64-linux";
     mainMonitor = "DP-1";
   };
+
   pkgs = import inputs.nixpkgs {
     system = myConfig.system;
     config.allowUnfree = true;

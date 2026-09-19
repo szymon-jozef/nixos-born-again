@@ -1,7 +1,7 @@
 { ... }:
 {
   flake.modules.homeManager.cli =
-    { myConfig, ... }:
+    { config, ... }:
     {
 
       services.ssh-agent.enable = true;
@@ -13,13 +13,13 @@
         settings = {
           "dmowski" = {
             hostname = "192.168.0.30";
-            user = myConfig.username;
+            user = config.user.name;
             port = 22;
             identityFile = "~/.ssh/dmowski";
           };
 
           "aur.archlinux.org" = {
-            user = myConfig.username;
+            user = config.user.name;
             identityFile = "~/.ssh/aur";
           };
 

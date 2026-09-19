@@ -1,26 +1,15 @@
 { inputs, self, ... }:
-let
-  myConfig = {
-    username = "john";
-    hostname = "example";
-    email = "john@example.com";
-    system = "x86_64-linux";
-    mainMonitor = "DP-1";
-    maxJobs = "auto";
-    maxCores = 0;
-  };
-in
+
 {
-  flake.nixosConfigurations.${myConfig.hostname} = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations."morbius@example" = inputs.nixpkgs.lib.nixosSystem {
     specialArgs = {
       inherit
         self
         inputs
-        myConfig
         ;
     };
 
-    system = myConfig.system;
+    system = "x86_64-linux";
 
     imports = [
       # general

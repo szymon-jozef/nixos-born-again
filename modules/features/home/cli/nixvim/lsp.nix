@@ -56,7 +56,6 @@
                 command = [ "nixfmt" ];
               };
 
-              # TODO change names to myConfig
               nixpkgs.expr = ''
                 import (builtins.getFlake "${flakePath}").inputs.nixpkgs { }
               '';

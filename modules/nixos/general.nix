@@ -4,7 +4,7 @@
     general =
       {
         inputs,
-        myConfig,
+        config,
         pkgs,
         ...
       }:
@@ -47,8 +47,11 @@
               "flakes"
             ];
             auto-optimise-store = true;
+            # TODO! Move this to host config
+            /*
             max-jobs = myConfig.maxJobs;
             cores = myConfig.maxCores;
+            */
           };
           gc = {
             automatic = true;

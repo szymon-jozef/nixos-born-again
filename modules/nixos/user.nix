@@ -2,13 +2,13 @@
 {
   flake.nixosModules.user =
     {
-      myConfig,
+      config,
       pkgs,
       pkgs-stable,
       ...
     }:
     {
-      users.users.${myConfig.username} = {
+      users.users.${config.user.name} = {
         isNormalUser = true;
         shell = pkgs.fish;
         extraGroups = [
@@ -21,16 +21,26 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
+        sharedModules = [
+            self.nixosModules.options
+
+          {
+            user.name = config.user.name;
+            user.email = config.user.email;
+            system.hostname = config.system.hostname;
+            monitors.primary = config.monitors.primary;
+          }
+        ];
+
         backupFileExtension = "backup";
         extraSpecialArgs = {
           inherit
             inputs
             pkgs-stable
-            myConfig
             ;
         };
 
-        users.${myConfig.username} = {
+        users.${config.user.name} = {
           imports = [
             inputs.hyprcursor-phinger.homeManagerModules.hyprcursor-phinger
             inputs.catppuccin.homeModules.catppuccin

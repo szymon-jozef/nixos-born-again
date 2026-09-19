@@ -1,7 +1,7 @@
 { ... }:
 {
   flake.modules.homeManager.waybar =
-    { pkgs, myConfig, ... }:
+    { pkgs, config, ... }:
     {
 
       programs.waybar = {
@@ -19,7 +19,7 @@
             reload_style_on_change = true;
             width = 70;
             output = [
-              myConfig.mainMonitor
+              config.monitors.primary
             ];
 
             modules-left = [

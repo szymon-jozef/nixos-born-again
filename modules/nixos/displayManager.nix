@@ -15,7 +15,7 @@
     display-manager-autologin =
       {
         self,
-        myConfig,
+        config,
         ...
       }:
       {
@@ -31,7 +31,7 @@
 
           autoLogin = {
             enable = true;
-            user = myConfig.username;
+            user = config.user.name;
           };
         };
       };

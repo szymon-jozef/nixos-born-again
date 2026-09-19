@@ -3,7 +3,7 @@
   flake.modules.homeManager.ashell =
     {
       pkgs,
-      myConfig,
+      config,
       ...
     }:
     {
@@ -13,7 +13,7 @@
 
         settings = {
           outputs = {
-            Targets = [ myConfig.mainMonitor ];
+            Targets = [ config.monitors.primary ];
           };
           position = "Bottom";
           modules = {
