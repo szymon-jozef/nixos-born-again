@@ -1,5 +1,6 @@
 { inputs, self, ... }:
 let
+  # just a helper
   myConfig = {
     username = "jozef";
     hostname = "example";
@@ -21,7 +22,6 @@ let
         "electron-38.8.4"
       ];
     };
-
   };
 in
 {
@@ -33,12 +33,19 @@ in
           inherit
             self
             inputs
-            myConfig
             pkgs-stable
             ;
         };
 
         modules = [
+          {
+            user.name = myConfig.username;
+            user.email = myConfig.email;
+
+            system.hostname = myConfig.hostname;
+            monitors.primary = myConfig.mainMonitor;
+          }
+
           {
             home = {
               username = myConfig.username;
