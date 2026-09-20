@@ -1,5 +1,5 @@
 {
-flake.nixosModules.options = 
+flake.commonModules.options = 
 
 { lib, ... }:
 let

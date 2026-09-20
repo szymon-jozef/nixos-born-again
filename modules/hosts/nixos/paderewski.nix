@@ -88,7 +88,7 @@ in
 
           imports = [
             # general
-            self.nixosModules.options
+            self.commonModules.options
             self.nixosModules.general
             self.nixosModules.locale-polish
 

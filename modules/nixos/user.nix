@@ -22,7 +22,7 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         sharedModules = [
-            self.nixosModules.options
+          self.commonModules.options
 
           {
             user.name = config.user.name;
