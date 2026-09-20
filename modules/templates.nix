@@ -11,8 +11,8 @@
     };
 
     c = {
-        path = ./_templates/c;
-        description = "C nix flake";
+      path = ./_templates/c;
+      description = "C nix flake";
     };
 
     py = {

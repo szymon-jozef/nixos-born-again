@@ -1,8 +1,5 @@
-{ ... }:
 {
-  flake.nixosModules.programs =
-    { ... }:
-    {
-      programs.direnv.enable = true;
-    };
+  flake.nixosModules.programs = {
+    programs.direnv.enable = true;
+  };
 }

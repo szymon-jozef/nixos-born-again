@@ -1,65 +1,62 @@
-{ ... }:
 {
-  flake.modules.homeManager.cli =
-    { ... }:
-    {
-      programs.fastfetch = {
-        enable = true;
-        settings = {
-          modules = [
-            "title"
-            "separator"
-            "os"
-            "host"
-            "kernel"
-            "packages"
-            "separator"
-            "wm"
-            "shell"
-            "terminal"
-            "theme"
-            "font"
-            "locale"
-            "separator"
-            "display"
-            "cpu"
-            "gpu"
-            "memory"
-            "disk"
-            "battery"
-            "separator"
-            "wifi"
-            "localip"
-            "break"
-            "colors"
-          ];
-        };
-      };
-
-      xdg.configFile."fastfetch/startup.jsonc".text = builtins.toJSON {
-        logo = {
-          source = "nixos_small";
-          padding = {
-            bottom = 1;
-          };
-        };
-        display = {
-          separator = " ➜ ";
-        };
+  flake.modules.homeManager.cli = {
+    programs.fastfetch = {
+      enable = true;
+      settings = {
         modules = [
           "title"
+          "separator"
+          "os"
+          "host"
           "kernel"
           "packages"
+          "separator"
+          "wm"
           "shell"
+          "terminal"
+          "theme"
+          "font"
+          "locale"
+          "separator"
+          "display"
+          "cpu"
+          "gpu"
+          "memory"
+          "disk"
           "battery"
-          {
-            type = "separator";
-            string = " • ";
-          }
+          "separator"
+          "wifi"
+          "localip"
           "break"
-          "break"
-          "break"
+          "colors"
         ];
       };
     };
+
+    xdg.configFile."fastfetch/startup.jsonc".text = builtins.toJSON {
+      logo = {
+        source = "nixos_small";
+        padding = {
+          bottom = 1;
+        };
+      };
+      display = {
+        separator = " ➜ ";
+      };
+      modules = [
+        "title"
+        "kernel"
+        "packages"
+        "shell"
+        "battery"
+        {
+          type = "separator";
+          string = " • ";
+        }
+        "break"
+        "break"
+        "break"
+      ];
+    };
+  };
 }

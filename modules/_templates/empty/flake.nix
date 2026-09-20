@@ -12,17 +12,14 @@
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-      { ... }:
-      {
-        systems = [
-          "x86_64-linux"
-          #"aarch64-darwin"
-        ];
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } ({
+      systems = [
+        "x86_64-linux"
+        #"aarch64-darwin"
+      ];
 
-        imports = [
-          (inputs.import-tree ./nix)
-        ];
-      }
-    );
+      imports = [
+        (inputs.import-tree ./nix)
+      ];
+    });
 }

@@ -1,8 +1,5 @@
-{ ... }:
 {
-  flake.modules.homeManager.gui =
-    { ... }:
-    {
-      programs.freetube.enable = true;
-    };
+  flake.modules.homeManager.gui = {
+    programs.freetube.enable = true;
+  };
 }

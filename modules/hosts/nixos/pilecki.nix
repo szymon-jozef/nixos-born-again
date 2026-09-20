@@ -15,9 +15,9 @@ in
     system = "x86_64-linux";
 
     modules = [
-    {
-    system.hostname = hostname;
-    }
+      {
+        system.hostname = hostname;
+      }
 
       # general
       self.commonModules.options

@@ -1,8 +1,5 @@
-{ ... }:
 {
-  flake.nixosModules.programs =
-    { ... }:
-    {
-      programs.obs-studio.enable = true;
-    };
+  flake.nixosModules.programs = {
+    programs.obs-studio.enable = true;
+  };
 }

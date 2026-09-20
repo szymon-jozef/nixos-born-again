@@ -1,7 +1,5 @@
-{ ... }:
 {
   flake.modules.homeManager.cli =
-    { ... }:
     let
       flakePath = "/etc/nixos";
     in

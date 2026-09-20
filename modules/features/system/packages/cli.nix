@@ -1,4 +1,3 @@
-{ ... }:
 {
   flake.nixosModules.packages =
     { inputs, pkgs, ... }:

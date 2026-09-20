@@ -1,6 +1,4 @@
-{ ... }:
 {
-
   flake.modules.homeManager.cli =
     { inputs, ... }:
     {

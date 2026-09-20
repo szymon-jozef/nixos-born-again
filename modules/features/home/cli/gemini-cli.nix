@@ -1,19 +1,16 @@
-{ ... }:
 {
-  flake.modules.homeManager.gemini =
-    { ... }:
-    {
-      # Move this to a separate module?
-      programs.antigravity-cli = {
-        enable = true;
+  flake.modules.homeManager.gemini = {
+    # Move this to a separate module?
+    programs.antigravity-cli = {
+      enable = true;
 
-        defaultModel = "gemini-3.1-pro-preview";
-        context = {
-          GEMINI = ''
-            # Context
-            Pisz po polsku i sie nie wydurniaj. Odpowiadaj krótko i zwęźle, nie dopytuj niepotrzebnie. Nie edytuj plików, jeśli nie zostaniesz o to explicite poproszony.
-          '';
-        };
+      defaultModel = "gemini-3.1-pro-preview";
+      context = {
+        GEMINI = ''
+          # Context
+          Pisz po polsku i sie nie wydurniaj. Odpowiadaj krótko i zwęźle, nie dopytuj niepotrzebnie. Nie edytuj plików, jeśli nie zostaniesz o to explicite poproszony.
+        '';
       };
     };
+  };
 }

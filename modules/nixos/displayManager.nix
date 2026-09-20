@@ -1,16 +1,14 @@
 {
   flake.nixosModules = {
-    display-manager =
-      { ... }:
-      {
-        services.displayManager = {
-          sddm = {
-            enable = true;
-            wayland.enable = true;
-            autoNumlock = true;
-          };
+    display-manager = {
+      services.displayManager = {
+        sddm = {
+          enable = true;
+          wayland.enable = true;
+          autoNumlock = true;
         };
       };
+    };
 
     display-manager-autologin =
       {

@@ -12,19 +12,16 @@
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-      { ... }:
-      {
-        _module.args.metadata = builtins.fromJSON (builtins.readFile ./metadata.json);
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } ({
+      _module.args.metadata = builtins.fromJSON (builtins.readFile ./metadata.json);
 
-        systems = [
-          "x86_64-linux"
-          #"aarch64-darwin"
-        ];
+      systems = [
+        "x86_64-linux"
+        #"aarch64-darwin"
+      ];
 
-        imports = [
-          (inputs.import-tree ./nix)
-        ];
-      }
-    );
+      imports = [
+        (inputs.import-tree ./nix)
+      ];
+    });
 }

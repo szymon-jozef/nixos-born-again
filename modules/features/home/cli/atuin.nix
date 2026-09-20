@@ -1,11 +1,8 @@
-{ ... }:
 {
-  flake.modules.homeManager.cli =
-    { ... }:
-    {
-      programs.atuin = {
-        enable = true;
-        enableFishIntegration = true;
-      };
+  flake.modules.homeManager.cli = {
+    programs.atuin = {
+      enable = true;
+      enableFishIntegration = true;
     };
+  };
 }

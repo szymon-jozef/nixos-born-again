@@ -1,23 +1,20 @@
-{ ... }:
 {
-  flake.modules.homeManager.hyprlauncher =
-    { ... }:
-    {
-      services.hyprlauncher = {
-        enable = true;
+  flake.modules.homeManager.hyprlauncher = {
+    services.hyprlauncher = {
+      enable = true;
 
-        settings = {
-          cache.enabled = true;
+      settings = {
+        cache.enabled = true;
 
-          finders = {
-            desktop_icons = true;
-            desktop_launch_prefix = "uwsm app --";
-          };
+        finders = {
+          desktop_icons = true;
+          desktop_launch_prefix = "uwsm app --";
+        };
 
-          general = {
-            grab_focus = true;
-          };
+        general = {
+          grab_focus = true;
         };
       };
     };
+  };
 }

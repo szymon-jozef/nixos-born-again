@@ -12,19 +12,16 @@
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-      { ... }:
-      {
-        _module.args.metadata = fromTOML (builtins.readFile ./Cargo.toml);
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } ({
+      _module.args.metadata = fromTOML (builtins.readFile ./Cargo.toml);
 
-        systems = [
-          "x86_64-linux"
-          #"aarch64-darwin"
-        ];
+      systems = [
+        "x86_64-linux"
+        #"aarch64-darwin"
+      ];
 
-        imports = [
-          (inputs.import-tree ./nix)
-        ];
-      }
-    );
+      imports = [
+        (inputs.import-tree ./nix)
+      ];
+    });
 }

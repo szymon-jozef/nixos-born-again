@@ -1,10 +1,7 @@
-{ ... }:
 {
-  flake.modules.homeManager.cli =
-    { ... }:
-    {
-      programs.bat = {
-        enable = true;
-      };
+  flake.modules.homeManager.cli = {
+    programs.bat = {
+      enable = true;
     };
+  };
 }

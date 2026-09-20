@@ -1,4 +1,3 @@
-{ ... }:
 {
   flake.nixosModules.university =
     { inputs, ... }:

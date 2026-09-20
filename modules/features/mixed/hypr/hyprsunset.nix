@@ -1,27 +1,24 @@
-{ ... }:
 {
-  flake.modules.homeManager.hyprsunset =
-    { ... }:
-    {
-      services.hyprsunset = {
-        enable = true;
+  flake.modules.homeManager.hyprsunset = {
+    services.hyprsunset = {
+      enable = true;
 
-        settings = {
-          max-gamma = 150;
+      settings = {
+        max-gamma = 150;
 
-          profile = [
-            {
-              time = "7:00";
-              identity = true;
-            }
-            {
-              time = "21:30";
-              identity = false;
-              temperature = 4500;
-              gamma = 0.8;
-            }
-          ];
-        };
+        profile = [
+          {
+            time = "7:00";
+            identity = true;
+          }
+          {
+            time = "21:30";
+            identity = false;
+            temperature = 4500;
+            gamma = 0.8;
+          }
+        ];
       };
     };
+  };
 }

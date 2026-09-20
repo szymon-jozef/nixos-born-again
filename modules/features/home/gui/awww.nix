@@ -1,10 +1,7 @@
-{ ... }:
 {
-  flake.modules.homeManager.gui =
-    { ... }:
-    {
-      services.awww = {
-        enable = true;
-      };
+  flake.modules.homeManager.gui = {
+    services.awww = {
+      enable = true;
     };
+  };
 }

@@ -1,4 +1,3 @@
-{ ... }:
 {
   flake.modules.homeManager.cli =
     { config, lib, ... }:

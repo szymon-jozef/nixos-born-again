@@ -1,16 +1,13 @@
-{ ... }:
 {
-  flake.nixosModules.services =
-    { ... }:
-    {
-      services = {
-        pulseaudio.enable = false;
-        pipewire = {
-          enable = true;
-          alsa.enable = true;
-          alsa.support32Bit = true;
-          pulse.enable = true;
-        };
+  flake.nixosModules.services = {
+    services = {
+      pulseaudio.enable = false;
+      pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
       };
     };
+  };
 }

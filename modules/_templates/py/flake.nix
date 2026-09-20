@@ -30,22 +30,19 @@
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } (
-      { ... }:
-      {
-        _module.args.metadata = fromTOML (builtins.readFile ./pyproject.toml);
-        _module.args.python-version = builtins.replaceStrings [ "." "\n" ] [ "" "" ] (
-          builtins.readFile ./.python-version
-        );
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } ({
+      _module.args.metadata = fromTOML (builtins.readFile ./pyproject.toml);
+      _module.args.python-version = builtins.replaceStrings [ "." "\n" ] [ "" "" ] (
+        builtins.readFile ./.python-version
+      );
 
-        systems = [
-          "x86_64-linux"
-          #"aarch64-darwin"
-        ];
+      systems = [
+        "x86_64-linux"
+        #"aarch64-darwin"
+      ];
 
-        imports = [
-          (inputs.import-tree ./nix)
-        ];
-      }
-    );
+      imports = [
+        (inputs.import-tree ./nix)
+      ];
+    });
 }

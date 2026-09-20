@@ -1,4 +1,3 @@
-{ ... }:
 {
   flake.nixosModules.services =
     { pkgs, ... }:

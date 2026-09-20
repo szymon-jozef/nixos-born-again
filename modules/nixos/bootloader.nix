@@ -23,43 +23,39 @@
       };
 
     # Normal elegant computers
-    bootloader-gpt =
-      { ... }:
-      {
-        imports = [ self.nixosModules.bootloader ];
+    bootloader-gpt = {
+      imports = [ self.nixosModules.bootloader ];
 
-        boot.loader = {
-          timeout = 5;
+      boot.loader = {
+        timeout = 5;
 
-          efi.canTouchEfiVariables = true;
+        efi.canTouchEfiVariables = true;
 
-          limine = {
-            enable = true;
-            efiSupport = true;
-            biosSupport = false;
-          };
+        limine = {
+          enable = true;
+          efiSupport = true;
+          biosSupport = false;
         };
       };
+    };
 
     # Legacy mbr (OLD COMPUTERS)
-    bootloader-mbr =
-      { ... }:
-      {
-        imports = [ self.nixosModules.bootloader ];
+    bootloader-mbr = {
+      imports = [ self.nixosModules.bootloader ];
 
-        boot.loader = {
-          timeout = 5;
+      boot.loader = {
+        timeout = 5;
 
-          efi.canTouchEfiVariables = false;
+        efi.canTouchEfiVariables = false;
 
-          limine = {
-            enable = true;
+        limine = {
+          enable = true;
 
-            efiSupport = false;
-            biosSupport = true;
-            biosDevice = "/dev/sda";
-          };
+          efiSupport = false;
+          biosSupport = true;
+          biosDevice = "/dev/sda";
         };
       };
+    };
   };
 }

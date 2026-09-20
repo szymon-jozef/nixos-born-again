@@ -1,6 +1,6 @@
 { inputs, self, ... }:
 let
-hostname = "pitagoras";
+  hostname = "pitagoras";
 in
 {
   # lenovo legion
@@ -15,10 +15,10 @@ in
     system = "x86_64-linux";
 
     modules = [
-    {
+      {
         system.hostname = hostname;
         monitors.primary = "eDP-1";
-    }
+      }
 
       # general
       self.commonModules.options
