@@ -1,5 +1,7 @@
 { inputs, self, ... }:
 let
+  hostname = "paderewski";
+
   pkgs = import inputs.nixpkgs {
     system = "x86_64-linux";
     config.allowUnfree = true;
@@ -23,7 +25,7 @@ let
 in
 {
   # main pc desktop
-  flake.nixosConfigurations."paderewski" = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.${hostname} = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
 
     specialArgs = {
@@ -46,6 +48,8 @@ in
               Persistent = true;
             };
           };
+
+          system.hostname = hostname;
 
           systemd.services."drives-backup" = {
             description = "Backup drives";
