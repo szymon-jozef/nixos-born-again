@@ -7,6 +7,7 @@
         enable = true;
 
         settings = {
+          arRPC = true;
           splashColor = "rgb(205, 214, 244)";
           splashBackground = "rgb(17, 17, 27)";
           spellCheckLanguages = [
