@@ -44,6 +44,6 @@
       };
     };
 
-    wayland.windowManager.hyprland.settings.terminal._var = lib.mkForce lib.getExe pkgs.kitty;
+    wayland.windowManager.hyprland.settings.terminal._var = lib.mkForce (lib.getExe pkgs.kitty);
   };
 }
