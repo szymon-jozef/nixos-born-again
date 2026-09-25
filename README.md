@@ -27,9 +27,9 @@
     - [hypr](#hypr)
     - [Status bars](#status-bars)
     - [Terminal emulators](#terminal-emulators)
-- [Programs](#programs)
-    - [Programs cli](#programs-cli)
-    - [Programs gui](#programs-gui)
+    - [Programs](#programs)
+      - [Programs cli](#programs-cli)
+      - [Programs gui](#programs-gui)
 - [Templates](#templates)
   - [Usage](#usage-1)
   - [Available templates](#available-templates)
@@ -168,7 +168,7 @@ home-manager switch --flake .#<your_name>@<your_host>
 |Ghostty|Super cool emulator|
 |Kitty|Another super cool emulator|
 
-# Programs
+### Programs
 |Module name|Description|
 |---|---|
 |xdg|Xdg configuration (defualt directories, etc.)|
@@ -178,7 +178,7 @@ home-manager switch --flake .#<your_name>@<your_host>
 |freetube| Freetube (alternative to youtube, that i almost don't use)|
 |nixvim|My super cool neovim configuration written with nixvim|
 
-### Programs cli
+#### Programs cli
 |Module name|Description|
 |---|---|
 |cli-default| Provides all of the following|
@@ -193,7 +193,7 @@ home-manager switch --flake .#<your_name>@<your_host>
 |zoxide|Zoxide config|
 |cli-packages|General cli packages|
 
-### Programs gui
+#### Programs gui
 |Module name|Description|
 |---|---|
 |gui-default| Provides all of the following|
