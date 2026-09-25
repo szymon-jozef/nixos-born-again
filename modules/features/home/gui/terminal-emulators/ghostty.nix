@@ -1,5 +1,6 @@
 {
-  flake.homeModules.ghostty = {
+  flake.homeModules.ghostty = { pkgs, lib, ... }: {
+
     programs.ghostty = {
       enable = true;
       systemd = { };
@@ -20,5 +21,7 @@
         gtk-single-instance = false;
       };
     };
+
+    wayland.windowManager.hyprland.settings.terminal._var = lib.mkForce lib.getExe pkgs.ghostty;
   };
 }
