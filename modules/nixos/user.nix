@@ -10,7 +10,6 @@
     {
       users.users.${config.user.name} = {
         isNormalUser = true;
-        hashedPasswordFile = config.age.secrets.user.path;
         shell = pkgs.fish;
         extraGroups = [
           "docker"
