@@ -66,6 +66,7 @@ in
             self.commonModules.options
             self.nixosModules.general
             self.nixosModules.locale-polish
+            self.nixosModules.secrets
 
             inputs.fwm.nixosModules.default
 

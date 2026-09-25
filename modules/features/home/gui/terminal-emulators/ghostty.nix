@@ -22,6 +22,6 @@
       };
     };
 
-    wayland.windowManager.hyprland.settings.terminal._var = lib.mkForce lib.getExe pkgs.ghostty;
+    wayland.windowManager.hyprland.settings.terminal._var = lib.mkForce (lib.getExe pkgs.ghostty);
   };
 }

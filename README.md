@@ -79,6 +79,11 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |bootloader-gpt| For gpt-partitioned disks|
 |bootloader-mbr| For mbr-partitioned disks|
 
+### Secrets
+|Module name|Description|
+|---|---|
+|Secrets|Sets secrets from _secrets dir to config|
+
 ### Packages
 #### General
 |Module name|Description|
