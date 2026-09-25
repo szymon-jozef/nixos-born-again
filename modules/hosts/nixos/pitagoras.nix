@@ -38,7 +38,7 @@ in
 
             self.nixosModules.programs
             self.nixosModules.hyprland
-            self.nixosModules.cli
+            self.nixosModules.fish
 
             # user
             self.nixosModules.user

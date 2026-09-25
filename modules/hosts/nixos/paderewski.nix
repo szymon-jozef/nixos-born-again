@@ -79,7 +79,7 @@ in
             self.nixosModules.programs
             self.nixosModules.gaming
             self.nixosModules.hyprland
-            self.nixosModules.cli
+            self.nixosModules.fish
 
             # user
             self.nixosModules.user

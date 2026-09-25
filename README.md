@@ -26,7 +26,10 @@
     - [Theme](#theme-1)
     - [hypr](#hypr)
     - [Status bars](#status-bars)
-    - [Programs](#programs)
+    - [Terminal emulators](#terminal-emulators)
+- [Programs](#programs)
+    - [Programs cli](#programs-cli)
+    - [Programs gui](#programs-gui)
 - [Templates](#templates)
   - [Usage](#usage-1)
   - [Available templates](#available-templates)
@@ -93,7 +96,7 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 #### CLI packages
 |Module name|Description|
 |---|---|
-|CLI|CLI tools configuration|
+|fish|Fish config|
 
 ### User
 |Module name|Description|
