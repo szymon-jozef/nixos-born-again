@@ -28,7 +28,7 @@ in
             self.nixosModules.locale-polish
 
             # bootloader
-            self.nixosModules.bootloader-gpt
+            self.nixosModules.bootloader-mbr
 
             # packages
             self.nixosModules.packages
@@ -61,9 +61,10 @@ in
               # self.homeModules.* import
               self.homeModules.theme
               self.homeModules.hypr
-              self.homeModules.ashell
+              self.homeModules.waybar
               self.homeModules.gui-default
-              self.homeModules.terminal-emulator-default
+              # self.homeModules.terminal-emulator-default
+              self.homeModules.kitty
 
               self.homeModules.cli-default
               self.homeModules.browsers
