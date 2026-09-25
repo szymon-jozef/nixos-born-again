@@ -15,42 +15,63 @@ in
     system = "x86_64-linux";
 
     modules = [
-      {
-        system.hostname = hostname;
-      }
+      (
+        { config, ... }:
+        {
+          system.hostname = hostname;
 
-      # general
-      self.commonModules.options
-      self.nixosModules.general
-      self.nixosModules.locale-polish
+          imports = [
+            # general
+            self.commonModules.options
+            self.nixosModules.general
+            self.nixosModules.locale-polish
 
-      # bootloader
-      self.nixosModules.bootloader-gpt
+            # bootloader
+            self.nixosModules.bootloader-gpt
 
-      # packages
-      self.nixosModules.packages
-      self.nixosModules.programs
-      self.nixosModules.hyprland
-      self.nixosModules.cli
+            # packages
+            self.nixosModules.packages
+            self.nixosModules.programs
+            self.nixosModules.hyprland
+            self.nixosModules.cli
 
-      # user
-      self.nixosModules.user
+            # user
+            self.nixosModules.user
 
-      # theme
-      self.nixosModules.theme
+            # theme
+            self.nixosModules.theme
 
-      # services
-      self.nixosModules.services
+            # services
+            self.nixosModules.services
 
-      # display manager
-      self.nixosModules.display-manager-autologin
+            # display manager
+            self.nixosModules.display-manager-autologin
 
-      # network
-      self.nixosModules.network
-      self.nixosModules.network-home-wifi
+            # network
+            self.nixosModules.network
+            self.nixosModules.network-home-wifi
 
-      # hardware
-      self.nixosModules.hardware-pilecki
+            # hardware
+            self.nixosModules.hardware-pilecki
+          ];
+
+          home-manager.users.${config.user.name} = {
+            imports = [
+              # self.modules.homeManager.* import
+              self.modules.homeManager.theme
+              self.modules.homeManager.hypr
+              self.modules.homeManager.ashell
+              self.modules.homeManager.gui
+              self.modules.homeManager.ghostty
+
+              self.modules.homeManager.cli
+              self.modules.homeManager.browsers
+              self.modules.homeManager.xdg
+              self.modules.homeManager.university
+            ];
+          };
+        }
+      )
     ];
   };
 }
