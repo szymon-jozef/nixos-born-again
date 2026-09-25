@@ -61,35 +61,6 @@ in
             };
           };
 
-          # home manager custom settings
-          home-manager.users.${config.user.name} = {
-            # start this apps only on this host
-            wayland.windowManager.hyprland.settings = {
-              on = [
-                {
-                  _args = [
-                    "hyprland.start"
-                    (lib.generators.mkLuaInline ''
-                      function()
-                          hl.exec_cmd("vesktop")
-                          hl.exec_cmd(signal_client, {workspace = 1} )
-                          hl.exec_cmd(browser)
-                      end
-                    '')
-                  ];
-                }
-              ];
-            };
-
-            services.ollama = {
-              enable = true;
-              acceleration = "rocm";
-            };
-          };
-
-          programs.fwm.enable = true;
-          services.open-webui.enable = true;
-
           imports = [
             # general
             self.commonModules.options
@@ -132,6 +103,43 @@ in
             # hardware
             self.nixosModules.hardware-paderewski
           ];
+
+          # home-manager imports go here
+          home-manager.users.${config.user.name} = {
+            imports = [
+              # self.modules.homeManager.* import
+              self.modules.homeManager.theme
+              self.modules.homeManager.hypr
+              self.modules.homeManager.ashell
+              self.modules.homeManager.gui
+              self.modules.homeManager.ghostty
+
+              self.modules.homeManager.cli
+              self.modules.homeManager.gemini
+              self.modules.homeManager.browsers
+              self.modules.homeManager.xdg
+              self.modules.homeManager.gaming
+              self.modules.homeManager.university
+            ];
+
+            # start this apps only on this host
+            wayland.windowManager.hyprland.settings = {
+              on = [
+                {
+                  _args = [
+                    "hyprland.start"
+                    (lib.generators.mkLuaInline ''
+                      function()
+                          hl.exec_cmd("vesktop")
+                          hl.exec_cmd(signal_client, {workspace = 1} )
+                          hl.exec_cmd(browser)
+                      end
+                    '')
+                  ];
+                }
+              ];
+            };
+          };
         }
       )
     ];
