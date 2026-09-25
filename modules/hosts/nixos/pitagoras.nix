@@ -26,6 +26,7 @@ in
             self.commonModules.options
             self.nixosModules.general
             self.nixosModules.locale-polish
+            self.nixosModules.options
 
             # bootloader
             self.nixosModules.bootloader-gpt

@@ -26,6 +26,7 @@ in
             self.commonModules.options
             self.nixosModules.general
             self.nixosModules.locale-polish
+            self.nixosModules.secrets
 
             # bootloader
             self.nixosModules.bootloader-mbr

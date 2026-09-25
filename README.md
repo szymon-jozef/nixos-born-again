@@ -7,11 +7,11 @@
   - [Nixos](#nixos)
   - [Home-manager](#home-manager)
 - [Flake parts](#flake-parts)
-  - [hosts](#hosts)
   - [nixosModules](#nixosmodules)
     - [General](#general)
     - [Locale](#locale)
     - [Bootloader](#bootloader)
+    - [Secrets](#secrets)
     - [Packages](#packages)
       - [General](#general-1)
       - [GUI packages](#gui-packages)
@@ -22,14 +22,14 @@
     - [displayManager](#displaymanager)
     - [Network](#network)
     - [Nvidia](#nvidia)
-  - [homeModules](#moduleshomemanager)
+  - [homeModules](#homemodules)
     - [Theme](#theme-1)
     - [hypr](#hypr)
     - [Status bars](#status-bars)
     - [Terminal emulators](#terminal-emulators)
-- [Programs](#programs)
-    - [Programs cli](#programs-cli)
-    - [Programs gui](#programs-gui)
+    - [Programs](#programs)
+      - [Programs cli](#programs-cli)
+      - [Programs gui](#programs-gui)
 - [Templates](#templates)
   - [Usage](#usage-1)
   - [Available templates](#available-templates)
@@ -57,11 +57,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 ```
 
 # Flake parts
-## hosts
-There is an [example host file](./modules/hosts/example.nix)
-
-Every host needs to inherit `myConfig` attrset, like in the example.
-
 ## nixosModules
 ### General
 |Module name|Description|
@@ -78,6 +73,11 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |---|---|
 |bootloader-gpt| For gpt-partitioned disks|
 |bootloader-mbr| For mbr-partitioned disks|
+
+### Secrets
+|Module name|Description|
+|---|---|
+|Secrets|Sets secrets from _secrets dir to config|
 
 ### Packages
 #### General
@@ -168,7 +168,7 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |Ghostty|Super cool emulator|
 |Kitty|Another super cool emulator|
 
-# Programs
+### Programs
 |Module name|Description|
 |---|---|
 |xdg|Xdg configuration (defualt directories, etc.)|
@@ -178,7 +178,7 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |freetube| Freetube (alternative to youtube, that i almost don't use)|
 |nixvim|My super cool neovim configuration written with nixvim|
 
-### Programs cli
+#### Programs cli
 |Module name|Description|
 |---|---|
 |cli-default| Provides all of the following|
@@ -193,7 +193,7 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |zoxide|Zoxide config|
 |cli-packages|General cli packages|
 
-### Programs gui
+#### Programs gui
 |Module name|Description|
 |---|---|
 |gui-default| Provides all of the following|

@@ -1,5 +1,5 @@
 {
-  flake.homeModules.kitty = {
+  flake.homeModules.kitty = { pkgs, lib, ... }: {
     programs.kitty = {
       enable = true;
       settings = {
@@ -43,5 +43,7 @@
           (builtins.concatStringsSep "," mappings) + " Symbols Nerd Font";
       };
     };
+
+    wayland.windowManager.hyprland.settings.terminal._var = lib.mkForce lib.getExe pkgs.kitty;
   };
 }
