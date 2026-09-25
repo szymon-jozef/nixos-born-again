@@ -7,11 +7,11 @@
   - [Nixos](#nixos)
   - [Home-manager](#home-manager)
 - [Flake parts](#flake-parts)
-  - [hosts](#hosts)
   - [nixosModules](#nixosmodules)
     - [General](#general)
     - [Locale](#locale)
     - [Bootloader](#bootloader)
+    - [Secrets](#secrets)
     - [Packages](#packages)
       - [General](#general-1)
       - [GUI packages](#gui-packages)
@@ -22,7 +22,7 @@
     - [displayManager](#displaymanager)
     - [Network](#network)
     - [Nvidia](#nvidia)
-  - [homeModules](#moduleshomemanager)
+  - [homeModules](#homemodules)
     - [Theme](#theme-1)
     - [hypr](#hypr)
     - [Status bars](#status-bars)
@@ -57,11 +57,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 ```
 
 # Flake parts
-## hosts
-There is an [example host file](./modules/hosts/example.nix)
-
-Every host needs to inherit `myConfig` attrset, like in the example.
-
 ## nixosModules
 ### General
 |Module name|Description|
