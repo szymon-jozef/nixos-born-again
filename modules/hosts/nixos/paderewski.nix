@@ -111,8 +111,8 @@ in
               self.modules.homeManager.theme
               self.modules.homeManager.hypr
               self.modules.homeManager.ashell
-              self.modules.homeManager.gui
-              self.modules.homeManager.ghostty
+              self.modules.homeManager.gui-default
+              self.modules.homeManager.terminal-emulator-default
 
               self.modules.homeManager.cli-default
               self.modules.homeManager.nixvim

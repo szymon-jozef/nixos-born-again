@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.gui =
+  flake.modules.homeManager.satty =
     { config, ... }:
     {
       programs.satty = {

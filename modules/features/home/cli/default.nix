@@ -14,7 +14,7 @@
       self.modules.homeManager.yazi
       self.modules.homeManager.zoxide
 
-      self.modules.homeManager.packages
+      self.modules.homeManager.cli-packages
     ];
   };
 }

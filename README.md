@@ -153,27 +153,49 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |waybar| Waybar configuration (old and not recommended)|
 |ashell| Ashell configuration|
 
-### Programs
+### Terminal emulators
 |Module name|Description|
 |---|---|
-|gui| GUI packages|
-|cli-default| CLI packges|
-|atuin|Atuin config (default)|
-|bat|Bat config (default)|
-|btop|Btop config (default)|
-|fastfetch|Fastfetch config (default)|
-|git|Git config (default)|
-|kdeconnect|Kdeconnect config (is this even cli?) (default)|
-|ssh|Ssh config (default)|
-|udiskie|Udiskie config (default)|
-|yazi|Yazi config (default)|
-|zoxide|Zoxide config (default)|
-|packages|General cli packages (default)|
-|gemini| Gemini-CLI configuration|
-|browsers| Provides internet browsers and PWAs|
+|terminal-emulator-default|Provides default config for most configurations|
+|Ghostty|Super cool emulator|
+|Kitty|Another super cool emulator|
+
+# Programs
+|Module name|Description|
+|---|---|
 |xdg|Xdg configuration (defualt directories, etc.)|
 |gaming| A bunch of gaming tools|
 |university| Some university tools|
+|gemini| Gemini-CLI configuration|
+|freetube| Freetube (alternative to youtube, that i almost don't use)|
+|nixvim|My super cool neovim configuration written with nixvim|
+
+### Programs cli
+|Module name|Description|
+|---|---|
+|cli-default| Provides all of the following|
+|atuin|Atuin config |
+|bat|Bat config |
+|btop|Btop config |
+|fastfetch|Fastfetch config |
+|git|Git config |
+|ssh|Ssh config |
+|udiskie|Udiskie config |
+|yazi|Yazi config |
+|zoxide|Zoxide config|
+|cli-packages|General cli packages|
+
+### Programs gui
+|Module name|Description|
+|---|---|
+|gui-default| Provides all of the following|
+|wallpaper|Wallpaper programs|
+|kdeconnect|Kdeconnect config|
+|mako|Notification deamon|
+|obsidian|Note taking app|
+|gui-packages|Collection of not specific packages|
+|satty|Screenshot edition tool|
+|browsers| Provides internet browsers and PWAs|
 
 # Templates
 This configuration also exposes templates for languages that I use.
