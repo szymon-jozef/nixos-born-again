@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.yazi =
+  flake.homeModules.yazi =
     { config, ... }:
     let
       download = config.xdg.userDirs.download;

@@ -73,10 +73,12 @@
 
   outputs =
     inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } ({
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [
         inputs.flake-parts.flakeModules.modules
+        inputs.home-manager.flakeModules.home-manager
+
         (inputs.import-tree ./modules)
       ];
-    });
+    };
 }

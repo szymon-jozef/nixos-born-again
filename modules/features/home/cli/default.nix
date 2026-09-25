@@ -1,20 +1,20 @@
 { self, ... }:
 {
-  flake.modules.homeManager.cli-default = {
+  flake.homeModules.cli-default = {
     imports = [
-      self.modules.homeManager.fish # default shell
+      self.homeModules.fish # default shell
 
-      self.modules.homeManager.atuin
-      self.modules.homeManager.bat
-      self.modules.homeManager.btop
-      self.modules.homeManager.fastfetch
-      self.modules.homeManager.git
-      self.modules.homeManager.ssh
-      self.modules.homeManager.udiskie
-      self.modules.homeManager.yazi
-      self.modules.homeManager.zoxide
+      self.homeModules.atuin
+      self.homeModules.bat
+      self.homeModules.btop
+      self.homeModules.fastfetch
+      self.homeModules.git
+      self.homeModules.ssh
+      self.homeModules.udiskie
+      self.homeModules.yazi
+      self.homeModules.zoxide
 
-      self.modules.homeManager.cli-packages
+      self.homeModules.cli-packages
     ];
   };
 }

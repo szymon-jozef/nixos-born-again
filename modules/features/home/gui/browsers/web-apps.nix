@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.browsers =
+  flake.homeModules.browsers =
     let
       mkWebApp =
         {

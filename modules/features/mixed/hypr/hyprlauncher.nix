@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.hyprlauncher = {
+  flake.homeModules.hyprlauncher = {
     services.hyprlauncher = {
       enable = true;
 

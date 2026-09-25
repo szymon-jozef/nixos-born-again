@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.ghostty = {
+  flake.homeModules.ghostty = {
     programs.ghostty = {
       enable = true;
       systemd = { };

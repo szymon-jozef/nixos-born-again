@@ -7,7 +7,7 @@
     };
   };
 
-  flake.modules.homeManager.hyprland = {
+  flake.homeModules.hyprland = {
     wayland.windowManager.hyprland = {
       enable = true;
       configType = "lua";

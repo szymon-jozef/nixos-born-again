@@ -1,7 +1,7 @@
 { self, ... }: {
-  flake.modules.homeManager.terminal-emulator-default = {
+  flake.homeModules.terminal-emulator-default = {
     imports = [
-      self.modules.homeManager.ghostty
+      self.homeModules.ghostty
     ];
   };
 }

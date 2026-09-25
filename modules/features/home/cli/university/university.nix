@@ -9,7 +9,7 @@
       programs.battleships.enable = true;
     };
 
-  flake.modules.homeManager.university =
+  flake.homeModules.university =
     {
       inputs,
       pkgs,

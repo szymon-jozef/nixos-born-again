@@ -3,7 +3,7 @@
     programs.fish.enable = true;
   };
 
-  flake.modules.homeManager.fish = {
+  flake.homeModules.fish = {
     programs.starship = {
       enable = true;
       enableFishIntegration = true;

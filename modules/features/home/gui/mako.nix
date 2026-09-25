@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.mako =
+  flake.homeModules.mako =
     { pkgs, ... }:
     let
       play_sound = "exec ${pkgs.pulseaudio}/bin/paplay ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/dialog-information.oga";

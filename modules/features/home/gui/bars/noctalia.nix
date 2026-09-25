@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.noctalia =
+  flake.homeModules.noctalia =
     { pkgs, ... }:
     {
       home.packages = [ pkgs.noctalia-shell ];

@@ -22,7 +22,7 @@
     - [displayManager](#displaymanager)
     - [Network](#network)
     - [Nvidia](#nvidia)
-  - [modules.homeManager](#moduleshomemanager)
+  - [homeModules](#moduleshomemanager)
     - [Theme](#theme-1)
     - [hypr](#hypr)
     - [Status bars](#status-bars)
@@ -138,7 +138,7 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |---|---|
 |nvidia|Nvidia settings|
 
-## modules.homeManager
+## homeModules
 ### Theme
 |Module name|Description|
 |---|---|

@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.satty =
+  flake.homeModules.satty =
     { config, ... }:
     {
       programs.satty = {

@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.hyprsunset = {
+  flake.homeModules.hyprsunset = {
     services.hyprsunset = {
       enable = true;
 

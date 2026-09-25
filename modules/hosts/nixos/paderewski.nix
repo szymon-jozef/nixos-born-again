@@ -107,20 +107,20 @@ in
           # home-manager imports go here
           home-manager.users.${config.user.name} = {
             imports = [
-              # self.modules.homeManager.* import
-              self.modules.homeManager.theme
-              self.modules.homeManager.hypr
-              self.modules.homeManager.ashell
-              self.modules.homeManager.gui-default
-              self.modules.homeManager.terminal-emulator-default
+              # self.homeModules.* import
+              self.homeModules.theme
+              self.homeModules.hypr
+              self.homeModules.ashell
+              self.homeModules.gui-default
+              self.homeModules.terminal-emulator-default
 
-              self.modules.homeManager.cli-default
-              self.modules.homeManager.nixvim
-              self.modules.homeManager.gemini
-              self.modules.homeManager.browsers
-              self.modules.homeManager.xdg
-              self.modules.homeManager.gaming
-              self.modules.homeManager.university
+              self.homeModules.cli-default
+              self.homeModules.nixvim
+              self.homeModules.gemini
+              self.homeModules.browsers
+              self.homeModules.xdg
+              self.homeModules.gaming
+              self.homeModules.university
             ];
 
             # start this apps only on this host

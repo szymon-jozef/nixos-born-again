@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.nixvim =
+  flake.homeModules.nixvim =
     let
       flakePath = "/etc/nixos";
     in

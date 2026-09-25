@@ -25,7 +25,7 @@
       };
     };
 
-  flake.modules.homeManager.gaming =
+  flake.homeModules.gaming =
     { pkgs, pkgs-stable, ... }:
     {
       home.packages = with pkgs; [

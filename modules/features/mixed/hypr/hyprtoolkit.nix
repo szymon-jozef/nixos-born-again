@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.hyprtoolkit = {
+  flake.homeModules.hyprtoolkit = {
     # TODO! change this to home module if it ever gets released
     xdg.configFile."hypr/hyprtoolkit.conf".text = ''
       background=0xff11111b

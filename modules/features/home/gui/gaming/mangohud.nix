@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.gaming = {
+  flake.homeModules.gaming = {
 
     catppuccin.mangohud.enable = false;
 

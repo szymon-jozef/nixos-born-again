@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.freetube = {
+  flake.homeModules.freetube = {
     programs.freetube.enable = true;
   };
 }

@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.wallpaper = { pkgs, ... }: {
+  flake.homeModules.wallpaper = { pkgs, ... }: {
     services.awww = {
       enable = true;
     };

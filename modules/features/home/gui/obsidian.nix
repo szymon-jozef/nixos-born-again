@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.obsidian =
+  flake.homeModules.obsidian =
     {
       config,
       ...

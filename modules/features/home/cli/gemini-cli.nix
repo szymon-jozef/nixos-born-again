@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.gemini = {
+  flake.homeModules.gemini = {
     # Move this to a separate module?
     programs.antigravity-cli = {
       enable = true;

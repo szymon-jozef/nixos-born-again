@@ -57,17 +57,17 @@ in
 
           home-manager.users.${config.user.name} = {
             imports = [
-              # self.modules.homeManager.* import
-              self.modules.homeManager.theme
-              self.modules.homeManager.hypr
-              self.modules.homeManager.ashell
-              self.modules.homeManager.gui-default
+              # self.homeModules.* import
+              self.homeModules.theme
+              self.homeModules.hypr
+              self.homeModules.ashell
+              self.homeModules.gui-default
               self.homeModules.terminal-emulator-default
 
-              self.modules.homeManager.cli-default
-              self.modules.homeManager.browsers
-              self.modules.homeManager.xdg
-              self.modules.homeManager.university
+              self.homeModules.cli-default
+              self.homeModules.browsers
+              self.homeModules.xdg
+              self.homeModules.university
             ];
           };
         }
