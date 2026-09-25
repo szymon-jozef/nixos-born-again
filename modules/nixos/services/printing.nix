@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.services = {
+  flake.nixosModules.services-printing = {
     services = {
       printing.enable = true;
       # for wireless printing
@@ -8,7 +8,6 @@
         nssmdns4 = true;
         openFirewall = true;
       };
-
     };
   };
 }

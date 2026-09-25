@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.services = {
+  flake.nixosModules.services-hardware = {
     services = {
       hardware.openrgb.enable = false;
       xserver.enable = false;

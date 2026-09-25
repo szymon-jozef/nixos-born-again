@@ -108,7 +108,12 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 ### Services
 |Module name|Description|
 |---|---|
-|services| Services configuration|
+|services-default| Default services configuration|
+|services-audio| Audio servers etc.|
+|services-printing| Printing support|
+|services-ssh| Ssh support|
+|services-hardware| Hardware stuff|
+|services-additional|Some stuff that i didn't categorize|
 |services-hardware-overclock|Enable [lact](https://github.com/ilya-zlobintsev/LACT)|
 |services-syncthing|Enable syncthing|
 |services-snapper|Enable snapper and make snapshots of home directory|

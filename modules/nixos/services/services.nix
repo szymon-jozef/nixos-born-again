@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.services =
+  flake.nixosModules.services-additional =
     { pkgs, ... }:
     {
       # other stuff that i want but don't fit any category

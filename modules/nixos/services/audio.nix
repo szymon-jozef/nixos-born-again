@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.services = {
+  flake.nixosModules.services-audio = {
     services = {
       pulseaudio.enable = false;
       pipewire = {
