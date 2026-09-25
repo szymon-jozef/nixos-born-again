@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli =
+  flake.modules.homeManager.waypaper =
     { pkgs, ... }:
     {
       home.packages = with pkgs; [

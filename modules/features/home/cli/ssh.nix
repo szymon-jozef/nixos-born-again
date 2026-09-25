@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli =
+  flake.modules.homeManager.ssh =
     { config, ... }:
     {
       services.ssh-agent.enable = true;

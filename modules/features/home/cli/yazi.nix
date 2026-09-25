@@ -1,6 +1,6 @@
 {
-  flake.modules.homeManager.cli =
-    { config, lib, ... }:
+  flake.modules.homeManager.yazi =
+    { config, ... }:
     let
       download = config.xdg.userDirs.download;
       documents = config.xdg.userDirs.documents;

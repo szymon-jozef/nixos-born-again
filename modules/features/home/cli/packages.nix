@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli =
+  flake.modules.homeManager.packages =
     { pkgs, ... }:
     {
       # TODO clean this up

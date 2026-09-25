@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli = {
+  flake.modules.homeManager.atuin = {
     programs.atuin = {
       enable = true;
       enableFishIntegration = true;

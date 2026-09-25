@@ -75,7 +75,7 @@ in
               self.modules.homeManager.gui
               self.modules.homeManager.ghostty
 
-              self.modules.homeManager.cli
+              self.modules.homeManager.cli-default
               self.modules.homeManager.gemini
               self.modules.homeManager.browsers
               self.modules.homeManager.xdg

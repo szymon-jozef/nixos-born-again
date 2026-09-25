@@ -157,7 +157,18 @@ Every host needs to inherit `myConfig` attrset, like in the example.
 |Module name|Description|
 |---|---|
 |gui| GUI packages|
-|cli| CLI packges |
+|cli-default| CLI packges|
+|atuin|Atuin config (default)|
+|bat|Bat config (default)|
+|btop|Btop config (default)|
+|fastfetch|Fastfetch config (default)|
+|git|Git config (default)|
+|kdeconnect|Kdeconnect config (is this even cli?) (default)|
+|ssh|Ssh config (default)|
+|udiskie|Udiskie config (default)|
+|yazi|Yazi config (default)|
+|zoxide|Zoxide config (default)|
+|packages|General cli packages (default)|
 |gemini| Gemini-CLI configuration|
 |browsers| Provides internet browsers and PWAs|
 |xdg|Xdg configuration (defualt directories, etc.)|

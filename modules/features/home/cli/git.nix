@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli =
+  flake.modules.homeManager.git =
     { pkgs, config, ... }:
     let
       signingKey = "~/.ssh/github.pub";

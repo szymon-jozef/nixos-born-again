@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli = {
+  flake.modules.homeManager.nixvim = {
     programs.nixvim.plugins = {
       # close () and stuff
       nvim-autopairs.enable = true;

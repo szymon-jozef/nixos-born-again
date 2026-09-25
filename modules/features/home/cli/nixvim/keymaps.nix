@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cli = {
+  flake.modules.homeManager.nixvim = {
     programs.nixvim.keymaps = [
       {
         mode = [
