@@ -19,6 +19,7 @@ in
         { config, ... }:
         {
           system.hostname = hostname;
+          monitors.primary = "LVDS-1";
 
           imports = [
             # general
@@ -68,6 +69,7 @@ in
               self.homeModules.browsers
               self.homeModules.xdg
               self.homeModules.university
+              self.homeModules.nixvim
             ];
           };
         }
