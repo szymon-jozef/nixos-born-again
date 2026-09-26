@@ -44,11 +44,8 @@
           settings.flavour = "mocha";
         };
 
-        autoGroups = {
-          YankHighlight = {
-            clear = true;
-          };
-        };
+        autoGroups.YankHighlight.clear = true;
+
         autoCmd = [
           {
             event = "TextYankPost";
@@ -61,9 +58,7 @@
           }
         ];
 
-        userCommands = {
-          NewNote.command = "call mkdir(expand('~/Dokumenty/szybkie_notatki'), 'p') | enew | lcd ~/Dokumenty/szybkie_notatki";
-        };
+        userCommands.NewNote.command = "call mkdir(expand('~/Dokumenty/szybkie_notatki'), 'p') | enew | lcd ~/Dokumenty/szybkie_notatki";
 
         extraConfigLua = ''
           vim.diagnostic.config({

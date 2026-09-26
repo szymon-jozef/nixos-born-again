@@ -1,92 +1,46 @@
+{ self, ... }:
 {
-  flake.homeModules.nixvim =
-    let
-      flakePath = "/etc/nixos";
-    in
-    {
+  flake.homeModules.nixvim = {
+    imports = [
+      self.homeModules.nixvim-pylsp
+      self.homeModules.nixvim-cargo
+      self.homeModules.nixvim-c
+      self.homeModules.nixvim-nix
+      self.homeModules.nixvim-web
+    ];
 
-      programs.nixvim.plugins.lsp = {
-        enable = true;
-        servers = {
-          # script
-          lua_ls.enable = true;
-          # web
-          cssls.enable = true;
-          html.enable = true;
-          emmet_language_server = {
-            enable = true;
-            filetypes = [ "html" ];
-          };
+    programs.nixvim.plugins.lsp = {
+      enable = true;
+      servers = {
+        # script
+        lua_ls.enable = true;
 
-          # friendly-snippets.enable = true;
-          # dev
-          clangd.enable = true;
-          cmake.enable = true;
+        # markdown
+        marksman.enable = true;
+      };
 
-          pylsp = {
-            enable = true;
-            settings = {
-              plugins = {
-                ruff = {
-                  enabled = true;
-                  format = [ "I" ];
-                };
-
-                pylsp_mypy.enabled = true;
-
-                jedi_completion.enabled = true;
-                jedi_definition.enabled = true;
-              };
-            };
-          };
-          rust_analyzer = {
-            enable = true;
-            installCargo = true;
-            installRustc = true;
-          };
-          # nix
-          nixd = {
-            enable = true;
-            # autoStart = true;
-            filetypes = [ "nix" ];
-            settings = {
-              formatting = {
-                command = [ "nixfmt" ];
-              };
-
-              nixpkgs.expr = ''
-                import (builtins.getFlake "${flakePath}").inputs.nixpkgs { }
-              '';
-              options = {
-                nixos.expr = ''(builtins.getFlake ("/etc/nixos")).nixosConfigurations.paderewski.options'';
-                home_manager.expr = ''(builtins.getFlake ("/etc/nixos")).nixosConfigurations.paderewski.options.home-manager.users.type.getSubOptions [ ]'';
-              };
-            };
-          };
-          # other
-          marksman.enable = true;
+      keymaps = {
+        lspBuf = {
+          "<leader>gd" = "definition";
+          "<leader>gD" = "references";
+          "<leader>gt" = "type_definition";
+          "<leader>gi" = "implementation";
+          "<leader>ca" = "code_action";
+          "<leader>cr" = "rename";
+          "K" = "hover";
         };
-        keymaps = {
-          lspBuf = {
-            "<leader>gd" = "definition";
-            "<leader>gD" = "references";
-            "<leader>gt" = "type_definition";
-            "<leader>gi" = "implementation";
-            "<leader>ca" = "code_action";
-            "<leader>cr" = "rename";
-            "K" = "hover";
-          };
-          extra = [
-            {
-              action = "<cmd>lua vim.diagnostic.jump({ count=-1, float=true })<CR>";
-              key = "<leader>gk";
-            }
-            {
-              action = "<cmd>lua vim.diagnostic.jump({ count=1, float=true })<CR>";
-              key = "<leader>gj";
-            }
-          ];
-        };
+
+        extra = [
+          {
+            action = "<cmd>lua vim.diagnostic.jump({ count=-1, float=true })<CR>";
+            key = "<leader>gk";
+          }
+          {
+            action = "<cmd>lua vim.diagnostic.jump({ count=1, float=true })<CR>";
+            key = "<leader>gj";
+          }
+        ];
       };
     };
+  };
 }
