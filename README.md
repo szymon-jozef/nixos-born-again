@@ -203,7 +203,9 @@ home-manager switch --flake .#<your_name>@<your_host>
 |obsidian|Note taking app|
 |gui-packages|Collection of not specific packages|
 |satty|Screenshot edition tool|
-|browsers| Provides internet browsers and PWAs|
+|browsers| Provides default browsers and PWAs|
+|zen| Zen-browser config|
+|web-apps| Provides web-apps (PWAs)|
 
 # Templates
 This configuration also exposes templates for languages that I use.

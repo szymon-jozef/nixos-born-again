@@ -1,5 +1,6 @@
 {
-  flake.homeModules.browsers =
+  flake.homeModules.web-apps =
+    { pkgs, ... }:
     let
       mkWebApp =
         {
@@ -25,6 +26,11 @@
         };
     in
     {
+
+      home.packages = with pkgs; [
+        brave
+      ];
+
       xdg.desktopEntries = {
         x = mkWebApp {
           name = "X";

@@ -112,16 +112,17 @@ in
               self.homeModules.theme
               self.homeModules.hypr
               self.homeModules.ashell
+
               self.homeModules.gui-default
               self.homeModules.terminal-emulator-default
+
+              self.homeModules.xdg
+              self.homeModules.gaming
+              self.homeModules.university
 
               self.homeModules.cli-default
               self.homeModules.nixvim
               self.homeModules.gemini
-              self.homeModules.browsers
-              self.homeModules.xdg
-              self.homeModules.gaming
-              self.homeModules.university
             ];
 
             # start this apps only on this host
