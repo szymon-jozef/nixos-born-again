@@ -188,7 +188,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |fastfetch|Fastfetch config |
 |git|Git config |
 |ssh|Ssh config |
-|udiskie|Udiskie config |
 |yazi|Yazi config |
 |zoxide|Zoxide config|
 |cli-packages|General cli packages|
@@ -199,6 +198,7 @@ home-manager switch --flake .#<your_name>@<your_host>
 |gui-default| Provides all of the following|
 |wallpaper|Wallpaper programs|
 |kdeconnect|Kdeconnect config|
+|udiskie|Udiskie config |
 |mako|Notification deamon|
 |obsidian|Note taking app|
 |gui-packages|Collection of not specific packages|

@@ -10,7 +10,6 @@
       self.homeModules.fastfetch
       self.homeModules.git
       self.homeModules.ssh
-      self.homeModules.udiskie
       self.homeModules.yazi
       self.homeModules.zoxide
 
