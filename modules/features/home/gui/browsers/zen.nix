@@ -10,6 +10,7 @@
         enable = true;
         setAsDefaultBrowser = true;
 
+        /*
         policies =
           let
             mkLockedAttrs = builtins.mapAttrs (
@@ -79,6 +80,7 @@
               "dom.battery.enabled" = false;
             };
           };
+          */
 
         profiles.default = {
           settings = {
