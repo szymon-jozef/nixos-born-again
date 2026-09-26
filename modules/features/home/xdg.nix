@@ -15,6 +15,10 @@
       audioPlayer = "mpv";
     in
     {
+      home.sessionVariables = {
+        XDG_DATA_DIRS = "$HOME/.nix-profile/share/applications:$XDG_DATA_DIRS";
+      };
+
       xdg = {
         enable = true;
 

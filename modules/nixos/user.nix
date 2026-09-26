@@ -47,12 +47,6 @@
           ];
 
           home = {
-            sessionVariables = {
-              EDITOR = "nvim";
-              VISUAL = "nvim";
-              XDG_DATA_DIRS = "$HOME/.nix-profile/share/applications:$XDG_DATA_DIRS";
-            };
-
             pointerCursor = {
               enable = true;
               name = "phinger-cursors-light";

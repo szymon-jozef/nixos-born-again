@@ -6,6 +6,11 @@
         inputs.nixvim.homeModules.nixvim
       ];
 
+      home.sessionVariables = {
+        EDITOR = "nvim";
+        VISUAL = "nvim";
+      };
+
       programs.nixvim = {
         # fix for https://github.com/nix-community/nixvim/issues/4426
         nixpkgs.useGlobalPackages = true;
