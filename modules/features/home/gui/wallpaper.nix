@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   flake.homeModules.wallpaper = { pkgs, ... }: {
     services.awww = {
@@ -7,5 +8,9 @@
     home.packages = with pkgs; [
       waypaper
     ];
+
+    home.file = {
+      "Obrazy/tapety/catppuccin".source = inputs.wallpapers;
+    };
   };
 }

@@ -47,10 +47,6 @@
           ];
 
           home = {
-            file = {
-              "Obrazy/tapety/catppuccin".source = inputs.wallpapers;
-            };
-
             sessionVariables = {
               EDITOR = "nvim";
               VISUAL = "nvim";
