@@ -68,7 +68,6 @@ in
               self.homeModules.kitty
 
               self.homeModules.cli-default
-              self.homeModules.browsers
               self.homeModules.xdg
               self.homeModules.university
               self.homeModules.nixvim
