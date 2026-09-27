@@ -104,11 +104,6 @@
                 focus_or_launch("^(zen)$", "uwsm app -- " .. browser)
             end)
 
-            -- FreeTube
-            hl.bind(mainMod .. " + CONTROL + F", function()
-                focus_or_launch("^(freetube)$", "uwsm app -- freetube")
-            end)
-
             -- X.desktop
             hl.bind(mainMod .. " + CONTROL + X", function()
                 focus_or_launch("^(chrome-x.com__-Default)$", "uwsm app -- x.desktop")
