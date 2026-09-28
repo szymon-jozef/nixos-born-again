@@ -13,5 +13,7 @@
       configType = "lua";
       systemd.enable = true;
     };
+
+    services.hyprpolkitagent.enable = true;
   };
 }
