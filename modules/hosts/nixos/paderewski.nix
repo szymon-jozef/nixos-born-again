@@ -114,6 +114,7 @@ in
               self.homeModules.ashell
 
               self.homeModules.gui-default
+              self.homeModules.freetube
               self.homeModules.terminal-emulator-default
 
               self.homeModules.xdg
