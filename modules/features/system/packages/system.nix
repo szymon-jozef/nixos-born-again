@@ -6,7 +6,6 @@
         kdePackages.kwallet
         kdePackages.kwallet-pam
         kdePackages.kwalletmanager
-        hyprpolkitagent
         modprobed-db
       ];
     };
