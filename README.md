@@ -190,6 +190,7 @@ home-manager switch --flake .#<your_name>@<your_host>
 |ssh|Ssh config |
 |yazi|Yazi config |
 |zoxide|Zoxide config|
+|devenv|Devenv settings|
 |cli-packages|General cli packages|
 
 #### Programs gui

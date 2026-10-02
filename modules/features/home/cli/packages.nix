@@ -8,7 +8,6 @@
         cliphist
 
         gh
-        devenv
 
         trash-cli
         pandoc
