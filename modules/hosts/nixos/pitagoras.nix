@@ -25,8 +25,8 @@ in
             # general
             self.commonModules.options
             self.nixosModules.general
+            self.nixosModules.secrets
             self.nixosModules.locale-polish
-            self.nixosModules.options
 
             # bootloader
             self.nixosModules.bootloader-gpt
@@ -77,8 +77,8 @@ in
               self.homeModules.terminal-emulator-default
 
               self.homeModules.cli-default
+              self.homeModules.nixvim
               self.homeModules.gemini
-              self.homeModules.browsers
               self.homeModules.xdg
               self.homeModules.gaming
               self.homeModules.university
