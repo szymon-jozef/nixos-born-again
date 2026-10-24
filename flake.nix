@@ -69,6 +69,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    aruba-via.url = "github:szymon-jozef/aruba-vpn-flake";
   };
 
   outputs =
