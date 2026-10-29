@@ -28,6 +28,8 @@
       url = "github:nix-community/nixvim";
     };
 
+    wrappers.url = "github:nix-community/nix-wrapper-modules";
+
     # === CACHYOS KERNEL ===
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
@@ -75,11 +77,17 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+      ];
+
       imports = [
         inputs.flake-parts.flakeModules.modules
         inputs.home-manager.flakeModules.home-manager
+        inputs.wrappers.flakeModules.wrappers
 
         (inputs.import-tree ./modules)
       ];
+
     };
 }

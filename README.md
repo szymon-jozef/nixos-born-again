@@ -30,9 +30,10 @@
     - [Programs](#programs)
       - [Programs cli](#programs-cli)
       - [Programs gui](#programs-gui)
+  - [Wrapped programs](#wrapped-programs)
+    - [Default](#default)
+    - [Wrapped programs modules](#wrapped-programs-modules)
 - [Templates](#templates)
-  - [Usage](#usage-1)
-  - [Available templates](#available-templates)
 <!--toc:end-->
 
 
@@ -201,6 +202,39 @@ home-manager switch --flake .#<your_name>@<your_host>
 |browsers| Provides default browsers and PWAs|
 |zen| Zen-browser config|
 |web-apps| Provides web-apps (PWAs)|
+
+## Wrapped programs
+Programs that are accessible from anywhere with my config. To try it out type in:
+```bash
+nix run github:szymon-jozef/nixos-born-again#<program>
+```
+
+For example:
+```bash
+nix run github:szymon-jozef/nixos-born-again#nh
+```
+
+### Default
+Every host should include
+```nix
+self.nixosModules.wrapped-programs-default
+```
+It imports all the modules in one place.
+
+### Wrapped programs modules
+Available modules for wrapped programs. To use it add:
+
+```nix
+imports = [
+    self.<nixosModules/homeModules>.<program_name>
+];
+```
+
+**Table of available modules**
+|Program name| has nixosModule| has homeModule|
+|---|---|---|
+|nh|yes|no|
+
 
 # Templates
 Since I started using [devenv](devenv.sh/), I've stopped using flake templates for devshells. Now I write specific a specific flake.nix per project only if I want to distribute it.

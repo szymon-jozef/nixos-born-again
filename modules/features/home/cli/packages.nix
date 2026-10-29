@@ -29,7 +29,6 @@
         ripgrep
         feh
 
-        nh
         runc
         nixfmt
         nix-output-monitor

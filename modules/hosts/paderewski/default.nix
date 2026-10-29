@@ -63,6 +63,8 @@ in
             # custom
             ./_hardware.nix
             ./_backup.nix
+
+            self.nixosModules.wrapped-programs-default
           ];
 
           # home-manager imports go here

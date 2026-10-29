@@ -54,6 +54,8 @@ in
 
             # hardware
             ./_hardware.nix
+
+            self.nixosModules.wrapped-programs-default
           ];
 
           home-manager.users.${config.user.name} = {
