@@ -42,6 +42,10 @@
           in
           (builtins.concatStringsSep "," mappings) + " Symbols Nerd Font";
       };
+
+      keybindings = {
+        "ctrl+shift+t" = "new_tab_with_cwd"; # why is this not the default ???
+      };
     };
 
     wayland.windowManager.hyprland.settings.terminal._var = lib.mkForce (lib.getExe pkgs.kitty);
