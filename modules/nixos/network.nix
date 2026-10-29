@@ -33,7 +33,7 @@
         };
       };
 
-    university =
+    network-university-wifi =
       { config, ... }:
       let
         cert = builtins.toFile "wificert.cer" ''
@@ -73,24 +73,27 @@
           ensureProfiles = {
             environmentFiles = [ config.age.secrets.wifi.path ];
 
-            profiles = {
-              "uni" = {
-                connection = {
-                  id = "uni";
-                  type = "wifi";
-                };
-                wifi.ssid = "$WIFI_UNI_SSID";
-                wifi-security = {
-                  key-mgmt = "wpa-eap";
-                };
+            profiles.uni = {
+              connection = {
+                id = "uni";
+                type = "wifi";
+              };
 
-                "802-1x" = {
-                  eap = "peap";
-                  identity = "$WIFI_UNI_LOGIN";
-                  password = "$WIFI_UNI_PASSWORD";
-                  phase2-auth = "mschapv2";
-                  ca-cert = cert;
-                };
+              wifi = {
+                mode = "infrastructure";
+                ssid = "$WIFI_UNI_SSID";
+              };
+
+              wifi-security = {
+                key-mgmt = "wpa-eap";
+              };
+
+              "802-1x" = {
+                eap = "peap";
+                identity = "$WIFI_UNI_LOGIN";
+                password = "$WIFI_UNI_PASSWORD";
+                phase2-auth = "mschapv2";
+                ca-cert = cert;
               };
             };
           };
