@@ -21,51 +21,44 @@ in
         {
           system.hostname = hostname;
 
-          imports = [
-            # general
-            self.commonModules.options
-            self.nixosModules.general
-            self.nixosModules.locale-polish
-            self.nixosModules.secrets
+          imports =
+            with self.nixosModules;
+            [
+              general
+              locale-polish
+              secrets
 
-            inputs.fwm.nixosModules.default
+              bootloader-gpt
 
-            # bootloader
-            self.nixosModules.bootloader-gpt
+              packages
+              packages-virtualisation
+              university # TODO don't forget to remove this
+              programs
+              gaming
+              hyprland
+              fish
 
-            # packages
-            self.nixosModules.packages
-            self.nixosModules.packages-virtualisation
-            self.nixosModules.university # TODO don't forget to remove this
-            self.nixosModules.programs
-            self.nixosModules.gaming
-            self.nixosModules.hyprland
-            self.nixosModules.fish
+              user
 
-            # user
-            self.nixosModules.user
+              theme
 
-            # theme
-            self.nixosModules.theme
+              services
+              services-hardware-overclock
+              services-syncthing
+              services-snapper
 
-            # services
-            self.nixosModules.services
-            self.nixosModules.services-hardware-overclock
-            self.nixosModules.services-syncthing
-            self.nixosModules.services-snapper
+              display-manager-autologin
 
-            # display manager
-            self.nixosModules.display-manager-autologin
+              network
 
-            # network
-            self.nixosModules.network
+              wrapped-programs-default
+            ]
+            ++ [
+              self.commonModules.options
 
-            # custom
-            ./_hardware.nix
-            ./_backup.nix
-
-            self.nixosModules.wrapped-programs-default
-          ];
+              ./_hardware.nix
+              ./_backup.nix
+            ];
 
           # home-manager imports go here
           home-manager.users.${config.user.name} = {
