@@ -59,7 +59,6 @@ in
 
             # network
             self.nixosModules.network
-            self.nixosModules.network-home-wifi
 
             # custom
             ./_hardware.nix

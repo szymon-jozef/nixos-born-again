@@ -60,7 +60,6 @@ in
 
             # network
             self.nixosModules.network
-            self.nixosModules.network-home-wifi
 
             # hardware
             ./_hardware.nix

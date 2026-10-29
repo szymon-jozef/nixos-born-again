@@ -131,8 +131,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |Module name|Description|
 |---|---|
 |network|Basic network settings|
-|network-home-wifi|Networkmanager profile for my home wifi|
-|network-university-wifi|Networkmanager profile for my home wifi|
 
 ### Nvidia
 |Module name|Description|

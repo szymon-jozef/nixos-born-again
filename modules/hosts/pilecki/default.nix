@@ -51,8 +51,6 @@ in
 
             # network
             self.nixosModules.network
-            self.nixosModules.network-home-wifi
-            self.nixosModules.network-university-wifi
 
             # hardware
             ./_hardware.nix
