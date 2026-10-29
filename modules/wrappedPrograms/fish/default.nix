@@ -1,6 +1,6 @@
-{ self, withSystemModule, ... }:
+{ self, ... }:
 {
-  flake.wrappers.fish = withSystemModule (
+  flake.wrappers.fish =
     {
       pkgs,
       wlib,
@@ -96,8 +96,7 @@
         lst = "${eza} --long --icons --color --git --tree";
         rm = "${pkgs.trash-cli}/bin/trash";
       };
-    }
-  );
+    };
 
   flake.nixosModules.fish =
     { config, ... }:
