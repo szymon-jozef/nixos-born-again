@@ -114,7 +114,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |services-default| Default services configuration|
 |services-audio| Audio servers etc.|
 |services-printing| Printing support|
-|services-ssh| Ssh support|
 |services-hardware| Hardware stuff|
 |services-additional|Some stuff that i didn't categorize|
 |services-hardware-overclock|Enable [lact](https://github.com/ilya-zlobintsev/LACT)|
