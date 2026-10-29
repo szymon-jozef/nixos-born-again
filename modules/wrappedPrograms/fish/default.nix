@@ -1,11 +1,20 @@
-{ self, ... }:
+{ self, withSystemModule, ... }:
 {
-  flake.wrappers.fish =
-    { pkgs, wlib, ... }:
+  flake.wrappers.fish = withSystemModule (
+    {
+      pkgs,
+      wlib,
+      ...
+    }:
     let
       inherit (pkgs) lib;
 
-      functions = import ./_functions.nix { inherit pkgs; };
+      wrapped = lib.mapAttrs (_: w: w.wrap { inherit pkgs; }) (removeAttrs self.wrappers [ "fish" ]);
+
+      exe = name: lib.getExe (wrapped.${name} or pkgs.${name});
+      eza = exe "eza";
+
+      functions = import ./_functions.nix { inherit exe; };
 
       functionsFish = lib.concatStringsSep "\n" (
         lib.mapAttrsToList (name: body: ''
@@ -25,7 +34,7 @@
         yazi = /* fish */ ''
           function y
             set tmp (mktemp -t "yazi-cwd.XXXXXX")
-            command ${lib.getExe pkgs.yazi} $argv --cwd-file="$tmp"
+            command ${exe "yazi"} $argv --cwd-file="$tmp"
             if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
               builtin cd -- "$cwd"
             end
@@ -35,7 +44,7 @@
 
         starship = /* fish */ ''
           if test "$TERM" != dumb
-            ${lib.getExe pkgs.starship} init fish | source
+            ${exe "starship"} init fish | source
           end
         '';
       };
@@ -57,22 +66,22 @@
 
           fish_vi_key_bindings
 
-          ${lib.getExe pkgs.direnv} hook fish | source
-          ${lib.getExe pkgs.atuin} init fish | source
-          ${lib.getExe pkgs.zoxide} init fish | source
+          ${exe "direnv"} hook fish | source
+          ${exe "atuin"} init fish | source
+          ${exe "zoxide"} init fish | source
 
           ${integrations.ghostty}
           ${integrations.yazi}
           ${integrations.starship}
 
-          ${lib.getExe pkgs.fastfetch} --config ~/.config/fastfetch/startup.jsonc
+          ${exe "fastfetch"} --config ~/.config/fastfetch/startup.jsonc
         end
       '';
 
-      eza = lib.getExe pkgs.eza;
     in
     {
       imports = [ wlib.wrapperModules.fish ];
+      runtimePkgs = lib.attrValues wrapped;
 
       configFile.content = ''
         ${functionsFish}
@@ -87,7 +96,8 @@
         lst = "${eza} --long --icons --color --git --tree";
         rm = "${pkgs.trash-cli}/bin/trash";
       };
-    };
+    }
+  );
 
   flake.nixosModules.fish =
     { config, ... }:

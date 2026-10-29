@@ -4,6 +4,7 @@
       self.nixosModules.nh
       self.nixosModules.btop
       self.nixosModules.nixvim
+      self.nixosModules.starship
     ];
   };
 }

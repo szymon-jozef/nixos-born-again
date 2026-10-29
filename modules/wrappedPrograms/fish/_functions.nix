@@ -1,8 +1,10 @@
-{ pkgs, ... }:
+{
+  exe,
+  ...
+}:
 let
-  inherit (pkgs) lib;
-  git = lib.getExe pkgs.git;
-  nh = lib.getExe pkgs.nh;
+  git = exe "git";
+  nh = exe "nh";
 in
 {
   update = /* fish */ ''

@@ -234,6 +234,9 @@ imports = [
 |nh|Nix helper|yes|no|
 |btop|Resource monitor|yes|no|
 |nixvim|My super cool neovim setup|yes|no|
+|fish|Fish shell configuration|yes|no|
+|starship|Starship prompt|yes|no|
+
 
 # Templates
 Since I started using [devenv](devenv.sh/), I've stopped using flake templates for devshells. Now I write specific a specific flake.nix per project only if I want to distribute it.
