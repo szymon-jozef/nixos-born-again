@@ -208,31 +208,4 @@ home-manager switch --flake .#<your_name>@<your_host>
 |web-apps| Provides web-apps (PWAs)|
 
 # Templates
-This configuration also exposes templates for languages that I use.
-
-## Usage
-To use a template create a new directory and type:
-
-```bash
-nix flake init -t github:szymon-jozef/nixos-born-again#<template name>
-```
-
-Or do it with one command:
-
-```bash
-nix flake new -t github:szymon-jozef/nixos-born-again#<template name> ./path/to/your/project
-```
-
-For example:
-```bash
-nix flake init -t github:szymon-jozef/nixos-born-again#cpp
-```
-
-This will create all necessary files. Please remember to configure them to your needs.
-
-## Available templates
-- empty
-- cpp
-- c
-- py
-- rs
+Since I started using [devenv](devenv.sh/), I've stopped using flake templates for devshells. Now I write specific a specific flake.nix per project only if I want to distribute it.

@@ -1,1 +1,0 @@
-# Rust nix template
