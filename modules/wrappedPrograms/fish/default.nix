@@ -74,7 +74,7 @@
           ${integrations.yazi}
           ${integrations.starship}
 
-          ${exe "fastfetch"} --config ~/.config/fastfetch/startup.jsonc
+          ${exe "fastfetch-smol"}
         end
       '';
 

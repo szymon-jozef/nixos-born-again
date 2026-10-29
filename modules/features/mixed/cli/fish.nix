@@ -33,7 +33,7 @@
 
           direnv hook fish | source
 
-          fastfetch --config ~/.config/fastfetch/startup.jsonc
+          fastfetch-smol
         '';
 
       functions = {
