@@ -71,7 +71,6 @@ in
               self.homeModules.cli-default
               self.homeModules.xdg
               self.homeModules.university
-              self.homeModules.nixvim
             ];
           };
         }

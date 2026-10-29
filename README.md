@@ -171,7 +171,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |university| Some university tools|
 |gemini| Gemini-CLI configuration|
 |freetube| Freetube (alternative to youtube, that i almost don't use)|
-|nixvim|My super cool neovim configuration written with nixvim|
 
 #### Programs cli
 |Module name|Description|
@@ -230,10 +229,11 @@ imports = [
 ```
 
 **Table of available modules**
-|Program name| has nixosModule| has homeModule|
-|---|---|---|
-|nh|yes|no|
-|btop|yes|no|
+|Program name|Description|has nixosModule|has homeModule|
+|---|---|---|---|
+|nh|Nix helper|yes|no|
+|btop|Resource monitor|yes|no|
+|nixvim|My super cool neovim setup|yes|no|
 
 # Templates
 Since I started using [devenv](devenv.sh/), I've stopped using flake templates for devshells. Now I write specific a specific flake.nix per project only if I want to distribute it.

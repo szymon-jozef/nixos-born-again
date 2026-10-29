@@ -3,6 +3,7 @@
     imports = [
       self.nixosModules.nh
       self.nixosModules.btop
+      self.nixosModules.nixvim
     ];
   };
 }

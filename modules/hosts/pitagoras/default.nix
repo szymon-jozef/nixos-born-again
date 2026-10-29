@@ -78,7 +78,6 @@ in
               self.homeModules.terminal-emulator-default
 
               self.homeModules.cli-default
-              self.homeModules.nixvim
               self.homeModules.gemini
               self.homeModules.xdg
               self.homeModules.gaming

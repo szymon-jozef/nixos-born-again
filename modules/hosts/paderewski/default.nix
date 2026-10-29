@@ -84,7 +84,6 @@ in
               self.homeModules.university
 
               self.homeModules.cli-default
-              self.homeModules.nixvim
               self.homeModules.gemini
             ];
 
