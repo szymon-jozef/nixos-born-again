@@ -22,8 +22,7 @@
               "https://cache.nixos.org"
 
               # Cache Kernel CachyOS
-              "https://cache.xinux.uz"
-              "https://attic.xuyh0120.win/lantian"
+              "https://cache.lantian.pub/lantian"
 
               # Cache Hyprland
               #  "https://hyprland.cachix.org"
@@ -34,8 +33,7 @@
               "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
 
               # Kernel
-              "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc"
-              "cache.xinux.uz:BXCrtqejFjWzWEB9YuGB7X2MV4ttBur1N8BkwQRdH+0="
+              "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ="
 
               # Hyprland
               #  "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="

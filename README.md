@@ -179,7 +179,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |cli-default| Provides all of the following|
 |atuin|Atuin config |
 |bat|Bat config |
-|btop|Btop config |
 |fastfetch|Fastfetch config |
 |git|Git config |
 |ssh|Ssh config |
@@ -234,7 +233,7 @@ imports = [
 |Program name| has nixosModule| has homeModule|
 |---|---|---|
 |nh|yes|no|
-
+|btop|yes|no|
 
 # Templates
 Since I started using [devenv](devenv.sh/), I've stopped using flake templates for devshells. Now I write specific a specific flake.nix per project only if I want to distribute it.

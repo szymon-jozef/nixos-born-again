@@ -5,7 +5,6 @@
     ask = false;
     flake = "/etc/nixos";
     nom = true;
-    searchChannel = "unstable";
   };
 
   flake.nixosModules.nh = { config, ... }: {
