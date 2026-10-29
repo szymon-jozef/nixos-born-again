@@ -51,7 +51,7 @@ in
             self.nixosModules.nvidia
 
             # services
-            self.nixosModules.services-default
+            self.nixosModules.services
             self.nixosModules.services-syncthing
             self.nixosModules.services-snapper
 

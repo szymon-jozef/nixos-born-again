@@ -44,7 +44,7 @@ in
             self.nixosModules.theme
 
             # services
-            self.nixosModules.services-default
+            self.nixosModules.services
 
             # display manager
             self.nixosModules.display-manager-autologin

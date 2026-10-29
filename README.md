@@ -111,11 +111,7 @@ home-manager switch --flake .#<your_name>@<your_host>
 ### Services
 |Module name|Description|
 |---|---|
-|services-default| Default services configuration|
-|services-audio| Audio servers etc.|
-|services-printing| Printing support|
-|services-hardware| Hardware stuff|
-|services-additional|Some stuff that i didn't categorize|
+|services|Services that i want to have on every host|
 |services-hardware-overclock|Enable [lact](https://github.com/ilya-zlobintsev/LACT)|
 |services-syncthing|Enable syncthing|
 |services-snapper|Enable snapper and make snapshots of home directory|

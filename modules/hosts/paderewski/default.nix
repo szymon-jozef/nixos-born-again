@@ -49,7 +49,7 @@ in
             self.nixosModules.theme
 
             # services
-            self.nixosModules.services-default
+            self.nixosModules.services
             self.nixosModules.services-hardware-overclock
             self.nixosModules.services-syncthing
             self.nixosModules.services-snapper

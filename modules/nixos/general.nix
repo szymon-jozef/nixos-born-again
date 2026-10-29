@@ -3,7 +3,6 @@
     general =
       {
         inputs,
-        config,
         pkgs,
         ...
       }:
