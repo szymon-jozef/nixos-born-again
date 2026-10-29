@@ -7,9 +7,11 @@
   };
 
   flake.nixosModules.starship = { config, ... }: {
-    imports = [ self.wrappers.nh.install ];
-    package = config.wrappers.starship.wrapper;
+    imports = [ self.wrappers.starship.install ];
 
-    enableFishIntegration = true;
+    programs.starship = {
+      package = config.wrappers.starship.wrapper;
+      enableFishIntegration = true;
+    };
   };
 }

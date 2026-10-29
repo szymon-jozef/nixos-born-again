@@ -178,7 +178,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |cli-default| Provides all of the following|
 |atuin|Atuin config |
 |bat|Bat config |
-|fastfetch|Fastfetch config |
 |git|Git config |
 |ssh|Ssh config |
 |yazi|Yazi config |
@@ -236,6 +235,8 @@ imports = [
 |nixvim|My super cool neovim setup|yes|no|
 |fish|Fish shell configuration|yes|no|
 |starship|Starship prompt|yes|no|
+|fastfetch|System info fetch tool|yes|no|
+|fastfetch-smol|System info fetch tool, but with less information. Ideal for starting the shell.|yes|no|
 
 
 # Templates

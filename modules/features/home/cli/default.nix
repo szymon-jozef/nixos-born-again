@@ -6,7 +6,6 @@
 
       self.homeModules.atuin
       self.homeModules.bat
-      self.homeModules.fastfetch
       self.homeModules.git
       self.homeModules.ssh
       self.homeModules.devenv
