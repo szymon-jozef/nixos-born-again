@@ -54,23 +54,7 @@
       flake = false;
     };
 
-    fwm.url = "github:iluaii/fwm";
-
     # === UNI ===
-    zut-calendar = {
-      url = "github:szymon-jozef/zut-calendar";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    zutui = {
-      url = "github:shv187/zutui";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    battleship = {
-      url = "github:szymon-jozef/battleships";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     aruba-via.url = "github:szymon-jozef/aruba-vpn-flake";
   };
 
