@@ -236,6 +236,7 @@ imports = [
 |starship|Starship prompt|yes|no|
 |fastfetch|System info fetch tool|yes|no|
 |fastfetch-smol|System info fetch tool, but with less information. Ideal for starting the shell.|yes|no|
+|eza|Ls replacement|yes|no|
 
 **Table of available modules that are not in the default module**
 |Program name|Description|has nixosModule|has homeModule|

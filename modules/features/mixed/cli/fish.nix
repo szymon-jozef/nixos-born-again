@@ -86,8 +86,8 @@
       };
 
       shellAliases = {
-        ls = "eza --long --icons --group-directories-first --git";
-        lst = "eza --long --icons --color --git --tree";
+        ls = "eza";
+        lst = "eza --tree"; # ls is a bin name for eza, or at least it should be. This config is undergoing some changes, so it may be broken...
         rm = "trash";
       };
     };

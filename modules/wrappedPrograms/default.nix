@@ -7,6 +7,7 @@
       starship
       # fish
       fastfetch
+      eza
     ];
   };
 }
