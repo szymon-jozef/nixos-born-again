@@ -1,6 +1,7 @@
 {
   keymaps = [
     {
+      # unmap space
       mode = [
         "n"
         "v"
@@ -9,6 +10,8 @@
       action = "<Nop>";
       options.silent = true;
     }
+
+    # shifting code
     {
       mode = "x";
       key = ">";
@@ -21,8 +24,22 @@
       action = "<gv";
       options.desc = "Shift code left";
     }
+
     {
-      # make sure the screen is centered
+      mode = "v";
+      key = "J";
+      action = ":m '>+1<CR>gv=gv";
+      options.desc = "Move selected lines down";
+    }
+    {
+      mode = "v";
+      key = "K";
+      action = ":m '<-2<CR>gv=gv";
+      options.desc = "Move selected lines up";
+    }
+
+    # make sure the screen is centered
+    {
       key = "j";
       action = "jzz";
     }
@@ -46,6 +63,7 @@
       key = "}}";
       action = "}}zz";
     }
+
     # clipboard
     {
       mode = [
@@ -63,8 +81,9 @@
       action = "\"+p";
       options.desc = "Paste from system clipboard";
     }
+
+    # splitting windows
     {
-      # splitting windows
       mode = "n";
       key = "<C-h>";
       action = "<C-w>h";
@@ -84,6 +103,8 @@
       key = "<C-l>";
       action = "<C-w>l";
     }
+
+    # showing diagnostics
     {
       mode = "n";
       key = "<leader>ce";
@@ -101,20 +122,6 @@
       key = "<leader>q";
       action = "<cmd> AutoSession search<CR>";
       options.desc = "Search sessions";
-    }
-
-    # moving lines up and down
-    {
-      mode = "v";
-      key = "J";
-      action = ":m '>+1<CR>gv=gv";
-      options.desc = "Move selected lines down";
-    }
-    {
-      mode = "v";
-      key = "K";
-      action = ":m '<-2<CR>gv=gv";
-      options.desc = "Move selected lines up";
     }
 
     # turn off highlight with esc after finding something
