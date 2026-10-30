@@ -1,4 +1,9 @@
-{ self, inputs, ... }:
+{
+  self,
+  inputs,
+  moduleWithSystem,
+  ...
+}:
 {
   config = {
     perSystem = { system, ... }: {
@@ -14,16 +19,18 @@
       };
     };
 
-    flake.nixosModules.nixvim = { pkgs, ... }: {
-      environment.systemPackages = [
-        self.packages.${pkgs.stdenv.hostPlatform.system}.nvim
-      ];
+    flake.nixosModules.nixvim = moduleWithSystem (
+      { system, ... }: {
+        environment.systemPackages = [
+          self.packages.${system}.nvim
+        ];
 
-      environment.variables = {
-        EDITOR = "nvim";
-        VISUAL = "nvim";
-      };
-    };
+        environment.variables = {
+          EDITOR = "nvim";
+          VISUAL = "nvim";
+        };
+      }
+    );
 
   };
 }
