@@ -51,7 +51,7 @@
 
       loginShellInit = /* fish */ ''
         if status is-login
-          fish_add_path --move --prepend --path "$HOME/.nix-profile/bin" /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
+          fish_add_path --move --prepend --path /run/wrappers/bin "$HOME/.nix-profile/bin" /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
         end
       '';
 
@@ -98,7 +98,7 @@
       };
     };
 
-  flake.nixosModules.fish =
+  flake.nixosModules.fish-wrapped = # TODO! Change to fish when finished
     { config, ... }:
     {
       imports = [ self.wrappers.fish.install ];

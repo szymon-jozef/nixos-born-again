@@ -19,7 +19,7 @@
       enable = true;
       loginShellInit = # fish
         ''
-          fish_add_path --move --prepend --path "$HOME/.nix-profile/bin" /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
+          fish_add_path --move --prepend --path /run/wrappers/bin "$HOME/.nix-profile/bin" /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
         '';
 
       interactiveShellInit = # fish
