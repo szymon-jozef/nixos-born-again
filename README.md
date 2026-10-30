@@ -153,7 +153,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 ### Status bars
 |Module name|Description|
 |---|---|
-|waybar| Waybar configuration (old and not recommended)|
 |ashell| Ashell configuration|
 
 ### Terminal emulators
@@ -238,6 +237,10 @@ imports = [
 |fastfetch|System info fetch tool|yes|no|
 |fastfetch-smol|System info fetch tool, but with less information. Ideal for starting the shell.|yes|no|
 
+**Table of available modules that are not in the default module**
+|Program name|Description|has nixosModule|has homeModule|
+|---|---|---|---|
+|waybar|Cool system bar|yes|no|
 
 # Templates
 Since I started using [devenv](devenv.sh/), I've stopped using flake templates for devshells. Now I write specific a specific flake.nix per project only if I want to distribute it.

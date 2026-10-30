@@ -56,6 +56,7 @@ in
             ./_hardware.nix
 
             self.nixosModules.wrapped-programs-default
+            self.nixosModules.waybar
           ];
 
           home-manager.users.${config.user.name} = {
@@ -63,7 +64,6 @@ in
               # self.homeModules.* import
               self.homeModules.theme
               self.homeModules.hypr
-              self.homeModules.waybar
               self.homeModules.gui-default
               # self.homeModules.terminal-emulator-default
               self.homeModules.kitty
