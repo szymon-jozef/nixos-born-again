@@ -14,7 +14,7 @@
             imports = [
               ./_general.nix
               ./_keymaps.nix
-              ./_plugins.nix
+              ./_plugins.nix 
               ./_lsp
             ];
           };

@@ -3,5 +3,6 @@
     enable = true;
     installCargo = true;
     installRustc = true;
+    installRustfmt = true;
   };
 }

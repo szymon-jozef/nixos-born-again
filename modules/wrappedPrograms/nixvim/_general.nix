@@ -34,6 +34,16 @@
       "noselect"
       "popup"
     ];
+
+    undofile = true;
+
+    # ignore case unless big letter is typed in
+    ignorecase = true;
+    smartcase = true;
+
+    updatetime = 250;
+
+    winborder = "rounded";
   };
 
   diagnostic.settings = {

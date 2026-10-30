@@ -64,43 +64,6 @@
       options.desc = "Paste from system clipboard";
     }
     {
-      # dap
-      mode = "n";
-      key = "<F5>";
-      action = "<cmd>lua require('dap').continue()<CR>";
-      options.desc = "DAP: Start/Continue";
-    }
-    {
-      mode = "n";
-      key = "<F10>";
-      action = "<cmd>lua require('dap').step_over()<CR>";
-      options.desc = "DAP: Step Over";
-    }
-    {
-      mode = "n";
-      key = "<F11>";
-      action = "<cmd>lua require('dap').step_into()<CR>";
-      options.desc = "DAP: Step Into";
-    }
-    {
-      mode = "n";
-      key = "<F12>";
-      action = "<cmd>lua require('dap').step_out()<CR>";
-      options.desc = "DAP: Step Out";
-    }
-    {
-      mode = "n";
-      key = "<leader>b";
-      action = "<cmd>lua require('dap').toggle_breakpoint()<CR>";
-      options.desc = "DAP: Toggle Breakpoint";
-    }
-    {
-      mode = "n";
-      key = "<leader>du";
-      action = "<cmd>lua require('dapui').toggle()<CR>";
-      options.desc = "DAP: Toggle UI";
-    }
-    {
       # splitting windows
       mode = "n";
       key = "<C-h>";
@@ -138,6 +101,39 @@
       key = "<leader>q";
       action = "<cmd> AutoSession search<CR>";
       options.desc = "Search sessions";
+    }
+
+    # moving lines up and down
+    {
+      mode = "v";
+      key = "J";
+      action = ":m '>+1<CR>gv=gv";
+      options.desc = "Move selected lines down";
+    }
+    {
+      mode = "v";
+      key = "K";
+      action = ":m '<-2<CR>gv=gv";
+      options.desc = "Move selected lines up";
+    }
+
+    # turn off highlight with esc after finding something
+    {
+      mode = "n";
+      key = "<Esc>";
+      action = "<cmd>nohlsearch<CR>";
+    }
+
+    # flash
+    {
+      mode = [
+        "n"
+        "x"
+        "o"
+      ];
+      key = "s";
+      action.__raw = "function() require('flash').jump() end";
+      options.desc = "Flash jump";
     }
   ];
 }

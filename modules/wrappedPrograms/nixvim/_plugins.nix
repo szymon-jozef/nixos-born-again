@@ -1,4 +1,9 @@
 {
+  pkgs,
+  lib,
+  ...
+}:
+{
   plugins = {
     # close () and stuff
     nvim-autopairs.enable = true;
@@ -10,7 +15,10 @@
 
     # show git stuff (super cool!)
     gitsigns.enable = true;
+
     mini-git.enable = true;
+    mini-surround.enable = true;
+    mini-ai.enable = true;
 
     # fuzzy find files
     telescope = {
@@ -29,7 +37,6 @@
 
     #autoformat on save
     lsp-format.enable = true;
-    # snippets enginge
 
     # treesitter speaks for itself
     treesitter = {
@@ -60,27 +67,34 @@
     # show dir as nvim buffer
     oil.enable = true;
 
+    # faster navigating
+    flash.enable = true;
+
     # completion engine
-    luasnip.enable = true;
-    cmp = {
+    blink-cmp = {
       enable = true;
       settings = {
-        snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
-        sources = [
-          { name = "nvim_lsp"; }
-          { name = "luasnip"; }
-          { name = "buffer"; }
+        keymap.preset = "default";
+
+        sources.default = [
+          "lsp"
+          "path"
+          "snippets"
+          "buffer"
         ];
-        mapping = {
-          "<C-p>" = "cmp.mapping.select_prev_item()";
-          "<C-n>" = "cmp.mapping.select_next_item()";
-          "<C-y>" = "cmp.mapping.confirm({ select = true })";
-          "<C-e>" = "cmp.mapping.abort()";
-        };
-        window = {
+
+        completion = {
+          menu.border = "rounded";
           documentation = {
-            border = "rounded";
+            auto_show = true;
+            auto_show_delay_ms = 200;
+            window.border = "rounded";
           };
+        };
+
+        signature = {
+          enabled = true;
+          window.border = "rounded";
         };
       };
     };
