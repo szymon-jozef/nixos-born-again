@@ -2,13 +2,21 @@
   globals = {
     mapleader = " ";
     maplocalleader = "\\";
+    autocomplete = true;
   };
 
   opts = {
     relativenumber = true;
     number = true;
+
     signcolumn = "yes";
-    cursorline = false;
+
+    # highlight current line for cursor
+    cursorline = true;
+
+    # better colors
+    termguicolors = true;
+
     wrap = true;
     shiftwidth = 4;
     tabstop = 4;
@@ -20,6 +28,35 @@
       "pl"
       "en"
     ];
+
+    completeopt = [
+      "menuone"
+      "noselect"
+      "popup"
+    ];
+  };
+
+  diagnostic.settings = {
+    update_in_insert = false;
+    severity_sort = true;
+
+    virtual_lines = false;
+    underline = false;
+
+    virtual_text = {
+      prefix = "●";
+      spacing = 4;
+      source = "if_many";
+      current_line = true;
+    };
+
+    float = {
+      border = "rounded";
+    };
+
+    jump = {
+      severity.__raw = "vim.diagnostic.severity.WARN";
+    };
   };
 
   colorschemes.catppuccin = {
@@ -40,14 +77,4 @@
       '';
     }
   ];
-
-  extraConfigLua = ''
-    vim.diagnostic.config({
-      virtual_text = {
-        prefix = "●",
-        spacing = 2,
-        source = "if_many",
-      }
-    });
-  '';
 }

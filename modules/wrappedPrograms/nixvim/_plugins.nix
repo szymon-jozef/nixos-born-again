@@ -27,16 +27,9 @@
       };
     };
 
-    # harpoon!
-    #harpoon = {
-    #  enable = true;
-    #  enableTelescope = true;
-    #};
-
     #autoformat on save
     lsp-format.enable = true;
     # snippets enginge
-    luasnip.enable = true;
 
     # treesitter speaks for itself
     treesitter = {
@@ -48,20 +41,11 @@
     };
     treesitter-textobjects.enable = true;
 
-    # debugger
-    dap.enable = true;
-    dap-ui.enable = true;
-
     # highlights word under cursor
     cursorline = {
       enable = true;
     };
 
-    # show indent
-    #mini-indentscope = {
-    #  enable = true;
-    #  settings.draw.delay = 0;
-    #};
     indent-blankline.enable = true;
 
     # status line
@@ -77,6 +61,7 @@
     oil.enable = true;
 
     # completion engine
+    luasnip.enable = true;
     cmp = {
       enable = true;
       settings = {
@@ -99,6 +84,5 @@
         };
       };
     };
-
   };
 }

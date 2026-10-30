@@ -7,6 +7,10 @@
     ./web.nix
   ];
 
+  lsp.completion = {
+    enable = true;
+  };
+
   plugins.lsp = {
     enable = true;
     servers = {
