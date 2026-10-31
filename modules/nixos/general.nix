@@ -54,7 +54,7 @@
               "electron-40.10.5"
             ];
           };
-          overlays = [ inputs.nix-cachyos-kernel.overlays.default ];
+          overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
         };
 
         _module.args.pkgs-stable = import inputs.nixpkgs-stable {
