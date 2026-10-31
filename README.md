@@ -30,9 +30,10 @@
     - [Programs](#programs)
       - [Programs cli](#programs-cli)
       - [Programs gui](#programs-gui)
+  - [Wrapped programs](#wrapped-programs)
+    - [Default](#default)
+    - [Wrapped programs modules](#wrapped-programs-modules)
 - [Templates](#templates)
-  - [Usage](#usage-1)
-  - [Available templates](#available-templates)
 <!--toc:end-->
 
 
@@ -111,12 +112,7 @@ home-manager switch --flake .#<your_name>@<your_host>
 ### Services
 |Module name|Description|
 |---|---|
-|services-default| Default services configuration|
-|services-audio| Audio servers etc.|
-|services-printing| Printing support|
-|services-ssh| Ssh support|
-|services-hardware| Hardware stuff|
-|services-additional|Some stuff that i didn't categorize|
+|services|Services that i want to have on every host|
 |services-hardware-overclock|Enable [lact](https://github.com/ilya-zlobintsev/LACT)|
 |services-syncthing|Enable syncthing|
 |services-snapper|Enable snapper and make snapshots of home directory|
@@ -131,7 +127,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |Module name|Description|
 |---|---|
 |network|Basic network settings|
-|network-home-wifi|Networkmanager profile for my home wifi|
 
 ### Nvidia
 |Module name|Description|
@@ -158,7 +153,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 ### Status bars
 |Module name|Description|
 |---|---|
-|waybar| Waybar configuration (old and not recommended)|
 |ashell| Ashell configuration|
 
 ### Terminal emulators
@@ -176,7 +170,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |university| Some university tools|
 |gemini| Gemini-CLI configuration|
 |freetube| Freetube (alternative to youtube, that i almost don't use)|
-|nixvim|My super cool neovim configuration written with nixvim|
 
 #### Programs cli
 |Module name|Description|
@@ -184,8 +177,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |cli-default| Provides all of the following|
 |atuin|Atuin config |
 |bat|Bat config |
-|btop|Btop config |
-|fastfetch|Fastfetch config |
 |git|Git config |
 |ssh|Ssh config |
 |yazi|Yazi config |
@@ -208,32 +199,49 @@ home-manager switch --flake .#<your_name>@<your_host>
 |zen| Zen-browser config|
 |web-apps| Provides web-apps (PWAs)|
 
-# Templates
-This configuration also exposes templates for languages that I use.
-
-## Usage
-To use a template create a new directory and type:
-
+## Wrapped programs
+Programs that are accessible from anywhere with my config. To try it out type in:
 ```bash
-nix flake init -t github:szymon-jozef/nixos-born-again#<template name>
-```
-
-Or do it with one command:
-
-```bash
-nix flake new -t github:szymon-jozef/nixos-born-again#<template name> ./path/to/your/project
+nix run github:szymon-jozef/nixos-born-again#<program>
 ```
 
 For example:
 ```bash
-nix flake init -t github:szymon-jozef/nixos-born-again#cpp
+nix run github:szymon-jozef/nixos-born-again#nh
 ```
 
-This will create all necessary files. Please remember to configure them to your needs.
+### Default
+Every host should include
+```nix
+self.nixosModules.wrapped-programs-default
+```
+It imports all the modules in one place.
 
-## Available templates
-- empty
-- cpp
-- c
-- py
-- rs
+### Wrapped programs modules
+Available modules for wrapped programs. To use it add:
+
+```nix
+imports = [
+    self.<nixosModules/homeModules>.<program_name>
+];
+```
+
+**Table of available modules**
+|Program name|Description|has nixosModule|has homeModule|
+|---|---|---|---|
+|nh|Nix helper|yes|no|
+|btop|Resource monitor|yes|no|
+|nixvim|My super cool neovim setup|yes|no|
+|fish|Fish shell configuration|yes|no|
+|starship|Starship prompt|yes|no|
+|fastfetch|System info fetch tool|yes|no|
+|fastfetch-smol|System info fetch tool, but with less information. Ideal for starting the shell.|yes|no|
+|eza|Ls replacement|yes|no|
+
+**Table of available modules that are not in the default module**
+|Program name|Description|has nixosModule|has homeModule|
+|---|---|---|---|
+|waybar|Cool system bar|yes|no|
+
+# Templates
+Since I started using [devenv](devenv.sh/), I've stopped using flake templates for devshells. Now I write specific a specific flake.nix per project only if I want to distribute it.

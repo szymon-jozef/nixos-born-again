@@ -19,7 +19,7 @@
       enable = true;
       loginShellInit = # fish
         ''
-          fish_add_path --move --prepend --path "$HOME/.nix-profile/bin" /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
+          fish_add_path --move --prepend --path /run/wrappers/bin "$HOME/.nix-profile/bin" /nix/var/nix/profiles/default/bin /run/current-system/sw/bin
         '';
 
       interactiveShellInit = # fish
@@ -33,7 +33,7 @@
 
           direnv hook fish | source
 
-          fastfetch --config ~/.config/fastfetch/startup.jsonc
+          fastfetch-smol
         '';
 
       functions = {
@@ -86,8 +86,8 @@
       };
 
       shellAliases = {
-        ls = "eza --long --icons --group-directories-first --git";
-        lst = "eza --long --icons --color --git --tree";
+        ls = "eza";
+        lst = "eza --tree"; # ls is a bin name for eza, or at least it should be. This config is undergoing some changes, so it may be broken...
         rm = "trash";
       };
     };

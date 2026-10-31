@@ -158,10 +158,10 @@
 
             -- power managament
             hl.bind(mainMod .. " + SHIFT + CONTROL + L", hl.dsp.exec_cmd("hyprlock"))
-            hl.bind(mainMod .. " + SHIFT + CONTROL + R", hl.dsp.exec_cmd("openrgb -c black && systemctl reboot"))
-            hl.bind(mainMod .. " + SHIFT + CONTROL + P", hl.dsp.exec_cmd("openrgb -c black && systemctl poweroff"))
+            hl.bind(mainMod .. " + SHIFT + CONTROL + R", hl.dsp.exec_cmd("systemctl reboot"))
+            hl.bind(mainMod .. " + SHIFT + CONTROL + P", hl.dsp.exec_cmd("systemctl poweroff"))
             hl.bind(mainMod .. " + SHIFT + CONTROL + S",
-                hl.dsp.exec_cmd("openrgb -c black && pidof hyprlock || sleep 1 && systemctl sleep"))
+                hl.dsp.exec_cmd("pidof hyprlock || sleep 1 && systemctl sleep"))
             hl.bind(mainMod .. " + SHIFT + CONTROL + M", hl.dsp.exec_cmd("uwsm stop"))
 
             -- window managament
