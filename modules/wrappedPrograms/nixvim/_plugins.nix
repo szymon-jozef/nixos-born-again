@@ -115,7 +115,11 @@
         ];
 
         completion = {
-          menu.border = "rounded";
+          menu = {
+            auto_show = false;
+            border = "rounded";
+          };
+
           documentation = {
             auto_show = true;
             auto_show_delay_ms = 200;
