@@ -101,6 +101,19 @@
     # faster navigating
     flash.enable = true;
 
+    snacks = {
+      enable = true;
+      settings.image.enabled = true;
+    };
+
+    img-clip = {
+      enable = true;
+      settings.default = {
+        dir_path = "assets";
+        prompt_for_file_name = false;
+      };
+    };
+
     # completion engine
     blink-cmp = {
       enable = true;
