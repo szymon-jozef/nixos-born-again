@@ -38,31 +38,33 @@
       options.desc = "Move selected lines up";
     }
 
-    # make sure the screen is centered
-    {
-      key = "j";
-      action = "jzz";
-    }
-    {
-      key = "k";
-      action = "kzz";
-    }
-    {
-      key = "[[";
-      action = "[[zz";
-    }
-    {
-      key = "]]";
-      action = "]]zz";
-    }
-    {
-      key = "{{";
-      action = "{{zz";
-    }
-    {
-      key = "}}";
-      action = "}}zz";
-    }
+    # make sure the screen is centered (maybe not)
+    /*
+      {
+        key = "j";
+        action = "jzz";
+      }
+      {
+        key = "k";
+        action = "kzz";
+      }
+      {
+        key = "[[";
+        action = "[[zz";
+      }
+      {
+        key = "]]";
+        action = "]]zz";
+      }
+      {
+        key = "{{";
+        action = "{{zz";
+      }
+      {
+        key = "}}";
+        action = "}}zz";
+      }
+    */
 
     # clipboard
     {
@@ -82,7 +84,7 @@
       options.desc = "Paste from system clipboard";
     }
 
-    # splitting windows
+    # changing buffer focus
     {
       mode = "n";
       key = "<C-h>";
@@ -141,6 +143,14 @@
       key = "s";
       action.__raw = "function() require('flash').jump() end";
       options.desc = "Flash jump";
+    }
+
+    # Oil
+    {
+      mode = "n";
+      key = "-";
+      action = "<cmd>Oil<CR>";
+      options.desc = "Oil";
     }
   ];
 }

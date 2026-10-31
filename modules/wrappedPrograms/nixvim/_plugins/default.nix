@@ -35,9 +35,6 @@
     };
     treesitter-textobjects.enable = true;
 
-    # show current indentation level
-    indent-blankline.enable = true;
-
     # restore session
     auto-session.enable = true;
 
@@ -50,4 +47,19 @@
     # faster navigating
     flash.enable = true;
   };
+
+  autoCmd = [
+    # lsp rename files changes with Oil
+    {
+      event = "User";
+      pattern = "OilActionsPost";
+      callback.__raw = ''
+        function(event)
+          if event.data.actions.type == "move" then
+            Snacks.rename.on_rename_file(event.data.actions.src_url, event.data.actions.dest_url)
+          end
+        end
+      '';
+    }
+  ];
 }

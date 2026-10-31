@@ -6,13 +6,13 @@
   };
 
   opts = {
-    relativenumber = true;
     number = true;
+    relativenumber = true;
 
     signcolumn = "yes";
 
     # highlight current line for cursor
-    cursorline = true;
+    cursorline = false;
 
     # better colors
     termguicolors = true;
@@ -44,6 +44,12 @@
     updatetime = 250;
 
     winborder = "rounded";
+
+    # open new buffers on the right bellow side
+    splitbelow = true;
+    splitright = true;
+
+    scrolloff = 8;
   };
 
   diagnostic.settings = {
