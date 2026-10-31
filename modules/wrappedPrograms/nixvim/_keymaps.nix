@@ -106,6 +106,29 @@
       action = "<C-w>l";
     }
 
+    # same thing in terminal mode
+
+    {
+      mode = "t";
+      key = "<C-h>";
+      action = "<C-\\><C-n> <C-w>h";
+    }
+    {
+      mode = "t";
+      key = "<C-j>";
+      action = "<C-\\><C-n> <C-w>j";
+    }
+    {
+      mode = "t";
+      key = "<C-k>";
+      action = "<C-\\><C-n> <C-w>k";
+    }
+    {
+      mode = "t";
+      key = "<C-l>";
+      action = "<C-\\><C-n> <C-w>l";
+    }
+
     # showing diagnostics
     {
       mode = "n";
