@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   flake.wrappers.waybar =
     { wlib, pkgs, ... }:
@@ -23,11 +24,6 @@
         mode = "dock";
         reload_style_on_change = true;
         width = 70;
-        /*
-          output = [
-            config.monitors.primary
-          ];
-        */
 
         modules-left = [
           "clock"
@@ -194,6 +190,15 @@
     };
 
   flake.nixosModules.waybar = { config, ... }: {
-    imports = [ config.wrappers.waybar.install ];
+    imports = [ self.wrappers.waybar.install ];
+
+    systemd.user.services.waybar.wantedBy = [ "graphical-session.target" ];
+
+    wrappers.waybar = {
+      enable = true;
+      settings.output = [
+        config.monitors.primary
+      ];
+    };
   };
 }
