@@ -1,7 +1,9 @@
 ![Nix](https://img.shields.io/badge/Nix-unstable-blue.svg?logo=nixos&logoColor=white)
 ![Home Manager](https://img.shields.io/badge/Home_Manager-enabled-brightgreen.svg)
 
+# Table of contents
 <!--toc:start-->
+- [Table of contents](#table-of-contents)
 - [NixOS born again](#nixos-born-again)
 - [Usage](#usage)
   - [Nixos](#nixos)
@@ -35,7 +37,6 @@
     - [Wrapped programs modules](#wrapped-programs-modules)
 - [Templates](#templates)
 <!--toc:end-->
-
 
 # NixOS born again
 My NixOS and home-manager configurations.
@@ -212,9 +213,11 @@ nix run github:szymon-jozef/nixos-born-again#nh
 
 ### Default
 Every host should include
+
 ```nix
 self.nixosModules.wrapped-programs-default
 ```
+
 It imports all the modules in one place.
 
 ### Wrapped programs modules
