@@ -192,13 +192,16 @@
   flake.nixosModules.waybar = { config, ... }: {
     imports = [ self.wrappers.waybar.install ];
 
-    systemd.user.services.waybar.wantedBy = [ "graphical-session.target" ];
-
     wrappers.waybar = {
       enable = true;
       settings.output = [
         config.monitors.primary
       ];
+    };
+
+    programs.waybar = {
+      enable = true;
+      package = config.wrappers.waybar.wrapped;
     };
   };
 }
