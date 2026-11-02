@@ -169,7 +169,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |xdg|Xdg configuration (defualt directories, etc.)|
 |gaming| A bunch of gaming tools|
 |university| Some university tools|
-|gemini| Gemini-CLI configuration|
 |freetube| Freetube (alternative to youtube, that i almost don't use)|
 
 #### Programs cli

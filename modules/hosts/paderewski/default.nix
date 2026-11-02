@@ -77,7 +77,6 @@ in
               self.homeModules.university
 
               self.homeModules.cli-default
-              self.homeModules.gemini
             ];
 
             # start this apps only on this host
