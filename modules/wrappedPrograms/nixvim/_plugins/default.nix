@@ -36,7 +36,22 @@
     treesitter-textobjects.enable = true;
 
     # restore session
-    auto-session.enable = true;
+    auto-session = {
+      enable = true;
+
+      settings = {
+        suppressed_dirs = [
+          "~/"
+          "~/Kodowanie"
+          "~/Pobrane"
+          "~/Dokumenty"
+        ];
+
+        git_use_branch_name = true;
+        purge_after_minutes = (60 * 12 * 7); # week
+      };
+
+    };
 
     # show lsp errors
     trouble.enable = true;
