@@ -48,7 +48,7 @@
         ];
 
         git_use_branch_name = true;
-        purge_after_minutes = (60 * 12 * 7); # week
+        purge_after_minutes = (60 * 24 * 7); # week
       };
 
     };
