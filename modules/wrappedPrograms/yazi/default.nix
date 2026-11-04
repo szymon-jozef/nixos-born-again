@@ -37,7 +37,7 @@
 
       settings = {
         theme = lib.recursiveUpdate (fromTOML (builtins.readFile ./theme.toml)) {
-          mgr.sytenct_theme = "${./preview.tmTheme}";
+          mgr.syntect_theme = "${./preview.tmTheme}";
         };
 
         yazi.plugin = {
