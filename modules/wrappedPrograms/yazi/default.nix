@@ -1,11 +1,51 @@
 { self, ... }:
 
 {
-  flake.wrappers.yazi = { wlib, ... }: {
+  flake.wrappers.yazi = { wlib, pkgs, ... }: {
     imports = [ wlib.wrapperModules.yazi ];
+
+    plugins = with pkgs.yaziPlugins; {
+      git = git;
+      mount = mount;
+      full-border = full-border;
+    };
+
+    initLua =
+      # lua
+      ''
+         require("full-border"):setup()
+         Header:children_add(function()
+             if ya.target_family() ~= "unix" then
+                 return ""
+             end
+             return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
+         end, 500, Header.LEFT)
+
+        require("git"):setup {
+             order = 1500,
+        }
+
+
+      '';
 
     settings = {
       theme = fromTOML (builtins.readFile ./theme.toml);
+
+      yazi.plugin = {
+        prepend_fetchers = [
+          {
+            url = "*";
+            run = "git";
+            group = "git";
+          }
+
+          {
+            url = "*/";
+            run = "git";
+            group = "git";
+          }
+        ];
+      };
 
       yazi.mgr = {
         ratio = [
@@ -36,6 +76,13 @@
             run = [
               "shell -- for path in %s; do echo \"file://$path\"; done | wl-copy -t text/uri-list"
               "yank"
+            ];
+          }
+
+          {
+            on = [ "M" ];
+            run = [
+              "plugin mount"
             ];
           }
         ];
