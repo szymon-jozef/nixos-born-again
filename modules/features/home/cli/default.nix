@@ -9,7 +9,6 @@
       self.homeModules.git
       self.homeModules.ssh
       self.homeModules.devenv
-      self.homeModules.yazi
       self.homeModules.zoxide
 
       self.homeModules.cli-packages

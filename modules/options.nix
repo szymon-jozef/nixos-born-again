@@ -33,6 +33,33 @@
             default = "DP-1";
           };
         };
+
+        paths = {
+          documents = lib.mkOption {
+            type = t.str;
+            default = "Dokumenty";
+          };
+
+          download = lib.mkOption {
+            type = t.str;
+            default = "Pobrane";
+          };
+
+          pictures = lib.mkOption {
+            type = t.str;
+            default = "Obrazy";
+          };
+
+          videos = lib.mkOption {
+            type = t.str;
+            default = "Video";
+          };
+
+          projects = lib.mkOption {
+            type = t.str;
+            default = "Kodowanie";
+          };
+        };
       };
     };
 }

@@ -179,7 +179,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |bat|Bat config |
 |git|Git config |
 |ssh|Ssh config |
-|yazi|Yazi config |
 |zoxide|Zoxide config|
 |devenv|Devenv settings|
 |cli-packages|General cli packages|
@@ -239,6 +238,7 @@ imports = [
 |fastfetch|System info fetch tool|yes|no|
 |fastfetch-smol|System info fetch tool, but with less information. Ideal for starting the shell.|yes|no|
 |eza|Ls replacement|yes|no|
+|yazi|Super cool terminal file manager|yes| no|
 
 **Table of available modules that are not in the default module**
 |Program name|Description|has nixosModule|has homeModule|

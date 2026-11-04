@@ -3,6 +3,8 @@
     { config, ... }:
     let
       home = config.home.homeDirectory;
+      homePaths = builtins.mapAttrs (name: value: "${home}/${value}") config.paths;
+
       browserFallback = [
         "zen-beta.desktop"
         "zen.desktop"
@@ -70,11 +72,11 @@
           enable = true;
           createDirectories = true;
 
-          documents = "${home}/Dokumenty";
-          download = "${home}/Pobrane";
-          pictures = "${home}/Obrazy";
-          videos = "${home}/Video";
-          projects = "${home}/Kodowanie";
+          documents = homePaths.documents;
+          download = homePaths.download;
+          pictures = homePaths.pictures;
+          videos = homePaths.videos;
+          projects = homePaths.projects;
 
           desktop = null;
           music = null;

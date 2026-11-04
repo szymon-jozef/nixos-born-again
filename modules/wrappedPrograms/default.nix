@@ -8,6 +8,8 @@
       # fish
       fastfetch
       eza
+      fastfetch
+      yazi
     ];
   };
 }
