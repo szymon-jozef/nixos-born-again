@@ -67,7 +67,6 @@
         };
 
         media_player = {
-          max_title_length = 50;
           indicator_format = "Icon";
         };
 
