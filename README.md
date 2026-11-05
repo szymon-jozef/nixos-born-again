@@ -2,6 +2,8 @@
 ![Home Manager](https://img.shields.io/badge/Home_Manager-enabled-brightgreen.svg)
 
 # Table of contents
+
+
 <!--toc:start-->
 - [Table of contents](#table-of-contents)
 - [NixOS born again](#nixos-born-again)
@@ -27,7 +29,6 @@
   - [homeModules](#homemodules)
     - [Theme](#theme-1)
     - [hypr](#hypr)
-    - [Status bars](#status-bars)
     - [Terminal emulators](#terminal-emulators)
     - [Programs](#programs)
       - [Programs cli](#programs-cli)
@@ -151,11 +152,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |hyprtoolkit|Hyprtoolkit (hypr* apps theming) configuration|
 |**hypr**| A wrapper around all the hypr stuff|
 
-### Status bars
-|Module name|Description|
-|---|---|
-|ashell| Ashell configuration|
-
 ### Terminal emulators
 |Module name|Description|
 |---|---|
@@ -244,6 +240,7 @@ imports = [
 |Program name|Description|has nixosModule|has homeModule|
 |---|---|---|---|
 |waybar|Cool system bar|yes|no|
+|ashell|Even better system bar|yes|no|
 
 # Templates
 Since I started using [devenv](devenv.sh/), I've stopped using flake templates for devshells. Now I write specific a specific flake.nix per project only if I want to distribute it.

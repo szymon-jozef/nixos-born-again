@@ -65,6 +65,7 @@ in
             ./_hardware.nix
 
             self.nixosModules.wrapped-programs-default
+            self.nixosModules.ashell
           ];
 
           # home-manager imports go here
@@ -73,7 +74,6 @@ in
               # self.homeModules.* import
               self.homeModules.theme
               self.homeModules.hypr
-              self.homeModules.ashell
               self.homeModules.gui-default
               self.homeModules.terminal-emulator-default
 

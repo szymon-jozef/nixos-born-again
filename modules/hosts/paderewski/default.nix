@@ -52,6 +52,7 @@ in
               network
 
               wrapped-programs-default
+              ashell
             ]
             ++ [
               self.commonModules.options
@@ -66,7 +67,6 @@ in
               # self.homeModules.* import
               self.homeModules.theme
               self.homeModules.hypr
-              self.homeModules.ashell
 
               self.homeModules.gui-default
               self.homeModules.freetube
