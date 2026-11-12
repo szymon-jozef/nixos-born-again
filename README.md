@@ -223,24 +223,24 @@ imports = [
 ];
 ```
 
-**Table of available modules**
-|Program name|Description|has nixosModule|has homeModule|
-|---|---|---|---|
-|nh|Nix helper|yes|no|
-|btop|Resource monitor|yes|no|
-|nixvim|My super cool neovim setup|yes|no|
-|fish|Fish shell configuration|yes|no|
-|starship|Starship prompt|yes|no|
-|fastfetch|System info fetch tool|yes|no|
-|fastfetch-smol|System info fetch tool, but with less information. Ideal for starting the shell.|yes|no|
-|eza|Ls replacement|yes|no|
-|yazi|Super cool terminal file manager|yes| no|
+**Table of available modules, included in wreapper-programs-default module**
+|Program name|Description|has nixosModule|
+|---|---|---|
+|nh|Nix helper|yes|
+|btop|Resource monitor|yes|
+|nixvim|My super cool neovim setup|yes|
+|fish|Fish shell configuration|yes|
+|starship|Starship prompt|yes|
+|fastfetch|System info fetch tool|yes|
+|fastfetch-smol|System info fetch tool, but with less information. Ideal for starting the shell.|yes|
+|eza|Ls replacement|yes|
+|yazi|Super cool terminal file manager|yes| 
 
 **Table of available modules that are not in the default module**
-|Program name|Description|has nixosModule|has homeModule|
-|---|---|---|---|
-|waybar|Cool system bar|yes|no|
-|ashell|Even better system bar|yes|no|
+|Program name|Description|has nixosModule|
+|---|---|---|
+|waybar|Cool system bar|yes|
+|ashell|Even better system bar|yes|
 
 # Templates
 Since I started using [devenv](devenv.sh/), I've stopped using flake templates for devshells. Now I write specific a specific flake.nix per project only if I want to distribute it.
