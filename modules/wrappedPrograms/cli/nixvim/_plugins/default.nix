@@ -57,7 +57,12 @@
     trouble.enable = true;
 
     # show dir as nvim buffer
-    oil.enable = true;
+    oil = {
+      enable = true;
+      settings = {
+        delete_to_trash = true;
+      };
+    };
 
     # faster navigating
     flash.enable = true;
