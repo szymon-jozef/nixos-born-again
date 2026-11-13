@@ -44,4 +44,25 @@
       };
     };
   };
+
+  autoCmd = [
+    {
+      event = "BufWritePre";
+      pattern = [
+        "*.md"
+      ];
+      desc = "Auto update tos on save";
+
+      callback.__raw = ''
+        function()
+            vim.lsp.buf.code_action {
+                filter = function(action)
+                    return action.title == "Update the Table of Contents"
+                end,
+                apply = true,
+            }
+        end
+      '';
+    }
+  ];
 }
