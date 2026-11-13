@@ -36,6 +36,7 @@ in
               programs
               gaming
               hyprland
+              hypr # from wrappers
               fish
 
               user

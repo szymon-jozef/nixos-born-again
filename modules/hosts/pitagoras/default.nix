@@ -39,6 +39,7 @@ in
 
             self.nixosModules.programs
             self.nixosModules.hyprland
+            self.nixosModules.hypr # from wrappers
             self.nixosModules.fish
 
             # user

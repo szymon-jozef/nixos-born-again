@@ -145,7 +145,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |Module name|Description|
 |---|---|
 |hyprland|Hyprland configuration|
-|hypridle|Hypridle configuration|
 |hyprlauncher|Hyprlauncher configuration |
 |hyprlock|Hyprlock configuration|
 |hyprsunset|Hyprsunset configuration|
@@ -241,6 +240,15 @@ imports = [
 |---|---|---|
 |waybar|Cool system bar|yes|
 |ashell|Even better system bar|yes|
+
+
+**Table of hypr\* programs**
+|Program name|Description|
+|---|---|
+|hypridle| Idle checker (super cool)|
+
+
+*All hypr\* programs are already imported in hypr nixos module*
 
 # Templates
 Since I started using [devenv](devenv.sh/), I've stopped using flake templates for devshells. Now I write specific a specific flake.nix per project only if I want to distribute it.
