@@ -4,7 +4,6 @@
     imports = [
       self.homeModules.hyprland
       self.homeModules.hyprlauncher
-      self.homeModules.hyprlock
       self.homeModules.hyprsunset
       self.homeModules.hyprtoolkit
     ];

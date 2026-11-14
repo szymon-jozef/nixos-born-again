@@ -146,7 +146,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |---|---|
 |hyprland|Hyprland configuration|
 |hyprlauncher|Hyprlauncher configuration |
-|hyprlock|Hyprlock configuration|
 |hyprsunset|Hyprsunset configuration|
 |hyprtoolkit|Hyprtoolkit (hypr* apps theming) configuration|
 |**hypr**| A wrapper around all the hypr stuff|
@@ -246,6 +245,7 @@ imports = [
 |Program name|Description|
 |---|---|
 |hypridle| Idle checker (super cool)|
+|hyprlock|Hyprlock configuration|
 
 
 *All hypr\* programs are already imported in hypr nixos module*
