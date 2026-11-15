@@ -1,12 +1,9 @@
 { self, ... }:
 {
   flake.wrappers.ashell =
-    { pkgs, ... }:
-    let
-      ashell = import ./_wrapper.nix;
-    in
+    { pkgs, wlib, ... }:
     {
-      imports = [ ashell ];
+      imports = [ wlib.wrapperModules.ashell ];
 
       settings = {
         position = "Bottom";
