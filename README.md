@@ -246,6 +246,7 @@ imports = [
 |---|---|
 |hypridle| Idle checker (super cool)|
 |hyprlock|Hyprlock configuration|
+|hyprlauncher|App launcher (as of now uses custom module, with custom hyprlauncher build, because as of now hyprlauncher doesn't support passing --config flag. I'm trying to get that merged)|
 
 
 *All hypr\* programs are already imported in hypr nixos module*
