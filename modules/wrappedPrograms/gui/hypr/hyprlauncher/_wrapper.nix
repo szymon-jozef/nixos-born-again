@@ -6,7 +6,10 @@
   ...
 }:
 {
-  imports = [ wlib.modules.default ];
+  imports = [
+    wlib.modules.default
+    wlib.modules.systemd
+  ];
 
   options = {
     settings = lib.mkOption {
@@ -51,6 +54,13 @@
         source = "/path/to/extra.conf"
       '';
     };
+
+    systemdTarget = lib.mkOption {
+      type = lib.types.str;
+      default = "graphical-session.target";
+      example = "hyprland-session.target";
+      description = "Systemd target to bind to.";
+    };
   };
 
   config = {
@@ -60,6 +70,22 @@
     constructFiles.generatedConfig = {
       content = config."hyprlauncher.conf".content;
       relPath = "${config.binName}.conf";
+    };
+
+    systemd.user.service.hyprlauncher = {
+      overwrite = true;
+      Install.WantedBy = [ config.systemdTarget ];
+      Unit = {
+        Description = "Hyprlauncher deamon";
+        ConditionEnvironment = "WAYLAND_DISPLAY";
+        After = [ config.systemdTarget ];
+        PartOf = [ config.systemdTarget ];
+        X-Restart-Triggers = [ config.constructFiles.generatedConfig.path ];
+      };
+      Service = {
+        ExecStart = config.wrapperPaths.placeholder;
+        Restart = "on-failure";
+      };
     };
   };
 }
