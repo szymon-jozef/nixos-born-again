@@ -233,6 +233,11 @@ imports = [
 |bat|Bat (better cat)|yes|
 |git|My git config. Nixos module provides access to signing keys via agenix. It also enables signing commits|yes|
 
+**Table of wrapped packages that don't have a module**
+|Program name|Description|
+|---|---|
+|delta|Delta config wrapped to use catppuccin theme. My own module. I'll later PR it to nix-wrapper-modules, if it will work correctly. It's used by git config.|
+
 
 **Table of modules included in wrapped-programs-gui-deafult module**
 

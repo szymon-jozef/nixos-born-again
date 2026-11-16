@@ -1,43 +1,45 @@
 { self, ... }:
 {
-  flake.wrappers.git = { wlib, pkgs, ... }: {
-    imports = [ wlib.wrapperModules.git ];
+  flake.wrappers.git =
+    { wlib, pkgs, ... }:
+    let
+      delta = pkgs.lib.getExe (self.wrappers.delta.wrap { inherit pkgs; });
+    in
+    {
+      imports = [ wlib.wrapperModules.git ];
 
-    settings = {
-      init.defaultBranch = "master";
-      push.autoSetupRemote = true;
+      settings = {
+        init.defaultBranch = "master";
+        push.autoSetupRemote = true;
 
-      pull.rebase = false;
+        pull.rebase = false;
 
-      merge.tool = "nvimdiff";
-      mergetool = {
-        prompt = false;
-        keepBackup = false;
+        merge.tool = "nvimdiff";
+        mergetool = {
+          prompt = false;
+          keepBackup = false;
+        };
+
+        core.pager = delta;
+
+        interactive = {
+          diffFilter = "${delta} --color-only";
+        };
+
+        tag.gpgSign = true;
+        gpg.format = "ssh";
+
+        core.excludesFile = "${pkgs.writeText "gitignore" ''
+          *~
+          *.swp
+          .DS_Store
+          node_modules
+          result
+          __pycache__
+          .direnv
+        ''}";
       };
-
-      core.pager = pkgs.lib.getExe pkgs.delta;
-
-      interactive = {
-        diffFilter = "${pkgs.lib.getExe pkgs.delta} --color-only";
-      };
-
-      tag.gpgSign = true;
-      gpg.format = "ssh";
-
-      include.path = "${./catppuccin.gitconfig}";
-      delta.features = "catppuccin-mocha";
-
-      core.excludesFile = "${pkgs.writeText "gitignore" ''
-        *~
-        *.swp
-        .DS_Store
-        node_modules
-        result
-        __pycache__
-        .direnv
-      ''}";
     };
-  };
 
   flake.nixosModules.git = { config, pkgs, ... }: {
     imports = [ self.wrappers.git.install ];
@@ -67,7 +69,6 @@
     environment.systemPackages = with pkgs; [
       gh
       git-graph
-      delta
     ];
   };
 }
