@@ -5,6 +5,7 @@
       hypridle
       hyprlock
       hyprlauncher
+      hyprsunset
     ];
   };
 }

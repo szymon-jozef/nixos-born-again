@@ -247,6 +247,7 @@ imports = [
 |hypridle| Idle checker (super cool)|
 |hyprlock|Hyprlock configuration|
 |hyprlauncher|App launcher (as of now uses custom module, with custom hyprlauncher build, because as of now hyprlauncher doesn't support passing --config flag. I'm trying to get that merged)|
+|hyprsunset|Blue light filter (also custom module. As of now I patch the binary with commit not yet in stable release, but when it will get merged, I will PR to nix-wrapper-modules)|
 
 
 *All hypr\* programs are already imported in hypr nixos module*
