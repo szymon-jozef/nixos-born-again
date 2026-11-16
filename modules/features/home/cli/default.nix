@@ -5,7 +5,6 @@
       self.homeModules.fish # default shell
 
       self.homeModules.atuin
-      self.homeModules.bat
       self.homeModules.git
       self.homeModules.ssh
       self.homeModules.devenv

@@ -10,6 +10,7 @@
       eza
       fastfetch
       yazi
+      bat
     ];
   };
 }

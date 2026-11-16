@@ -170,7 +170,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |---|---|
 |cli-default| Provides all of the following|
 |atuin|Atuin config |
-|bat|Bat config |
 |git|Git config |
 |ssh|Ssh config |
 |zoxide|Zoxide config|
@@ -232,6 +231,7 @@ imports = [
 |fastfetch-smol|System info fetch tool, but with less information. Ideal for starting the shell.|yes|
 |eza|Ls replacement|yes|
 |yazi|Super cool terminal file manager|yes| 
+|bat|Bat (better cat)|yes|
 
 
 **Table of modules included in wrapped-programs-gui-deafult module**
