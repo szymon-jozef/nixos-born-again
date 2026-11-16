@@ -20,4 +20,5 @@ let
 in
 {
   "wifi.age".publicKeys = users ++ systems;
+  "git.age".publicKeys = users ++ systems;
 }

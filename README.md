@@ -170,7 +170,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |---|---|
 |cli-default| Provides all of the following|
 |atuin|Atuin config |
-|git|Git config |
 |ssh|Ssh config |
 |zoxide|Zoxide config|
 |devenv|Devenv settings|
@@ -232,6 +231,7 @@ imports = [
 |eza|Ls replacement|yes|
 |yazi|Super cool terminal file manager|yes| 
 |bat|Bat (better cat)|yes|
+|git|My git config. Nixos module provides access to signing keys via agenix. It also enables signing commits|yes|
 
 
 **Table of modules included in wrapped-programs-gui-deafult module**

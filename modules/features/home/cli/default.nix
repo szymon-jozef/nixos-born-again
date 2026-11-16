@@ -5,7 +5,6 @@
       self.homeModules.fish # default shell
 
       self.homeModules.atuin
-      self.homeModules.git
       self.homeModules.ssh
       self.homeModules.devenv
       self.homeModules.zoxide
