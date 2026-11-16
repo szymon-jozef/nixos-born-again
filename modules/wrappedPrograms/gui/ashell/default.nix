@@ -82,16 +82,5 @@
       enable = true;
       settings.outputs.Targets = [ config.monitors.primary ];
     };
-
-    systemd.user.services.ashell = {
-      description = "Autostart ashell";
-      wantedBy = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
-
-      serviceConfig = {
-        ExecStart = lib.getExe config.wrappers.ashell.wrapper;
-        Restart = "on-failure";
-      };
-    };
   };
 }

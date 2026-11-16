@@ -434,11 +434,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1794558749,
-        "narHash": "sha256-o3qP4WjKWRyghN80cnpVsY0i0dU7oc0A+32lYudaBP0=",
+        "lastModified": 1794787132,
+        "narHash": "sha256-rTqJa3Qe1WuS8sOq0WpaoTrVSzB1pS/pCm+/Z/Fv+Sg=",
         "owner": "nix-community",
         "repo": "nix-wrapper-modules",
-        "rev": "ec3ec32509e1bd97cd9886658b04702a2a7b7007",
+        "rev": "f55056187c96b480ac68e665a04b23f9e0bca5aa",
         "type": "github"
       },
       "original": {
