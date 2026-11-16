@@ -145,8 +145,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |Module name|Description|
 |---|---|
 |hyprland|Hyprland configuration|
-|hyprlauncher|Hyprlauncher configuration |
-|hyprsunset|Hyprsunset configuration|
 |hyprtoolkit|Hyprtoolkit (hypr* apps theming) configuration|
 |**hypr**| A wrapper around all the hypr stuff|
 
