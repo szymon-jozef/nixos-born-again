@@ -53,6 +53,7 @@ in
               network
 
               wrapped-programs-default
+              wrapped-programs-gui-default
               ashell
             ]
             ++ [

@@ -58,6 +58,7 @@ in
             ./_hardware.nix
 
             self.nixosModules.wrapped-programs-default
+            self.nixosModules.wrapped-gui-programs-default
             self.nixosModules.waybar
           ];
 

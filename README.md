@@ -187,7 +187,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |mako|Notification deamon|
 |obsidian|Note taking app|
 |gui-packages|Collection of not specific packages|
-|satty|Screenshot edition tool|
 |browsers| Provides default browsers and PWAs|
 |zen| Zen-browser config|
 |web-apps| Provides web-apps (PWAs)|
@@ -221,7 +220,7 @@ imports = [
 ];
 ```
 
-**Table of available modules, included in wreapper-programs-default module**
+**Table of available modules, included in wrapped-programs-default module**
 |Program name|Description|has nixosModule|
 |---|---|---|
 |nh|Nix helper|yes|
@@ -233,6 +232,13 @@ imports = [
 |fastfetch-smol|System info fetch tool, but with less information. Ideal for starting the shell.|yes|
 |eza|Ls replacement|yes|
 |yazi|Super cool terminal file manager|yes| 
+
+
+**Table of modules included in wrapped-programs-gui-deafult module**
+
+|Program name|Description|
+|---|---|
+|satty|Screenshot annotation tool|
 
 **Table of available modules that are not in the default module**
 |Program name|Description|has nixosModule|

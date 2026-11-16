@@ -9,7 +9,6 @@
       self.homeModules.udiskie
       self.homeModules.mako
       self.homeModules.obsidian
-      self.homeModules.satty
 
       self.homeModules.gui-packages
 

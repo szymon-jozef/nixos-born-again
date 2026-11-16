@@ -66,6 +66,7 @@ in
             ./_hardware.nix
 
             self.nixosModules.wrapped-programs-default
+            self.nixosModules.wrapped-programs-gui-default
             self.nixosModules.ashell
           ];
 
