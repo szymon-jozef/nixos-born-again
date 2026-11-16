@@ -73,7 +73,6 @@
     };
 
     systemd.user.service.hyprlauncher = {
-      overwrite = true;
       Install.WantedBy = [ config.systemdTarget ];
       Unit = {
         Description = "Hyprlauncher deamon";
@@ -83,7 +82,7 @@
         X-Restart-Triggers = [ config.constructFiles.generatedConfig.path ];
       };
       Service = {
-        ExecStart = config.wrapperPaths.placeholder;
+        ExecStart = "${config.wrapperPaths.placeholder} -d";
         Restart = "on-failure";
       };
     };

@@ -75,7 +75,7 @@
       };
     };
 
-  flake.nixosModules.ashell = { config, lib, ... }: {
+  flake.nixosModules.ashell = { config, ... }: {
     imports = [ self.wrappers.ashell.install ];
 
     wrappers.ashell = {
