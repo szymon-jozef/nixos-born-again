@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   flake.homeModules.hyprland =
     {
@@ -9,7 +10,7 @@
     let
       # === apps ===
       grim = lib.getExe pkgs.grim;
-      satty = lib.getExe pkgs.satty;
+      satty = lib.getExe (self.wrappers.satty.wrap { inherit pkgs; });
       jq = lib.getExe pkgs.jq;
       wl_copy = lib.getExe' pkgs.wl-clipboard "wl-copy";
       notify_send = lib.getExe' pkgs.libnotify "notify-send";
