@@ -49,6 +49,7 @@
       in
       {
         enable = true;
+        aliases = [ "g" ];
         settings = {
           user = {
             name = config.user.name;
