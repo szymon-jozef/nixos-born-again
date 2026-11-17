@@ -1,7 +1,7 @@
 { self, ... }:
 {
-  flake.wrappers.satty = {
-    imports = [ ./_wrapper.nix ];
+  flake.wrappers.satty = { wlib, ... }: {
+    imports = [ wlib.wrapperModules.satty ];
     settings = {
       general = {
         fullscreen = true;
