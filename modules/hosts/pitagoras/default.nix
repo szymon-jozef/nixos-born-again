@@ -68,6 +68,7 @@ in
             self.nixosModules.wrapped-programs-default
             self.nixosModules.wrapped-programs-gui-default
             self.nixosModules.ashell
+            self.nixosModules.ghostty
           ];
 
           # home-manager imports go here
@@ -77,7 +78,6 @@ in
               self.homeModules.theme
               self.homeModules.hypr
               self.homeModules.gui-default
-              self.homeModules.terminal-emulator-default
 
               self.homeModules.cli-default
               self.homeModules.xdg

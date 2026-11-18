@@ -1,10 +1,13 @@
+{ self, ... }:
 {
-  flake.homeModules.ghostty = { pkgs, lib, ... }: {
+  flake.wrappers.ghostty =
+    { wlib, ... }:
+    let
+      catppuccin-mocha = "${./catppuccin-mocha}";
+    in
+    {
+      imports = [ wlib.wrapperModules.ghostty ];
 
-    programs.ghostty = {
-      enable = true;
-      systemd = { };
-      enableFishIntegration = true;
       settings = {
         font-size = 12;
         font-family = "Hack Nerd Font";
@@ -19,9 +22,12 @@
 
         confirm-close-surface = false;
         gtk-single-instance = false;
+        theme = catppuccin-mocha;
       };
     };
 
-    wayland.windowManager.hyprland.settings.terminal._var = lib.mkForce (lib.getExe pkgs.ghostty);
+  flake.nixosModules.ghostty = {
+    imports = [ self.wrappers.ghostty.install ];
+    wrappers.ghostty.enable = true;
   };
 }

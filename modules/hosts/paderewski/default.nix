@@ -55,6 +55,7 @@ in
               wrapped-programs-default
               wrapped-programs-gui-default
               ashell
+              ghostty
             ]
             ++ [
               self.commonModules.options
@@ -72,7 +73,6 @@ in
 
               self.homeModules.gui-default
               self.homeModules.freetube
-              self.homeModules.terminal-emulator-default
 
               self.homeModules.xdg
               self.homeModules.gaming

@@ -151,8 +151,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 ### Terminal emulators
 |Module name|Description|
 |---|---|
-|terminal-emulator-default|Provides default config for most configurations|
-|Ghostty|Super cool emulator|
 |Kitty|Another super cool emulator|
 
 ### Programs
@@ -248,6 +246,7 @@ imports = [
 |---|---|---|
 |waybar|Cool system bar|yes|
 |ashell|Even better system bar|yes|
+|ghostty|Modern termimal emulator|yes|
 
 
 **Table of hypr\* programs**
