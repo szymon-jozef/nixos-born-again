@@ -173,7 +173,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |wallpaper|Wallpaper programs|
 |kdeconnect|Kdeconnect config|
 |udiskie|Udiskie config |
-|mako|Notification deamon|
 |obsidian|Note taking app|
 |gui-packages|Collection of not specific packages|
 |browsers| Provides default browsers and PWAs|
@@ -235,6 +234,7 @@ imports = [
 |Program name|Description|
 |---|---|
 |satty|Screenshot annotation tool|
+|mako|Notification daemon|
 
 **Table of available modules that are not in the default module**
 |Program name|Description|has nixosModule|
