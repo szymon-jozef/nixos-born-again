@@ -29,7 +29,6 @@
   - [homeModules](#homemodules)
     - [Theme](#theme-1)
     - [hypr](#hypr)
-    - [Terminal emulators](#terminal-emulators)
     - [Programs](#programs)
       - [Programs cli](#programs-cli)
       - [Programs gui](#programs-gui)
@@ -148,10 +147,6 @@ home-manager switch --flake .#<your_name>@<your_host>
 |hyprtoolkit|Hyprtoolkit (hypr* apps theming) configuration|
 |**hypr**| A wrapper around all the hypr stuff|
 
-### Terminal emulators
-|Module name|Description|
-|---|---|
-|Kitty|Another super cool emulator|
 
 ### Programs
 |Module name|Description|
@@ -247,6 +242,7 @@ imports = [
 |waybar|Cool system bar|yes|
 |ashell|Even better system bar|yes|
 |ghostty|Modern termimal emulator|yes|
+|kitty|Also a pretty cool terminal emulator|yes|
 
 
 **Table of hypr\* programs**
