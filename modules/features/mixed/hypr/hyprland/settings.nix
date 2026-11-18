@@ -1,7 +1,7 @@
-{ self, ... }:
 {
   flake.homeModules.hyprland =
     {
+      osConfig,
       pkgs,
       inputs,
       lib,
@@ -10,7 +10,7 @@
 
     let
       # terminal = lib.getExe pkgs.kitty;
-      terminal = lib.getExe (self.wrappers.ghostty.wrap { inherit pkgs; });
+      terminal = lib.getExe (osConfig.default-apps.terminal-emulator);
       menu = lib.getExe pkgs.hyprlauncher;
       music_player = lib.getExe pkgs.spotify;
       notes = lib.getExe pkgs.obsidian;

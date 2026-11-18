@@ -49,8 +49,9 @@
     };
   };
 
-  flake.nixosModules.kitty = {
+  flake.nixosModules.kitty = { pkgs, ... }: {
     imports = [ self.wrappers.kitty.install ];
+    default-apps.terminal-emulator = self.wrappers.kitty.wrap { inherit pkgs; };
     wrappers.kitty.enable = true;
   };
 }

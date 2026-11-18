@@ -26,8 +26,9 @@
       };
     };
 
-  flake.nixosModules.ghostty = {
+  flake.nixosModules.ghostty = { pkgs, ... }: {
     imports = [ self.wrappers.ghostty.install ];
+    default-apps.terminal-emulator = self.wrappers.ghostty.wrap { inherit pkgs; };
     wrappers.ghostty.enable = true;
   };
 }

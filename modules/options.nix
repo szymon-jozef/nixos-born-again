@@ -1,7 +1,7 @@
+{ self, ... }:
 {
   flake.commonModules.options =
-
-    { lib, ... }:
+    { pkgs, lib, ... }:
     let
       t = lib.types;
     in
@@ -58,6 +58,14 @@
           projects = lib.mkOption {
             type = t.str;
             default = "Kodowanie";
+          };
+        };
+
+        default-apps = {
+          terminal-emulator = lib.mkOption {
+            type = t.package;
+            default = (self.wrappers.ghostty.wrap { inherit pkgs; });
+            description = "Default terminal emulator to use";
           };
         };
       };
