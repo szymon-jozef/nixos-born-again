@@ -3,6 +3,7 @@
   flake.homeModules.hyprland =
     {
       pkgs,
+      osConfig,
       config,
       lib,
       ...
@@ -10,7 +11,7 @@
     let
       # === apps ===
       grim = lib.getExe pkgs.grim;
-      satty = lib.getExe (self.wrappers.satty.wrap { inherit pkgs; });
+      satty = lib.getExe osConfig.wrappers.satty.wrapper;
       jq = lib.getExe pkgs.jq;
       wl_copy = lib.getExe' pkgs.wl-clipboard "wl-copy";
       notify_send = lib.getExe' pkgs.libnotify "notify-send";
