@@ -13,7 +13,7 @@
       terminal = lib.getExe (osConfig.default-apps.terminal-emulator);
       menu = lib.getExe pkgs.hyprlauncher;
       music_player = lib.getExe pkgs.spotify;
-      notes = lib.getExe pkgs.obsidian;
+      # notes = lib.getExe pkgs.obsidian;
       # signal_client = "${terminal} --title 'gurk' ${pkgs.gurk-rs}/bin/gurk";
       signal_client = "${terminal} -e ${pkgs.gurk-rs}/bin/gurk";
       browser = lib.getExe inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -30,7 +30,7 @@
           terminal._var = terminal;
           menu._var = menu;
           music_player._var = music_player;
-          notes._var = notes;
+        #  notes._var = notes;
           signal_client._var = signal_client;
           browser._var = browser;
           openrgb_color._var = color;

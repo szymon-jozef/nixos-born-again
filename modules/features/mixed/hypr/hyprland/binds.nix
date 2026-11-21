@@ -84,9 +84,9 @@
             hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd("openrgb -c " .. openrgb_color))
 
             -- notes
-            hl.bind(mainMod .. " + CONTROL + N", function()
-                focus_or_launch("^(obsidian)$", "uwsm app -- " .. notes, { workspace = 6 })
-            end)
+            -- hl.bind(mainMod .. " + CONTROL + N", function()
+            --     focus_or_launch("^(obsidian)$", "uwsm app -- " .. notes, { workspace = 6 })
+            -- end)
 
             -- music
             hl.bind(mainMod .. " + CONTROL + M", function()

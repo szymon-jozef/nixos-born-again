@@ -7,7 +7,7 @@
       self.homeModules.kdeconnect
       self.homeModules.browsers
       self.homeModules.udiskie
-      self.homeModules.obsidian
+      # self.homeModules.obsidian
 
       self.homeModules.gui-packages
 
