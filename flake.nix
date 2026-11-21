@@ -27,7 +27,10 @@
       url = "github:nix-community/nixvim";
     };
 
-    wrappers.url = "github:nix-community/nix-wrapper-modules";
+    wrappers = {
+      url = "github:nix-community/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # === CACHYOS KERNEL ===
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
