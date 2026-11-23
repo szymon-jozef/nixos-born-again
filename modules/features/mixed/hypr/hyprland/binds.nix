@@ -217,6 +217,32 @@
                 suppress_event = "maximize",
             })
             suppressMaximizeRule:set_enabled(false)
+
+            local MAX_ZOOM = 3
+            local MIN_ZOOM = 1
+            local ZOOM_TOGGLE_FACTOR = 0.5
+
+            ---@param offset number
+            ---@return nil
+            local function zoom(offset)
+                local current = hl.get_config("cursor.zoom_factor")
+
+                -- If no offset is provided, default to zoom after toggle, else use passed zoom value
+                current = current + (offset and offset or ZOOM_TOGGLE_FACTOR)
+                if offset == 0 then current = 0 end -- reset to no zoom if offset is zero
+                if current < MIN_ZOOM then current = MIN_ZOOM end
+                if current > MAX_ZOOM then current = MAX_ZOOM end
+
+                hl.config({ cursor = { zoom_factor = current } })
+            end
+
+            hl.bind(mainMod .. "+ equal", zoom)
+            hl.bind("SUPER + BackSpace", function()
+                zoom(0)
+            end)
+            hl.bind(mainMod .. " + minus", function()
+                zoom(-0.5)
+            end)
           '';
       };
     };
