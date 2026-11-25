@@ -145,6 +145,13 @@
           ];
           run = "cd ${homePaths.projects}";
         }
+        {
+          on = [
+            "g"
+            "m"
+          ];
+          run = "cd ${homePaths.music}";
+        }
       ];
 
       wrappers.yazi.enable = true;

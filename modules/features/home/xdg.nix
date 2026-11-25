@@ -79,7 +79,7 @@
           projects = homePaths.projects;
 
           desktop = null;
-          music = null;
+          music = homePaths.music;
           templates = null;
           publicShare = null;
           setSessionVariables = true;

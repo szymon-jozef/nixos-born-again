@@ -59,6 +59,11 @@
             type = t.str;
             default = "Kodowanie";
           };
+
+          music = lib.mkOption {
+            type = t.str;
+            default = "Muzyka";
+          };
         };
 
         default-apps = {
