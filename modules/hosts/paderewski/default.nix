@@ -77,6 +77,7 @@ in
               self.homeModules.xdg
               self.homeModules.gaming
               self.homeModules.university
+              self.homeModules.ai-slop
 
               self.homeModules.cli-default
             ];
