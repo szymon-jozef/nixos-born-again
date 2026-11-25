@@ -6,10 +6,7 @@
   ...
 }:
 {
-  imports = [
-    wlib.modules.default
-    wlib.modules.systemd
-  ];
+  imports = [ wlib.modules.default ];
 
   options = {
     settings = lib.mkOption {
@@ -56,31 +53,15 @@
       description = "Additional config to append to the end of the config file.";
       default = null;
     };
-
-    systemdTarget = lib.mkOption {
-      type = lib.types.nullOr lib.types.str;
-      description = "Systemd target to bind to. Set to null to disable systemd service.";
-      default = "graphical-session.target";
-      example = "hyprland-session.target";
-    };
   };
 
   config = {
     package = pkgs.callPackage ./_package.nix { };
+    filesToPatch = [ "usr/systemd/user/*.service" ];
     flags."--config" = config.constructFiles.generatedConfig.path;
     constructFiles.generatedConfig = {
       content = config."hyprsunset.conf".content;
       relPath = "${config.binName}.conf";
-    };
-
-    systemd.user.service.hyprsunset = lib.mkIf (config.systemdTarget != null) {
-      Install.WantedBy = [ config.systemdTarget ];
-      Unit = {
-        After = [ config.systemdTarget ];
-        ConditionEnvironment = "WAYLAND_DISPLAY";
-        PartOf = [ config.systemdTarget ];
-        X-Restart-Triggers = [ config.constructFiles.generatedConfig.path ];
-      };
     };
 
     meta = {
