@@ -159,12 +159,13 @@ home-manager switch --flake .#<your_name>@<your_host>
 #### Programs cli
 |Module name|Description|
 |---|---|
-|cli-default| Provides all of the following|
 |atuin|Atuin config |
 |ssh|Ssh config |
 |zoxide|Zoxide config|
 |devenv|Devenv settings|
+|cli-default| Provides all of the above|
 |cli-packages|General cli packages|
+|ai-slop|Some ai bullshit|
 
 #### Programs gui
 |Module name|Description|
